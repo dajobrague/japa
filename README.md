@@ -1,69 +1,68 @@
-# Welcome to your Lovable project
+# JAPA Smart Parking Solutions
 
-## Project info
+JAPA is a comprehensive smart parking platform designed to transform parking management for universities, cities, and organizations. Our intelligent solutions deliver real-time data, actionable insights, and enhanced user experiences.
 
-**URL**: https://lovable.dev/projects/d84a49e4-51f0-4339-a4eb-55756f136526
+![JAPA Smart Parking](public/og-image.png)
 
-## How can I edit this code?
+## About JAPA
 
-There are several ways of editing your application.
+JAPA provides cutting-edge parking management technology that helps organizations optimize their parking resources, reduce congestion, and improve user satisfaction. Our platform integrates seamlessly with existing infrastructure to provide a complete smart parking ecosystem.
 
-**Use Lovable**
+## Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d84a49e4-51f0-4339-a4eb-55756f136526) and start prompting.
+- **Real-Time Parking Data**: Convert every parking stall into a live data hub with 99%+ accurate sensors that deliver real-time availability information.
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Analytics & Insights**: Gain valuable insights with historical data, occupancy trends, peak usage times, and customizable reports.
 
-**Use your preferred IDE**
+- **Violation Tracking**: Automatically detect parking violations with time-based monitoring, improving enforcement efficiency and turnover rates.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Seamless Integration**: Integrate with existing parking management systems, payment platforms, and campus apps for a unified experience.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Web Management Console**: Access a powerful, user-friendly dashboard to manage and monitor your entire parking ecosystem from anywhere.
 
-Follow these steps:
+- **Mobile Application**: Help commuters quickly find available parking with our intuitive mobile app, reducing congestion and frustration.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Our Solutions
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+JAPA offers customized solutions for various sectors:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Universities**: Optimize campus parking for students, faculty, and visitors
+- **Cities**: Improve urban mobility and reduce downtown congestion
+- **Healthcare**: Enhance patient and visitor experience at medical facilities
+- **Events**: Streamline parking for stadiums, arenas, and event venues
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Technology Stack
+
+This project is built with modern web technologies:
+
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- shadcn-ui
+
+## Getting Started
+
+To run this project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/japa-smart-parking.git
+
+# Navigate to the project directory
+cd japa-smart-parking
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Learn More
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Visit our website or contact our team to learn more about how JAPA can transform your parking management experience.
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d84a49e4-51f0-4339-a4eb-55756f136526) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+© 2023 JAPA Inc. All rights reserved.
