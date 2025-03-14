@@ -12,7 +12,10 @@
   "routes": [
     {
       "src": "/assets/(.*)",
-      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "headers": { 
+        "cache-control": "public, max-age=31536000, immutable",
+        "content-type": "application/javascript; charset=utf-8"
+      },
       "dest": "/assets/$1"
     },
     {
@@ -26,7 +29,7 @@
     {
       "src": "/(.*).js",
       "headers": { 
-        "content-type": "application/javascript", 
+        "content-type": "application/javascript; charset=utf-8", 
         "x-content-type-options": "nosniff" 
       },
       "dest": "/$1.js"
@@ -42,26 +45,6 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*).js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/_next/static/(.*).js",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
     }
   ]
 } 
