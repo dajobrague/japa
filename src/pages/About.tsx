@@ -1,0 +1,382 @@
+import React, { useEffect, useState } from "react";
+import PageLayout from "@/components/layout/PageLayout";
+import Pill from "@/components/ui/Pill";
+import AnimationWrapper from "@/components/ui/AnimationWrapper";
+import { ArrowRight, Award, CheckCircle2, Clock, Globe, MapPin, MessageSquare, Smile, Users } from "lucide-react";
+import AnimatedButton from "@/components/ui/AnimatedButton";
+
+// Carousel images from other pages
+const carouselImages = [
+  {
+    src: "/lovable-uploads/aerial-parking-lot.jpg",
+    alt: "Smart Parking Aerial View"
+  },
+  {
+    src: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
+    alt: "University Parking Solution"
+  },
+  {
+    src: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
+    alt: "City Center Parking"
+  },
+  {
+    src: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
+    alt: "Stadium Parking System"
+  },
+  {
+    src: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
+    alt: "Healthcare Facility Parking"
+  }
+];
+
+const milestones = [
+  {
+    year: "2016",
+    title: "University Project",
+    description: "JAPA began as an innovative project at a leading university, aimed at solving campus parking challenges."
+  },
+  {
+    year: "2017",
+    title: "First Prototype",
+    description: "Development of the first sensor prototype and initial testing in a small-scale university environment."
+  },
+  {
+    year: "2018",
+    title: "Company Formation",
+    description: "JAPA officially incorporated as a company focused on smart parking solutions for educational institutions."
+  },
+  {
+    year: "2019",
+    title: "First Major Deployment",
+    description: "Successfully implemented our first large-scale solution at a major university campus."
+  },
+  {
+    year: "2020",
+    title: "Expansion to Cities",
+    description: "Expanded our solutions beyond universities to include municipal applications in urban centers."
+  },
+  {
+    year: "2021",
+    title: "Advanced Analytics",
+    description: "Launched enhanced analytics platform with predictive capabilities and comprehensive reporting."
+  },
+  {
+    year: "2022",
+    title: "Mobile App Launch",
+    description: "Released our user-focused mobile application to help commuters find parking in real-time."
+  },
+  {
+    year: "2023",
+    title: "Market Leadership",
+    description: "Established as the leading provider of cost-effective smart parking solutions in the U.S."
+  }
+];
+
+const values = [
+  {
+    icon: <Award className="w-6 h-6" />,
+    title: "Innovation",
+    description: "We continuously pursue innovative solutions to parking challenges, leveraging the latest technologies to create more efficient systems."
+  },
+  {
+    icon: <Globe className="w-6 h-6" />,
+    title: "Sustainability",
+    description: "Our solutions are designed to reduce emissions from parking searches, supporting more sustainable urban environments."
+  },
+  {
+    icon: <Clock className="w-6 h-6" />,
+    title: "Operational Excellence",
+    description: "We are committed to delivering solutions that improve operational efficiency for parking managers and facility operators."
+  },
+  {
+    icon: <Smile className="w-6 h-6" />,
+    title: "User Experience",
+    description: "We prioritize the end-user experience, making parking less stressful and more convenient for everyone."
+  }
+];
+
+const teamMembers = [
+  {
+    name: "Alexandra Chen",
+    position: "CEO & Co-Founder",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=AC&font=open-sans",
+    bio: "Former transportation consultant with a passion for urban innovation and smart city planning."
+  },
+  {
+    name: "Marcus Rodriguez",
+    position: "CTO & Co-Founder",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MR&font=open-sans",
+    bio: "Computer engineer with expertise in IoT networks and sensor technology."
+  },
+  {
+    name: "Sarah Johnson",
+    position: "VP of Product",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=SJ&font=open-sans",
+    bio: "Product specialist focused on creating intuitive user experiences for complex technological solutions."
+  },
+  {
+    name: "David Park",
+    position: "Director of Operations",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=DP&font=open-sans",
+    bio: "Operations expert with a background in smart infrastructure and deployment logistics."
+  }
+];
+
+const stats = [
+  { value: "500+", label: "Parking Facilities", icon: <MapPin className="w-5 h-5" /> },
+  { value: "25K+", label: "Parking Spaces", icon: <Globe className="w-5 h-5" /> },
+  { value: "85+", label: "Client Organizations", icon: <Users className="w-5 h-5" /> },
+  { value: "4.8/5", label: "Customer Satisfaction", icon: <MessageSquare className="w-5 h-5" /> }
+];
+
+const About = () => {
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // State for image carousel
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Image carousel rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <PageLayout>
+      {/* Enhanced Hero Section */}
+      <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+        {/* Background pattern */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0 bg-grid-pattern-light"></div>
+        </div>
+        
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7">
+              <AnimationWrapper animation="fade-right">
+                <Pill className="mb-5">Our Mission</Pill>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-japa-slate mb-6 leading-tight">
+                  Parking. <span className="text-japa-blue">Made Intelligent.</span>
+                </h1>
+                <p className="text-lg md:text-xl text-japa-slate/80 max-w-xl mb-8 leading-relaxed">
+                  JAPA is transforming parking through smart technology, creating more efficient, sustainable, and user-friendly parking experiences for all.
+                </p>
+                
+                {/* Stats section with fixed sizes */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+                  {stats.map((stat, index) => (
+                    <AnimationWrapper 
+                      key={index} 
+                      animation="fade-up" 
+                      delay={100 * (index + 1)}
+                    >
+                      <div className="text-center p-4 rounded-lg bg-white shadow-sm border border-gray-100 h-[120px] flex flex-col items-center justify-center">
+                        <div className="flex justify-center text-japa-blue/70 mb-2">
+                          {stat.icon}
+                        </div>
+                        <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-japa-blue to-japa-blue/80 bg-clip-text text-transparent mb-1">
+                          {stat.value}
+                        </div>
+                        <div className="text-japa-slate/70 text-xs md:text-sm">
+                          {stat.label}
+                        </div>
+                      </div>
+                    </AnimationWrapper>
+                  ))}
+                </div>
+              </AnimationWrapper>
+            </div>
+            
+            <div className="lg:col-span-5">
+              <AnimationWrapper animation="fade-left" delay={150}>
+                <div className="relative rounded-xl overflow-hidden h-[300px] md:h-[400px] shadow-lg">
+                  {/* Image Carousel */}
+                  {carouselImages.map((image, index) => (
+                    <div 
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ${
+                        index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
+                    >
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-full object-cover" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/60 to-transparent"></div>
+                    </div>
+                  ))}
+                  
+                  {/* Caption */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
+                    <p className="text-white/90 text-sm md:text-base font-medium">
+                      Helping cities and institutions create smarter parking systems
+                    </p>
+                  </div>
+                  
+                  {/* Carousel Indicators */}
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-2 z-20">
+                    {carouselImages.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          index === currentImageIndex 
+                            ? 'bg-white w-4' 
+                            : 'bg-white/50'
+                        }`}
+                        onClick={() => setCurrentImageIndex(index)}
+                        aria-label={`View image ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </AnimationWrapper>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-5">
+              <AnimationWrapper animation="fade-right">
+                <div className="sticky top-32">
+                  <Pill className="mb-4">Our Story</Pill>
+                  <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">
+                    From Campus Project to Industry Leader
+                  </h2>
+                  <p className="text-japa-slate/80 mb-6">
+                    JAPA began as a university project aimed at solving the everyday frustration of finding parking on campus. What started as a simple idea has grown into a comprehensive smart parking platform that serves universities, cities, stadiums, healthcare facilities, and more across the United States.
+                  </p>
+                  <p className="text-japa-slate/80 mb-6">
+                    Our name, JAPA, reflects our mission: to make the Japanese concept of continuous improvement (Kaizen) a reality in the parking industry. We believe that by making small, incremental improvements to parking systems, we can create transformative change in how people experience parking.
+                  </p>
+                  <p className="text-japa-slate/80 mb-8">
+                    Today, JAPA is the leading provider of cost-effective smart parking solutions in the U.S., helping organizations optimize their parking resources while improving the user experience for commuters and visitors.
+                  </p>
+                  <AnimatedButton variant="primary">
+                    Learn More About Our Solutions
+                  </AnimatedButton>
+                </div>
+              </AnimationWrapper>
+            </div>
+
+            <div className="lg:col-span-7">
+              <AnimationWrapper animation="fade-left">
+                <div className="relative ml-6 md:ml-12 pb-8">
+                  {/* Timeline vertical line */}
+                  <div className="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-japa-blue via-japa-blue/70 to-japa-blue/30 rounded-full"></div>
+                  
+                  <div className="space-y-12 md:space-y-16">
+                    {milestones.map((milestone, index) => (
+                      <AnimationWrapper 
+                        key={index} 
+                        animation="fade-left" 
+                        delay={100 * index}
+                        className="relative ml-8 md:ml-12"
+                      >
+                        <div className="absolute -left-11 md:-left-14 mt-1.5 w-9 h-9 rounded-full border-4 border-japa-blue/20 bg-white flex items-center justify-center shadow-md">
+                          <div className="w-3 h-3 rounded-full bg-japa-blue"></div>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                          <span className="inline-block px-3 py-1 bg-japa-blue/10 text-japa-blue rounded-full text-sm font-medium mb-3">
+                            {milestone.year}
+                          </span>
+                          <h3 className="text-xl font-bold text-japa-slate mb-2">{milestone.title}</h3>
+                          <p className="text-japa-slate/80">{milestone.description}</p>
+                        </div>
+                      </AnimationWrapper>
+                    ))}
+                  </div>
+                </div>
+              </AnimationWrapper>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-japa-gray/20 to-white">
+        <div className="container-wide">
+          <AnimationWrapper animation="fade-up" className="text-center mb-16">
+            <Pill className="mb-4">Our Values</Pill>
+            <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">Guiding Principles</h2>
+            <p className="text-lg text-japa-slate/80 max-w-2xl mx-auto">
+              At JAPA, our core values guide everything we do, from product development to customer service.
+            </p>
+          </AnimationWrapper>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {values.map((value, index) => (
+              <AnimationWrapper 
+                key={index} 
+                animation="fade-up" 
+                delay={index * 100}
+              >
+                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100 h-full group hover:border-japa-blue/20">
+                  <div className="bg-japa-blue/10 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-japa-blue group-hover:bg-japa-blue group-hover:text-white transition-colors">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-japa-slate mb-3">{value.title}</h3>
+                  <p className="text-japa-slate/80">{value.description}</p>
+                </div>
+              </AnimationWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-wide">
+          <AnimationWrapper animation="fade-up" className="text-center mb-16">
+            <Pill className="mb-4">Our Team</Pill>
+            <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">Meet the JAPA Leadership</h2>
+            <p className="text-lg text-japa-slate/80 max-w-2xl mx-auto">
+              Our passionate team of experts is dedicated to transforming the parking industry through innovative technology.
+            </p>
+          </AnimationWrapper>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <AnimationWrapper 
+                key={index} 
+                animation="fade-up" 
+                delay={index * 100}
+              >
+                <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden group border border-gray-100">
+                  <div className="h-64 overflow-hidden relative">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <p className="text-white text-sm">{member.bio}</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-japa-slate mb-1">{member.name}</h3>
+                    <p className="text-sm text-japa-blue">{member.position}</p>
+                  </div>
+                </div>
+              </AnimationWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+    </PageLayout>
+  );
+};
+
+export default About;
