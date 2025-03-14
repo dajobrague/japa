@@ -35,7 +35,7 @@ const SimulatorModal: React.FC<SimulatorModalProps> = ({ isOpen, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-opacity"
       onClick={handleBackdropClick}
     >
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] max-h-[95vh] overflow-hidden flex flex-col">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-[98%] xl:max-w-[96%] 2xl:max-w-[95%] max-h-[95vh] overflow-hidden flex flex-col">
         {/* Modal header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-100">
           <h3 className="text-xl font-bold text-japa-slate">Smart Parking Simulator</h3>
