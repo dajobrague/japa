@@ -3,22 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/" />
+    <base href="./" />
     <title>JAPA</title>
     <meta name="description" content="Smart parking solutions for universities, cities, and organizations" />
     <meta name="author" content="JAPA" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="./og-image.png" />
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/location-pin.png" />
-    <link rel="apple-touch-icon" href="/lovable-uploads/location-pin.png" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./lovable-uploads/location-pin.png" />
+    <link rel="apple-touch-icon" href="./lovable-uploads/location-pin.png" />
+    
+    <!-- CSS Directo -->
+    <link rel="stylesheet" href="./assets/index.css" />
     
     <!-- External Dependencies -->
     <script src="https://unpkg.com/zod@3.23.8/lib/index.umd.js"></script>
     <script>
       // Asegurar que zod sea accesible globalmente
       window.zod = window.zod || window.z;
+
+      // Función para verificar si los estilos se están cargando
+      function checkStylesheets() {
+        const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+        console.log('Hojas de estilo encontradas:', stylesheets.length);
+        
+        stylesheets.forEach((sheet, index) => {
+          console.log(`Hoja de estilo ${index + 1}:`, sheet.href, 'Estado:', sheet.sheet ? 'Cargada' : 'No cargada');
+        });
+        
+        // Si no hay hojas de estilo o ninguna está cargada, intentar cargar manualmente
+        if (stylesheets.length === 0 || !document.querySelector('link[href*="index.css"]')) {
+          console.warn('No se encontraron hojas de estilo principales, intentando cargar manualmente...');
+          const cssLink = document.createElement('link');
+          cssLink.rel = 'stylesheet';
+          cssLink.href = './assets/index.css';
+          document.head.appendChild(cssLink);
+        }
+      }
 
       // Script de depuración para capturar errores
       window.addEventListener('error', function(e) {
@@ -35,6 +57,7 @@
             document.body.innerHTML += '<div style="color:orange; padding:20px; background:#f8f8f8; position:fixed; top:0; left:0; right:0; z-index:9999">Advertencia: La aplicación no ha renderizado contenido en #root después de 3 segundos</div>';
           } else {
             console.log('Elemento root con contenido encontrado');
+            checkStylesheets();
           }
         } else {
           console.error('Elemento root no encontrado');
@@ -48,12 +71,13 @@
     <!-- GPT Engineer script - ahora con type="module" -->
     <script type="module" src="https://cdn.gpteng.co/gptengineer.js"></script>
     <!-- Usando el tipo module como requiere Vite -->
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
 
     <!-- Verificación simple para depuración -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM completamente cargado');
+        setTimeout(checkStylesheets, 1000); // Verificar estilos después de que se cargue el DOM
       });
     </script>
   </body>

@@ -21,17 +21,30 @@ export default defineConfig(({ mode }) => ({
       "@/parking-visualization": path.resolve(__dirname, "./src/parking-visualization"),
     },
   },
+  css: {
+    devSourcemap: true,
+    modules: {
+      scopeBehaviour: 'local',
+      localsConvention: 'camelCaseOnly'
+    }
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: mode !== 'production',
     minify: 'esbuild',
+    cssCodeSplit: false,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/index.css';
+          }
+          return 'assets/[name].[ext]';
+        },
         manualChunks: {
           vendor: [
             'react', 
