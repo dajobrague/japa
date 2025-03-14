@@ -3,6 +3,7 @@ import { CheckCircle, Shield, BarChart, Zap, Globe, Smartphone, ArrowRight, Chev
 import AnimationWrapper from "../ui/AnimationWrapper";
 import Pill from "../ui/Pill";
 import { Link } from "react-router-dom";
+import AnimatedButton from "../ui/AnimatedButton";
 
 // Feature data with additional details for enhanced cards
 const features = [
@@ -85,11 +86,11 @@ const Features = () => {
       <div className="container-wide px-4 md:px-6">
         <AnimationWrapper animation="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
-            <Pill className="mb-3 md:mb-4">Our Solutions</Pill>
-            <h2 className="text-balance font-display font-bold text-japa-slate mb-4 md:mb-5 text-3xl sm:text-4xl md:text-5xl leading-tight">
+            <Pill className="mb-3 md:mb-4 inline-flex">Our Solutions</Pill>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-2xl mx-auto">
               Comprehensive Smart <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-japa-orange to-japa-blue">Parking Solutions</span>
             </h2>
-            <p className="text-japa-slate/80 text-base md:text-lg">
+            <p className="text-japa-slate/80 text-lg md:text-xl max-w-xl mx-auto">
               Our integrated suite of parking technologies delivers real-time data, actionable insights, and enhanced user experiences.
             </p>
           </div>
@@ -139,7 +140,7 @@ const Features = () => {
                   <h3 className="text-base font-display font-semibold mb-2 text-japa-slate group-hover:text-japa-orange transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-japa-slate/70 text-sm mb-4 line-clamp-3">
+                  <p className="text-japa-slate/70 text-base md:text-lg mb-4 line-clamp-3">
                     {feature.description}
                   </p>
                   
@@ -198,7 +199,7 @@ const Features = () => {
                 <h3 className="text-lg md:text-xl font-display font-semibold mb-2 md:mb-3 text-japa-slate group-hover:text-japa-orange transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-japa-slate/70 text-sm md:text-base mb-6 md:mb-8">
+                <p className="text-japa-slate/70 text-base md:text-lg mb-6 md:mb-8">
                   {feature.description}
                 </p>
                 
@@ -227,13 +228,13 @@ const Features = () => {
         {/* Added section CTA */}
         <AnimationWrapper animation="fade-up" delay={600}>
           <div className="mt-10 md:mt-12 lg:mt-16 text-center">
-            <Link 
-              to="/solutions" 
-              className="bg-japa-slate hover:bg-japa-slate/90 text-white py-2.5 md:py-3 px-6 md:px-8 rounded-full inline-flex items-center text-sm md:text-base font-medium transition-all duration-300 hover:pl-6 hover:pr-10 shadow-lg"
+            <AnimatedButton 
+              variant="primary"
+              icon={<ArrowRight size={16} />}
+              onClick={() => window.location.href = '/solutions'}
             >
               Explore All Solutions
-              <ArrowRight size={16} className="ml-2" />
-            </Link>
+            </AnimatedButton>
           </div>
         </AnimationWrapper>
       </div>

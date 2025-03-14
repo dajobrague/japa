@@ -3,6 +3,7 @@ import { Check, ChevronRight, BarChart3 } from 'lucide-react';
 import Pill from '@/components/ui/Pill';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import { ArrowRight } from 'lucide-react';
+import AnimatedButton from '@/components/ui/AnimatedButton';
 
 const SolutionsHero: React.FC = () => {
   return (
@@ -24,12 +25,23 @@ const SolutionsHero: React.FC = () => {
                 JAPA's comprehensive solutions turn traditional parking infrastructure into intelligent, data-driven systems that create seamless experiences for both operators and users.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <a href="#simulator" className="inline-flex items-center justify-center bg-japa-blue hover:bg-japa-darkBlue text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                <AnimatedButton 
+                  variant="primary" 
+                  onClick={() => {
+                    document.getElementById('simulator')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Try Interactive Demo
-                </a>
-                <a href="#solutions" className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-japa-slate border border-gray-200 font-medium py-3 px-6 rounded-lg transition-colors">
-                  Explore Solutions <ChevronRight className="ml-1 w-4 h-4" />
-                </a>
+                </AnimatedButton>
+                <AnimatedButton 
+                  variant="secondary" 
+                  icon={<ChevronRight className="w-4 h-4" />}
+                  onClick={() => {
+                    document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Explore Solutions
+                </AnimatedButton>
               </div>
             </div>
           </AnimationWrapper>

@@ -3,6 +3,7 @@ import AnimationWrapper from "../ui/AnimationWrapper";
 import Pill from "../ui/Pill";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import AnimatedButton from "../ui/AnimatedButton";
 
 // Enhanced partner data with categories
 const partnerLogos = [
@@ -75,7 +76,7 @@ const Partners = () => {
               <h2 className="text-balance font-display font-bold text-japa-slate text-3xl sm:text-4xl md:text-5xl mb-4 md:mb-6 leading-tight">
                 Trusted by <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-japa-orange to-japa-blue">Industry Leaders</span>
               </h2>
-              <p className="text-japa-slate/80 text-base md:text-lg mb-6 md:mb-8 max-w-lg">
+              <p className="text-japa-slate/80 text-lg md:text-xl mb-6 md:mb-8 max-w-lg">
                 We're proud to collaborate with universities, cities, and organizations across the country 
                 to transform parking management and create smarter urban environments.
               </p>
@@ -100,13 +101,13 @@ const Partners = () => {
                 ))}
               </div>
               
-              <Link 
-                to="/partners" 
-                className="inline-flex items-center text-japa-slate font-medium hover:text-japa-orange transition-colors group text-sm md:text-base"
+              <AnimatedButton
+                variant="text"
+                icon={<ArrowRight size={16} />}
+                onClick={() => window.location.href = '/partners'}
               >
                 View all our partnerships
-                <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </AnimatedButton>
             </AnimationWrapper>
           </div>
           

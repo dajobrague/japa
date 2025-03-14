@@ -42,7 +42,7 @@ const CallToAction = () => {
             </AnimationWrapper>
             
             <AnimationWrapper animation="fade-up" delay={100}>
-              <p className="text-white/80 text-base md:text-lg mb-6 md:mb-8">
+              <p className="text-white/80 text-lg md:text-xl mb-6 md:mb-8">
                 Join universities and cities nationwide that have optimized their parking operations, improved user satisfaction, and increased revenue with JAPA's smart solutions.
               </p>
             </AnimationWrapper>

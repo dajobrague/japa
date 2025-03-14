@@ -13,7 +13,12 @@ const Hero = () => {
   const { openDemoForm } = useDemoForm();
 
   return (
-    <section className="relative pt-16 pb-16 md:pt-24 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+      {/* Background pattern */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute inset-0 bg-grid-pattern-light"></div>
+      </div>
+      
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-white to-japa-paleOrange/30 -z-10" />
       <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1621950614805-1b59f36954a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5 -z-10" />

@@ -27,9 +27,16 @@ const CaseStudyHero = () => {
                 <AnimatedButton variant="primary" size="lg">
                   Request a Consultation
                 </AnimatedButton>
-                <a href="#case-studies" className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-japa-slate border border-gray-200 font-medium py-3 px-6 rounded-lg transition-colors">
-                  View Case Studies <ChevronRight className="ml-1 w-4 h-4" />
-                </a>
+                <AnimatedButton 
+                  variant="secondary" 
+                  size="lg"
+                  icon={<ChevronRight className="w-4 h-4" />}
+                  onClick={() => {
+                    document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  View Case Studies
+                </AnimatedButton>
               </div>
             </div>
           </AnimationWrapper>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import PageLayout from "@/components/layout/PageLayout";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
 import Partners from "@/components/home/Partners";
@@ -13,16 +12,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        <Features />
-        <Partners />
-        <CallToAction />
-      </main>
-      <Footer />
-    </div>
+    <PageLayout>
+      <Hero />
+      <Features />
+      <Partners />
+      <CallToAction />
+    </PageLayout>
   );
 };
 
