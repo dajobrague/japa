@@ -27,17 +27,23 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
     sourcemap: false,
     minify: 'terser',
-    commonjsOptions: {
-      include: [/node_modules/],
-    },
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]',
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          router: ['react-router-dom']
+        manualChunks(id) {
+          // Crear chunks separados para dependencias grandes
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react';
+            }
+            if (id.includes('react-router')) {
+              return 'router';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            // Otros módulos grandes pueden agruparse en vendor
+            return 'vendor';
+          }
         }
       }
     }
