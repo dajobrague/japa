@@ -22,15 +22,22 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: 'terser',
     commonjsOptions: {
       include: [/node_modules/],
     },
     rollupOptions: {
-      external: ['zod', '@hookform/resolvers/zod'],
       output: {
-        globals: {
-          zod: 'zod',
-          '@hookform/resolvers/zod': 'zodResolver'
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          router: ['react-router-dom']
         }
       }
     }
