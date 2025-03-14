@@ -3,6 +3,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
 import Partners from "@/components/home/Partners";
+import Testimonials from "@/components/home/Testimonials";
 import CallToAction from "@/components/home/CallToAction";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
       <Hero />
       <Features />
       <Partners />
+      <Testimonials />
       <CallToAction />
     </PageLayout>
   );

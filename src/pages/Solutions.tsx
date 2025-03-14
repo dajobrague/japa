@@ -3,9 +3,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import SolutionsHero from "@/components/solutions/SolutionsHero";
 import FeaturesGrid from "@/components/solutions/FeaturesGrid";
 import SimulatorSection from "@/components/solutions/SimulatorSection";
-import FAQSection from "@/components/solutions/FAQSection";
 import FeatureModal from "@/components/solutions/FeatureModal";
-import { featuresData, faqData } from "@/data/solutionsData";
+import { featuresData } from "@/data/solutionsData";
 import { FeatureContent } from "@/types/solutions";
 
 const Solutions = () => {
@@ -56,7 +55,6 @@ const Solutions = () => {
       <SolutionsHero />
       <FeaturesGrid features={featuresData} onOpenModal={handleOpenModal} />
       <SimulatorSection />
-      <FAQSection faqItems={faqData} />
       
       {/* Feature Modal */}
       {activeFeature && (
