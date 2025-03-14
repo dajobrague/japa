@@ -1,8 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-// Importamos el shim para asegurar que las dependencias estén disponibles
-import './shims'
 
 console.log('Aplicación iniciando - Verificando carga...');
 

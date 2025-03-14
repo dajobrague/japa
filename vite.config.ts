@@ -26,10 +26,12 @@ export default defineConfig(({ mode }) => ({
       include: [/node_modules/],
     },
     rollupOptions: {
-      onwarn(warning, warn) {
-        // Suprimir advertencias específicas de resolución
-        if (warning.code === 'MODULE_NOT_FOUND') return;
-        warn(warning);
+      external: ['zod', '@hookform/resolvers/zod'],
+      output: {
+        globals: {
+          zod: 'zod',
+          '@hookform/resolvers/zod': 'zodResolver'
+        }
       }
     }
   },
