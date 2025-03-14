@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { name: "Home", href: "/" },
   { name: "Solutions", href: "/solutions" },
   { name: "Use Cases", href: "/use-cases" },
   { name: "Case Studies", href: "/case-studies" },
@@ -15,6 +16,7 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
   
   // Handle scroll event to change navbar appearance
   useEffect(() => {
@@ -32,6 +34,16 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Check if the current path matches the link's href
+  const isActive = (href: string) => {
+    // Special case for home page
+    if (href === "/" && location.pathname === "/") {
+      return true;
+    }
+    // For other pages, check if the pathname starts with the href (for nested routes)
+    return href !== "/" && location.pathname.startsWith(href);
+  };
 
   return (
     <header 
@@ -62,7 +74,10 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-japa-slate/80 hover:text-japa-orange transition-colors duration-200 text-sm font-medium"
+              className={cn(
+                "text-japa-slate/80 hover:text-japa-orange transition-colors duration-200 text-sm font-medium relative pb-1",
+                isActive(link.href) && "text-japa-orange after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-japa-orange"
+              )}
             >
               {link.name}
             </Link>
@@ -101,7 +116,10 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-japa-slate hover:text-japa-orange transition-colors duration-200 text-base font-medium py-2 border-b border-gray-100"
+              className={cn(
+                "text-japa-slate hover:text-japa-orange transition-colors duration-200 text-base font-medium py-2 border-b border-gray-100",
+                isActive(link.href) && "text-japa-orange"
+              )}
               onClick={() => setIsOpen(false)}
             >
               {link.name}
