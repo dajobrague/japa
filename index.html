@@ -19,14 +19,42 @@
     <script>
       // Asegurar que zod sea accesible globalmente
       window.zod = window.zod || window.z;
+
+      // Script de depuración para capturar errores
+      window.addEventListener('error', function(e) {
+        console.error('Error capturado globalmente:', e.error || e.message);
+        document.body.innerHTML += '<div style="color:red; padding:20px; background:#f8f8f8; position:fixed; bottom:0; left:0; right:0; z-index:9999">Error: ' + (e.error?.message || e.message) + '</div>';
+      });
+
+      // Verificar si el root está disponible
+      setTimeout(function() {
+        const rootEl = document.getElementById('root');
+        if (rootEl) {
+          if (rootEl.childNodes.length === 0) {
+            console.warn('Elemento root encontrado pero está vacío');
+            document.body.innerHTML += '<div style="color:orange; padding:20px; background:#f8f8f8; position:fixed; top:0; left:0; right:0; z-index:9999">Advertencia: La aplicación no ha renderizado contenido en #root después de 3 segundos</div>';
+          } else {
+            console.log('Elemento root con contenido encontrado');
+          }
+        } else {
+          console.error('Elemento root no encontrado');
+        }
+      }, 3000);
     </script>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- GPT Engineer script -->
-    <script src="https://cdn.gpteng.co/gptengineer.js"></script>
+    <!-- GPT Engineer script - ahora con type="module" -->
+    <script type="module" src="https://cdn.gpteng.co/gptengineer.js"></script>
     <!-- Usando el tipo module como requiere Vite -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Verificación simple para depuración -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM completamente cargado');
+      });
+    </script>
   </body>
 </html>

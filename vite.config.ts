@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/',
+  base: './',
   server: {
     host: "::",
     port: 8080,
@@ -25,34 +25,38 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-    sourcemap: false,
+    sourcemap: mode !== 'production',
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          // Crear chunks separados para dependencias grandes
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'react';
-            }
-            if (id.includes('react-router')) {
-              return 'router';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            // Otros módulos grandes pueden agruparse en vendor
-            return 'vendor';
-          }
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+        manualChunks: {
+          vendor: [
+            'react', 
+            'react-dom',
+            'react-router-dom',
+            'lucide-react',
+            '@tanstack/react-query'
+          ]
         }
       }
     }
   },
   optimizeDeps: {
     include: [
-      'zod',
-      'react-hook-form',
+      'react',
+      'react-dom',
+      'react-router-dom'
+    ],
+    exclude: [
+      'zod', 
       '@hookform/resolvers/zod'
     ]
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(mode),
+    'import.meta.env.BASE_URL': JSON.stringify('./')
   }
 }));
