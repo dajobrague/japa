@@ -21,4 +21,23 @@ export default defineConfig(({ mode }) => ({
       "@/parking-visualization": path.resolve(__dirname, "./src/parking-visualization"),
     },
   },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Suprimir advertencias específicas de resolución
+        if (warning.code === 'MODULE_NOT_FOUND') return;
+        warn(warning);
+      }
+    }
+  },
+  optimizeDeps: {
+    include: [
+      'zod',
+      'react-hook-form',
+      '@hookform/resolvers/zod'
+    ]
+  }
 }));
