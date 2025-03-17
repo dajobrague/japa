@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Use Cases", href: "/use-cases" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "About", href: "/about" },
+  { name: "Press", href: "/press" },
   { name: "FAQs", href: "/faqs" },
 ];
 
@@ -43,6 +44,11 @@ const Navbar = () => {
     }
     // For other pages, check if the pathname starts with the href (for nested routes)
     return href !== "/" && location.pathname.startsWith(href);
+  };
+
+  // Función para abrir el login en el sitio original
+  const handleLoginClick = () => {
+    window.open("https://parkjapa.com/login", "_blank");
   };
 
   return (
@@ -84,8 +90,21 @@ const Navbar = () => {
           ))}
         </nav>
         
-        {/* Contact Button (Desktop) */}
-        <div className="hidden lg:block">
+        {/* Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-3">
+          {/* Log In Button */}
+          <AnimatedButton 
+            variant="outline" 
+            size="sm"
+            icon={<LogIn size={16} />}
+            iconPosition="left"
+            onClick={handleLoginClick}
+            className="text-japa-slate border-japa-slate/30 hover:text-japa-orange hover:border-japa-orange"
+          >
+            Log In
+          </AnimatedButton>
+          
+          {/* Contact Button */}
           <AnimatedButton 
             variant="primary" 
             size="sm"
@@ -125,7 +144,22 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <div className="mt-4">
+          
+          {/* Log in button (Mobile) */}
+          <div className="mt-4 mb-2">
+            <AnimatedButton 
+              variant="outline" 
+              fullWidth
+              icon={<LogIn size={16} />}
+              iconPosition="left"
+              onClick={handleLoginClick}
+              className="text-japa-slate border-japa-slate/30"
+            >
+              Log In
+            </AnimatedButton>
+          </div>
+          
+          <div className="mt-2">
             <AnimatedButton 
               variant="primary" 
               fullWidth

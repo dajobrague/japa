@@ -27,4 +27,5 @@ export interface CaseStudy {
   implementation: string;
   outcomes: string;
   color: string;
+  detailsUrl?: string;
 } 

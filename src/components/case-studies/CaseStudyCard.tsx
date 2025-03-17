@@ -21,11 +21,17 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, onClick }) => 
               className="w-full h-full object-cover"
             />
             <div className={`absolute inset-0 bg-gradient-to-br ${caseStudy.color || 'from-japa-blue/20 to-japa-blue/30'} opacity-60`}></div>
+            
+            {/* Category tag positioned on the image */}
+            <div className="absolute top-4 left-4">
+              <span className="inline-block bg-white/90 backdrop-blur-sm text-japa-slate text-xs font-medium px-3 py-1 rounded-full">
+                {caseStudy.category}
+              </span>
+            </div>
           </div>
         </div>
         
         <div className="lg:col-span-3">
-          <Pill variant="secondary" className="mb-3">{caseStudy.category}</Pill>
           <h3 className="text-xl md:text-2xl font-bold text-japa-slate mb-3 line-clamp-2">{caseStudy.title}</h3>
           <p className="text-japa-slate/80 mb-6 line-clamp-3">
             {caseStudy.description}
@@ -50,14 +56,16 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy, onClick }) => 
               <span className="font-medium text-japa-blue">{caseStudy.stats.timeframe}</span> timeframe
             </div>
             
-            <AnimatedButton 
-              variant="primary" 
-              size="sm"
-              icon={<ArrowRight size={16} />}
-              onClick={() => onClick(caseStudy.id)}
-            >
-              Read Details
-            </AnimatedButton>
+            {caseStudy.detailsUrl && (
+              <AnimatedButton 
+                variant="primary" 
+                size="sm"
+                icon={<ArrowRight size={16} />}
+                onClick={() => onClick(caseStudy.id)}
+              >
+                Read Details
+              </AnimatedButton>
+            )}
           </div>
         </div>
       </div>

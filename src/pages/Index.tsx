@@ -5,6 +5,7 @@ import Features from "@/components/home/Features";
 import Partners from "@/components/home/Partners";
 import AppShowcase from "@/components/home/AppShowcase";
 import Testimonials from "@/components/home/Testimonials";
+import CallToAction from "@/components/home/CallToAction";
 import SectionTransition from "@/components/ui/SectionTransition";
 
 const Index = () => {
@@ -27,6 +28,9 @@ const Index = () => {
       </SectionTransition>
       <SectionTransition animation="slide-in-left" threshold={0.1} id="testimonials-section">
         <Testimonials />
+      </SectionTransition>
+      <SectionTransition animation="fade-up" threshold={0.1} id="cta-section">
+        <CallToAction />
       </SectionTransition>
     </PageLayout>
   );

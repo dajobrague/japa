@@ -114,6 +114,12 @@ const FAQs = () => {
   // State to track which FAQ items are open
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
   
+  // State to track which category groups are expanded
+  const [expandedCategories, setExpandedCategories] = useState<Record<number, boolean>>(
+    // Initialize all categories as collapsed by default
+    faqData.reduce((acc, _, index) => ({ ...acc, [index]: false }), {})
+  );
+  
   // State for search functionality
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -139,6 +145,14 @@ const FAQs = () => {
       [key]: !prev[key]
     }));
   };
+  
+  // Toggle category expansion
+  const toggleCategory = (categoryIndex: number) => {
+    setExpandedCategories((prev) => ({
+      ...prev,
+      [categoryIndex]: !prev[categoryIndex]
+    }));
+  };
 
   // Filter FAQs based on search query
   const filteredFAQs = searchQuery.trim() === "" 
@@ -150,6 +164,17 @@ const FAQs = () => {
           item.answer.toLowerCase().includes(searchQuery.toLowerCase())
         )
       })).filter(category => category.items.length > 0);
+
+  // When searching, expand all categories with matching results
+  useEffect(() => {
+    if (searchQuery.trim() !== "") {
+      const newExpandedCategories = { ...expandedCategories };
+      filteredFAQs.forEach((_, index) => {
+        newExpandedCategories[index] = true;
+      });
+      setExpandedCategories(newExpandedCategories);
+    }
+  }, [searchQuery, filteredFAQs]);
 
   return (
     <PageLayout>
@@ -164,7 +189,6 @@ const FAQs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
               <AnimationWrapper animation="fade-right">
-                <Pill className="mb-5">Knowledge Base</Pill>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-japa-slate mb-6 leading-tight">
                   Frequently Asked <span className="text-japa-blue">Questions</span>
                 </h1>
@@ -289,15 +313,35 @@ const FAQs = () => {
                   {filteredFAQs.map((category, categoryIndex) => (
                     <div key={categoryIndex} id={`category-${categoryIndex}`} className="mb-12">
                       <AnimationWrapper animation="fade-up" delay={categoryIndex * 50}>
-                        <div className="flex items-center mb-6">
-                          <span className="flex items-center justify-center w-10 h-10 rounded-full bg-japa-blue/10 text-japa-blue mr-4">
-                            {category.icon}
+                        <div 
+                          className="flex items-center justify-between mb-6 cursor-pointer"
+                          onClick={() => toggleCategory(categoryIndex)}
+                        >
+                          <div className="flex items-center">
+                            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-japa-blue/10 text-japa-blue mr-4">
+                              {category.icon}
+                            </span>
+                            <h2 className="text-2xl font-bold text-japa-slate">
+                              {category.category}
+                            </h2>
+                          </div>
+                          <span className={`p-2 rounded-full ${
+                            expandedCategories[categoryIndex]
+                              ? "bg-japa-blue text-white"
+                              : "bg-japa-blue/10 text-japa-blue"
+                          }`}>
+                            {expandedCategories[categoryIndex] ? 
+                              <ChevronUp size={16} /> : 
+                              <ChevronDown size={16} />
+                            }
                           </span>
-                          <h2 className="text-2xl font-bold text-japa-slate">
-                            {category.category}
-                          </h2>
                         </div>
-                        <div className="space-y-4">
+                        
+                        <div className={`space-y-4 overflow-hidden transition-all duration-500 ${
+                          expandedCategories[categoryIndex] 
+                            ? "max-h-[5000px] opacity-100" 
+                            : "max-h-0 opacity-0"
+                        }`}>
                           {category.items.map((item, itemIndex) => {
                             const key = `${categoryIndex}-${itemIndex}`;
                             const isOpen = openItems[key] || false;
@@ -313,7 +357,10 @@ const FAQs = () => {
                                       ? "bg-japa-blue/5 text-japa-blue" 
                                       : "bg-white hover:bg-gray-50 text-japa-slate"
                                   }`}
-                                  onClick={() => toggleItem(categoryIndex, itemIndex)}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleItem(categoryIndex, itemIndex);
+                                  }}
                                   aria-expanded={isOpen}
                                 >
                                   <span className="font-medium">{item.question}</span>
@@ -351,28 +398,36 @@ const FAQs = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-japa-blue/5 to-japa-gray/30 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-japa-orange relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-japa-blue/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-japa-blue/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
         
         <div className="container-wide relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <AnimationWrapper animation="fade-up">
-              <div className="inline-block rounded-full bg-japa-blue/10 p-3 mb-6">
-                <HelpCircle className="w-8 h-8 text-japa-blue" />
+              <div className="inline-block rounded-full bg-white/20 p-3 mb-6">
+                <HelpCircle className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Still Have Questions?
               </h2>
-              <p className="text-lg text-japa-slate/80 mb-8">
+              <p className="text-lg text-white/90 mb-8">
                 Our team is here to help. Contact us for personalized assistance with your specific parking challenges.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AnimatedButton variant="primary" size="lg">
+                <AnimatedButton 
+                  variant="secondary" 
+                  size="lg" 
+                  className="bg-white text-japa-orange hover:bg-white/90"
+                >
                   Contact Our Team
                 </AnimatedButton>
-                <AnimatedButton variant="outline" size="lg">
+                <AnimatedButton 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-white text-white hover:bg-white/10"
+                >
                   Schedule a Demo
                 </AnimatedButton>
               </div>

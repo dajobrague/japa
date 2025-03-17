@@ -162,7 +162,6 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
               <AnimationWrapper animation="fade-right">
-                <Pill className="mb-5">Our Mission</Pill>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-japa-slate mb-6 leading-tight">
                   Parking. <span className="text-japa-blue">Made Intelligent.</span>
                 </h1>
@@ -247,11 +246,13 @@ const About = () => {
       {/* Our Story Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container-wide">
+          <div className="text-center mb-12">
+            <Pill className="mx-auto">Our Story</Pill>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <AnimationWrapper animation="fade-right">
                 <div className="sticky top-32">
-                  <Pill className="mb-4">Our Story</Pill>
                   <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">
                     From Campus Project to Industry Leader
                   </h2>
@@ -306,12 +307,12 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-japa-gray/20 to-white">
+      <section className="py-16 md:py-24 bg-japa-orange">
         <div className="container-wide">
           <AnimationWrapper animation="fade-up" className="text-center mb-16">
-            <Pill className="mb-4">Our Values</Pill>
-            <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">Guiding Principles</h2>
-            <p className="text-lg text-japa-slate/80 max-w-2xl mx-auto">
+            <Pill className="mb-4 bg-white text-japa-orange border-white">Our Values</Pill>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Guiding Principles</h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               At JAPA, our core values guide everything we do, from product development to customer service.
             </p>
           </AnimationWrapper>
@@ -323,8 +324,8 @@ const About = () => {
                 animation="fade-up" 
                 delay={index * 100}
               >
-                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100 h-full group hover:border-japa-blue/20">
-                  <div className="bg-japa-blue/10 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-japa-blue group-hover:bg-japa-blue group-hover:text-white transition-colors">
+                <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all border border-white h-full group hover:border-white/20">
+                  <div className="bg-japa-orange/10 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-japa-orange group-hover:bg-japa-orange group-hover:text-white transition-colors">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-bold text-japa-slate mb-3">{value.title}</h3>

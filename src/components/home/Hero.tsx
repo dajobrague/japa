@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, ArrowDown, Play, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowDown, Play, ChevronRight, Zap, DollarSign } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
 import AnimationWrapper from "../ui/AnimationWrapper";
 import Pill from "../ui/Pill";
@@ -57,7 +57,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+    <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-orange/10 via-white to-japa-blue/5">
       {/* Add floating animation */}
       <style>
         {`
@@ -104,20 +104,20 @@ const Hero = () => {
         <div className="absolute inset-0 bg-grid-pattern-light"></div>
       </div>
       
-      {/* Enhanced Background Elements with Parallax */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-japa-paleOrange/30 -z-10" />
+      {/* Enhanced Background Elements with Parallax - Added more orange */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-japa-paleOrange/40 -z-10" />
       <div 
         className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1621950614805-1b59f36954a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5 -z-10 parallax" 
         style={{ transform: `translateY(${scrollY * 0.1}px)` }}
       />
       
-      {/* Enhanced Decorative Elements with Parallax */}
+      {/* Enhanced Decorative Elements with Parallax - Added more orange */}
       <div 
-        className="absolute top-1/3 right-1/4 w-48 h-48 bg-japa-orange opacity-[0.02] rounded-full blur-2xl -z-10 parallax"
+        className="absolute top-1/3 right-1/4 w-60 h-60 bg-japa-orange opacity-[0.04] rounded-full blur-2xl -z-10 parallax"
         style={{ transform: `translate(${scrollY * 0.03}px, ${scrollY * -0.02}px)` }}
       />
       <div 
-        className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-japa-orange opacity-[0.02] rounded-full blur-2xl -z-10 parallax"
+        className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-japa-orange opacity-[0.04] rounded-full blur-2xl -z-10 parallax"
         style={{ transform: `translate(${scrollY * -0.05}px, ${scrollY * 0.01}px)` }}
       />
       <div 
@@ -133,15 +133,39 @@ const Hero = () => {
       
       <div className="container-wide px-4 md:px-6">
         {/* Hero Layout - Changed to side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
-          {/* Text Content - Now left-aligned on desktop */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12 lg:gap-16">
+          {/* ParkingVisualization with enhanced styling - MOVED TO TOP/RIGHT */}
+          <AnimationWrapper 
+            animation="fade-up" 
+            delay={200}
+            className="w-full lg:w-1/2 mt-4 lg:mt-0 px-4 md:px-0"
+          >
+            <div className="relative">
+              {/* Glow effects around visualization */}
+              <div className="absolute inset-0 -m-6 bg-gradient-to-tr from-japa-orange/30 to-japa-blue/20 rounded-3xl blur-xl opacity-80"></div>
+              
+              <div className="max-w-xl mx-auto lg:max-w-none relative animate-float">
+                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-white text-japa-blue text-[10px] md:text-xs font-bold rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-md transform rotate-6 z-20 animate-pulse-subtle">
+                  <div className="text-center">
+                    <div className="text-base md:text-xl">Live</div>
+                    <div className="text-[8px] md:text-[10px]">Data</div>
+                  </div>
+                </div>
+                
+                <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 bg-white text-japa-orange text-[10px] md:text-xs font-bold rounded-full w-14 h-14 md:w-20 md:h-20 flex items-center justify-center shadow-md transform -rotate-6 z-20 border border-japa-orange/10">
+                  <div className="text-center px-1">
+                    <div className="text-[10px] md:text-sm font-bold">JAPA Console</div>
+                    <div className="text-[8px] md:text-[10px]">Smart Parking Solution</div>
+                  </div>
+                </div>
+                
+                <ParkingVisualization className="w-full max-w-full shadow-xl rounded-xl border border-white/30 backdrop-blur-sm" />
+              </div>
+            </div>
+          </AnimationWrapper>
+          
+          {/* Text Content - Now right-aligned on desktop */}
           <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-center lg:text-left">
-            <AnimationWrapper animation="fade-up" delay={100}>
-              <Pill className="mb-4 md:mb-6 inline-flex">
-                Transforming Parking Management
-              </Pill>
-            </AnimationWrapper>
-            
             <AnimationWrapper animation="fade-up" delay={200}>
               <h1 className="text-balance font-display font-bold text-japa-slate text-4xl sm:text-5xl md:text-6xl">
                 Parking.
@@ -155,6 +179,21 @@ const Hero = () => {
               </p>
             </AnimationWrapper>
             
+            {/* Key benefits highlight - NEW SECTION */}
+            <AnimationWrapper animation="fade-up" delay={330}>
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start mt-2">
+                <div className="flex items-center gap-2 bg-japa-orange/10 text-japa-orange font-medium px-4 py-2 rounded-lg">
+                  <DollarSign size={18} strokeWidth={2.5} />
+                  <span className="text-sm md:text-base font-bold">Cost Effective</span>
+                </div>
+                
+                <div className="flex items-center gap-2 bg-japa-blue/10 text-japa-blue font-medium px-4 py-2 rounded-lg">
+                  <Zap size={18} strokeWidth={2.5} />
+                  <span className="text-sm md:text-base font-bold">Easy to Install</span>
+                </div>
+              </div>
+            </AnimationWrapper>
+            
             {/* Animated Stats */}
             <AnimationWrapper animation="fade-up" delay={350}>
               <div className="grid grid-cols-3 gap-2 lg:gap-4 py-2 my-2 lg:ml-0 mx-auto">
@@ -165,7 +204,7 @@ const Hero = () => {
                   <div className="text-japa-slate/70 text-xs lg:text-sm">Parking Spaces</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
-                  <div className="text-japa-blue font-bold text-xl lg:text-2xl">
+                  <div className="text-japa-orange font-bold text-xl lg:text-2xl">
                     {stats.efficiency}%
                   </div>
                   <div className="text-japa-slate/70 text-xs lg:text-sm">More Efficient</div>
@@ -234,32 +273,9 @@ const Hero = () => {
               </div>
             </AnimationWrapper>
           </div>
-          
-          {/* ParkingVisualization with enhanced styling */}
-          <AnimationWrapper 
-            animation="fade-up" 
-            delay={300}
-            className="w-full lg:w-1/2 mt-8 lg:mt-0 px-4 md:px-0"
-          >
-            <div className="relative">
-              {/* Glow effects around visualization */}
-              <div className="absolute inset-0 -m-6 bg-gradient-to-tr from-japa-orange/20 to-japa-blue/20 rounded-3xl blur-xl opacity-70"></div>
-              
-              <div className="max-w-xl mx-auto lg:max-w-none relative animate-float">
-                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-white text-japa-blue text-[10px] md:text-xs font-bold rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center shadow-md transform rotate-6 z-20 animate-pulse-subtle">
-                  <div className="text-center">
-                    <div className="text-base md:text-xl">Live</div>
-                    <div className="text-[8px] md:text-[10px]">Data</div>
-                  </div>
-                </div>
-                
-                <ParkingVisualization className="w-full max-w-full shadow-xl rounded-xl border border-white/30 backdrop-blur-sm" />
-              </div>
-            </div>
-          </AnimationWrapper>
         </div>
         
-        {/* Enhanced Scroll Indicator */}
+        {/* Enhanced Scroll Indicator - Fixed dot colors */}
         <AnimationWrapper 
           animation="fade-up" 
           delay={800}

@@ -5,12 +5,9 @@ import { BarChart, Users, Clock } from 'lucide-react';
 
 const CaseStudyCTA = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-20 pb-0 bg-japa-orange">
       <div className="container-wide">
-        <div className="bg-japa-dark rounded-xl p-10 md:p-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 z-0"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24 z-0"></div>
-          
+        <div className="bg-japa-orange rounded-xl p-10 md:p-16 relative overflow-hidden">
           <div className="relative z-10 max-w-3xl mx-auto">
             <AnimationWrapper animation="fade-up">
               <div className="text-center mb-12">
@@ -55,10 +52,10 @@ const CaseStudyCTA = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AnimatedButton variant="primary" size="lg">
-                  Schedule a Consultation
+                <AnimatedButton variant="secondary" size="lg" className="bg-white text-japa-orange hover:bg-white/90">
+                  Schedule a Demo
                 </AnimatedButton>
-                <AnimatedButton variant="outline" size="lg">
+                <AnimatedButton variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                   Download Case Studies
                 </AnimatedButton>
               </div>

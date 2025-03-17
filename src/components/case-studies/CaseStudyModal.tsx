@@ -28,10 +28,13 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose }) =
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/90 to-transparent flex flex-col justify-end p-8">
-            <div className="max-w-3xl">
-              <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full mb-3">
+            <div className="absolute top-4 left-4">
+              <span className="inline-block bg-white/90 backdrop-blur-sm text-japa-slate text-xs font-medium px-3 py-1 rounded-full">
                 {caseStudy.category}
               </span>
+            </div>
+            
+            <div className="max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{caseStudy.title}</h2>
               <p className="text-white/90 md:text-lg mb-0">{caseStudy.description}</p>
             </div>
@@ -120,9 +123,6 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose }) =
             <div className="flex flex-col sm:flex-row gap-3">
               <AnimatedButton variant="primary" size="sm">
                 Schedule a Consultation
-              </AnimatedButton>
-              <AnimatedButton variant="outline" size="sm">
-                Download Full Case Study PDF
               </AnimatedButton>
             </div>
           </div>

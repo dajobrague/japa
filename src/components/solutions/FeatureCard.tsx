@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from "lucide-react";
+import { Plus } from "lucide-react";
 import { FeatureContent } from '@/types/solutions';
 
 interface FeatureCardProps {
@@ -9,19 +9,24 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ feature, onOpenModal }) => {
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-japa-blue/20 transition-all duration-300 h-full flex flex-col">
+    <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 hover:border-japa-orange/30 transition-all duration-300 h-full flex flex-col relative">
+      {/* Top orange accent line - visible by default */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-japa-orange opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+      
       <div className="relative h-64 overflow-hidden">
         <img 
           src={feature.bgImage} 
           alt={feature.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/70 to-japa-slate/10 group-hover:from-japa-slate/80 transition-all duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/80 to-japa-slate/10 group-hover:from-japa-orange/80 group-hover:to-japa-slate/30 transition-all duration-300"></div>
         <div className="absolute bottom-0 left-0 w-full p-6 flex justify-between items-end">
-          <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full w-14 h-14 flex items-center justify-center shadow-md">
-            {feature.icon}
+          <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full w-14 h-14 flex items-center justify-center shadow-md group-hover:bg-japa-orange/10 group-hover:border group-hover:border-japa-orange/30 transition-all duration-300">
+            <div className="text-japa-orange">
+              {feature.icon}
+            </div>
           </div>
-          <h3 className="text-xl font-bold text-white mb-0 px-3 py-2 bg-japa-blue/80 backdrop-blur-sm rounded-lg">
+          <h3 className="text-xl font-bold text-white mb-0 px-3 py-2 bg-japa-orange/90 backdrop-blur-sm rounded-lg transition-all duration-300">
             {feature.title}
           </h3>
         </div>
@@ -32,16 +37,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ feature, onOpenModal }) => {
         </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {feature.tags.map((tag, tagIndex) => (
-            <span key={tagIndex} className="text-xs bg-japa-blue/10 text-japa-blue px-3 py-1 rounded-full">
+            <span key={tagIndex} className="text-xs bg-japa-orange/10 text-japa-orange px-3 py-1 rounded-full">
               {tag}
             </span>
           ))}
         </div>
         <button 
           onClick={() => onOpenModal(feature.id)}
-          className="inline-flex items-center text-japa-blue hover:text-japa-darkBlue font-medium group-hover:underline mt-auto"
+          className="flex items-center justify-center gap-2 bg-japa-orange/10 hover:bg-japa-orange text-japa-orange hover:text-white py-2 px-4 rounded-lg font-medium transition-colors duration-300 w-full mt-auto"
         >
-          Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          View Details <Plus className="w-4 h-4" />
         </button>
       </div>
     </div>

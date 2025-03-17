@@ -3,17 +3,22 @@ import { CaseStudy, CaseStudyCategory } from '@/types/caseStudies';
 import CaseStudyCard from './CaseStudyCard';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import Pill from '@/components/ui/Pill';
+import CaseStudyFilters from './CaseStudyFilters';
 
 interface CaseStudyGridProps {
   caseStudies: CaseStudy[];
   category: CaseStudyCategory | 'All';
   onSelectCaseStudy: (id: number) => void;
+  categories: CaseStudyCategory[];
+  setActiveCategory: (category: CaseStudyCategory | 'All') => void;
 }
 
 const CaseStudyGrid: React.FC<CaseStudyGridProps> = ({ 
   caseStudies, 
   category,
-  onSelectCaseStudy
+  onSelectCaseStudy,
+  categories,
+  setActiveCategory
 }) => {
   // Filter case studies by category if needed
   const filteredCaseStudies = category === 'All' 
@@ -37,13 +42,21 @@ const CaseStudyGrid: React.FC<CaseStudyGridProps> = ({
           </div>
         </AnimationWrapper>
 
+        <div className="mb-12">
+          <CaseStudyFilters 
+            categories={categories}
+            activeCategory={category} 
+            setActiveCategory={setActiveCategory} 
+          />
+        </div>
+
         <div className="space-y-8">
           {filteredCaseStudies.length > 0 ? (
             filteredCaseStudies.map((study, index) => (
               <AnimationWrapper 
                 key={study.id} 
                 animation="fade-up" 
-                delay={index * 50}
+                delay={10}
               >
                 <CaseStudyCard 
                   caseStudy={study} 

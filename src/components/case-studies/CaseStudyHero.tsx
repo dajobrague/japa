@@ -16,7 +16,6 @@ const CaseStudyHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimationWrapper animation="fade-right">
             <div>
-              <Pill className="mb-5">Success Stories</Pill>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-japa-slate mb-6 leading-tight">
                 Real Results from <span className="text-japa-blue">Real Clients</span>
               </h1>
@@ -25,7 +24,7 @@ const CaseStudyHero = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <AnimatedButton variant="primary" size="lg">
-                  Request a Consultation
+                  Schedule a Demo
                 </AnimatedButton>
                 <AnimatedButton 
                   variant="secondary" 

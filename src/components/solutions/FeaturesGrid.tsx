@@ -11,13 +11,19 @@ interface FeaturesGridProps {
 
 const FeaturesGrid: React.FC<FeaturesGridProps> = ({ features, onOpenModal }) => {
   return (
-    <section id="solutions" className="py-20 md:py-28">
+    <section id="solutions" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Add subtle orange decorative elements */}
+      <div className="absolute -top-40 right-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute -bottom-40 left-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
+      
       <div className="container-wide">
         <AnimationWrapper animation="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Pill className="mb-4">Complete Ecosystem</Pill>
+            <Pill className="mb-4 inline-flex">
+              Complete Ecosystem
+            </Pill>
             <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-5">
-              Smart Solutions for Every Parking Challenge
+              Smart Solutions for Every <span className="text-japa-orange">Parking Challenge</span>
             </h2>
             <p className="text-lg text-japa-slate/80">
               Our integrated suite of solutions addresses the entire parking ecosystem, from hardware sensors to user-facing mobile apps.

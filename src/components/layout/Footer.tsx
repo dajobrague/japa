@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, ExternalLink, Twitter, Linkedin, Facebook, Instagram, Github, ChevronUp, ChevronRight, ChevronDown } from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, Twitter, Linkedin, Facebook, Instagram, ChevronRight, ChevronDown } from "lucide-react";
 import AnimationWrapper from "../ui/AnimationWrapper";
 
 // Social media links with hover colors
@@ -8,40 +8,39 @@ const socialLinks = [
   { icon: <Twitter size={18} />, url: "#", name: "Twitter", hoverColor: "hover:bg-[#1DA1F2]" },
   { icon: <Linkedin size={18} />, url: "#", name: "LinkedIn", hoverColor: "hover:bg-[#0A66C2]" },
   { icon: <Facebook size={18} />, url: "#", name: "Facebook", hoverColor: "hover:bg-[#1877F2]" },
-  { icon: <Instagram size={18} />, url: "#", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" },
-  { icon: <Github size={18} />, url: "#", name: "GitHub", hoverColor: "hover:bg-[#333333]" }
+  { icon: <Instagram size={18} />, url: "#", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" }
 ];
 
-// Quick links for the footer
+// Quick links for the footer - Updated to match all current pages
 const quickLinks = [
   {
-    title: "Platform",
+    title: "Solutions",
     links: [
+      { name: "Platform Overview", url: "/solutions" },
       { name: "Real-Time Data", url: "/solutions/real-time-data" },
       { name: "Mobile App", url: "/solutions/mobile-app" },
       { name: "Analytics Dashboard", url: "/solutions/analytics" },
-      { name: "Integration API", url: "/solutions/api" },
-      { name: "Pricing", url: "/pricing" }
+      { name: "Integration API", url: "/solutions/api" }
     ]
   },
   {
     title: "Company",
     links: [
       { name: "About Us", url: "/about" },
+      { name: "Partners", url: "/partners" },
       { name: "Careers", url: "/careers" },
-      { name: "Press Kit", url: "/press" },
-      { name: "Contact", url: "/contact" },
-      { name: "Blog", url: "/blog" }
+      { name: "Press", url: "/press" },
+      { name: "Contact", url: "/contact" }
     ]
   },
   {
     title: "Resources",
     links: [
-      { name: "Documentation", url: "/docs" },
+      { name: "Use Cases", url: "/use-cases" },
       { name: "Case Studies", url: "/case-studies" },
-      { name: "Webinars", url: "/webinars" },
+      { name: "FAQs", url: "/faqs" },
       { name: "Support Center", url: "/support" },
-      { name: "Status", url: "/status" }
+      { name: "Documentation", url: "/docs" }
     ]
   }
 ];
@@ -55,13 +54,6 @@ const Footer = () => {
     } else {
       setExpandedSection(title);
     }
-  };
-  
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
   };
 
   return (
@@ -264,22 +256,12 @@ const Footer = () => {
           </AnimationWrapper>
         </div>
         
-        {/* Copyright and back to top */}
-        <div className="py-4 md:py-6 border-t border-gray-100 flex flex-col-reverse sm:flex-row justify-between items-center">
+        {/* Copyright */}
+        <div className="py-4 md:py-6 border-t border-gray-100 flex justify-center sm:justify-start">
           <AnimationWrapper animation="fade-up">
-            <p className="text-xs md:text-sm text-japa-slate/60 mt-4 sm:mt-0 text-center sm:text-left">
+            <p className="text-xs md:text-sm text-japa-slate/60 text-center sm:text-left">
               © {new Date().getFullYear()} JAPA Inc. All rights reserved.
             </p>
-          </AnimationWrapper>
-          
-          <AnimationWrapper animation="fade-up" delay={100}>
-            <button
-              onClick={scrollToTop}
-              className="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 hover:bg-japa-orange/10 text-japa-slate hover:text-japa-orange rounded-full flex items-center gap-1 md:gap-2 transition-all duration-300 group"
-            >
-              <span className="text-xs md:text-sm font-medium">Back to top</span>
-              <ChevronUp size={14} className="transition-transform group-hover:-translate-y-1" />
-            </button>
           </AnimationWrapper>
         </div>
       </div>
