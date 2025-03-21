@@ -2,7 +2,7 @@
 
 JAPA is a comprehensive smart parking platform designed to transform parking management for universities, cities, and organizations. Our intelligent solutions deliver real-time data, actionable insights, and enhanced user experiences.
 
-![JAPA Smart Parking](public/og-image.png)
+![JAPA Smart Parking](public/japa-logo.png)
 
 ## About JAPA
 
