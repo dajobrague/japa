@@ -5,22 +5,18 @@ import AnimationWrapper from "../ui/AnimationWrapper";
 
 // Social media links with hover colors
 const socialLinks = [
-  { icon: <Twitter size={18} />, url: "#", name: "Twitter", hoverColor: "hover:bg-[#1DA1F2]" },
-  { icon: <Linkedin size={18} />, url: "#", name: "LinkedIn", hoverColor: "hover:bg-[#0A66C2]" },
-  { icon: <Facebook size={18} />, url: "#", name: "Facebook", hoverColor: "hover:bg-[#1877F2]" },
-  { icon: <Instagram size={18} />, url: "#", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" }
+  { icon: <Twitter size={18} />, url: "https://twitter.com", name: "Twitter", hoverColor: "hover:bg-[#1DA1F2]" },
+  { icon: <Linkedin size={18} />, url: "https://linkedin.com", name: "LinkedIn", hoverColor: "hover:bg-[#0A66C2]" },
+  { icon: <Facebook size={18} />, url: "https://facebook.com", name: "Facebook", hoverColor: "hover:bg-[#1877F2]" },
+  { icon: <Instagram size={18} />, url: "https://instagram.com", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" }
 ];
 
-// Quick links for the footer - Updated to match all current pages
+// Quick links for the footer - Updated to match only existing pages
 const quickLinks = [
   {
     title: "Solutions",
     links: [
-      { name: "Platform Overview", url: "/solutions" },
-      { name: "Real-Time Data", url: "/solutions/real-time-data" },
-      { name: "Mobile App", url: "/solutions/mobile-app" },
-      { name: "Analytics Dashboard", url: "/solutions/analytics" },
-      { name: "Integration API", url: "/solutions/api" }
+      { name: "Platform Overview", url: "/solutions" }
     ]
   },
   {
@@ -28,9 +24,7 @@ const quickLinks = [
     links: [
       { name: "About Us", url: "/about" },
       { name: "Partners", url: "/partners" },
-      { name: "Careers", url: "/careers" },
-      { name: "Press", url: "/press" },
-      { name: "Contact", url: "/contact" }
+      { name: "Press", url: "/press" }
     ]
   },
   {
@@ -38,9 +32,7 @@ const quickLinks = [
     links: [
       { name: "Use Cases", url: "/use-cases" },
       { name: "Case Studies", url: "/case-studies" },
-      { name: "FAQs", url: "/faqs" },
-      { name: "Support Center", url: "/support" },
-      { name: "Documentation", url: "/docs" }
+      { name: "FAQs", url: "/faqs" }
     ]
   }
 ];
@@ -173,35 +165,26 @@ const Footer = () => {
               <ul className="space-y-3 md:space-y-4 text-sm">
                 <li>
                   <a 
-                    href="mailto:info@japaparking.com" 
+                    href="mailto:contact@japa.one" 
                     className="flex items-center gap-2 md:gap-3 text-japa-slate/70 hover:text-japa-orange transition-colors group"
                   >
-                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-japa-orange/10">
-                      <Mail size={14} className="text-japa-orange" />
-                    </div>
-                    <span>info@japaparking.com</span>
+                    <Mail size={18} className="text-japa-orange flex-shrink-0" />
+                    <span>contact@japa.one</span>
                   </a>
                 </li>
                 <li>
                   <a 
-                    href="tel:+15551234567" 
+                    href="tel:+18777755272" 
                     className="flex items-center gap-2 md:gap-3 text-japa-slate/70 hover:text-japa-orange transition-colors group"
                   >
-                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-japa-orange/10">
-                      <Phone size={14} className="text-japa-orange" />
-                    </div>
-                    <span>+1 (555) 123-4567</span>
+                    <Phone size={18} className="text-japa-orange flex-shrink-0" />
+                    <span>877.775.5272</span>
                   </a>
                 </li>
                 <li>
                   <div className="flex items-start gap-2 md:gap-3 text-japa-slate/70 group">
-                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-100 flex items-center justify-center mt-0.5">
-                      <MapPin size={14} className="text-japa-orange" />
-                    </div>
-                    <span>
-                      123 Innovation Drive<br />
-                      Tech City, CA 91234
-                    </span>
+                    <MapPin size={18} className="text-japa-orange flex-shrink-0 mt-0.5" />
+                    <span>Sacramento, CA</span>
                   </div>
                 </li>
               </ul>
@@ -232,6 +215,8 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.name}
                   className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-gray-100 flex items-center justify-center text-japa-slate/80 transition-all duration-300 ${social.hoverColor} hover:text-white`}
                 >
@@ -243,14 +228,8 @@ const Footer = () => {
           
           <AnimationWrapper animation="fade-up" delay={100}>
             <div className="flex items-center flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-              <Link to="/privacy" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
-                Privacy
-              </Link>
-              <Link to="/terms" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
-                Terms
-              </Link>
-              <Link to="/sitemap" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
-                Sitemap
+              <Link to="/about" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
+                About
               </Link>
             </div>
           </AnimationWrapper>
