@@ -97,36 +97,48 @@ const values = [
 
 const teamMembers = [
   {
-    name: "Alexandra Chen",
-    position: "CEO & Co-Founder",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=AC&font=open-sans",
-    bio: "Former transportation consultant with a passion for urban innovation and smart city planning."
+    name: "Mathew Magno",
+    position: "CEO & Co-founder",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MM&font=open-sans",
+    bio: "Driving JAPA's vision to transform parking management through innovative smart solutions."
   },
   {
-    name: "Marcus Rodriguez",
-    position: "CTO & Co-Founder",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MR&font=open-sans",
-    bio: "Computer engineer with expertise in IoT networks and sensor technology."
+    name: "Charles Chen",
+    position: "CTO & Co-founder",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=CC&font=open-sans",
+    bio: "Leading the technological innovation and engineering excellence at JAPA."
   },
   {
-    name: "Sarah Johnson",
-    position: "VP of Product",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=SJ&font=open-sans",
-    bio: "Product specialist focused on creating intuitive user experiences for complex technological solutions."
+    name: "Kevin Burnham",
+    position: "Project Manager",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=KB&font=open-sans",
+    bio: "Ensuring seamless delivery and implementation of JAPA's smart parking solutions."
   },
   {
-    name: "David Park",
-    position: "Director of Operations",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=DP&font=open-sans",
-    bio: "Operations expert with a background in smart infrastructure and deployment logistics."
+    name: "Mariana Aracaya",
+    position: "Sales Manager",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MA&font=open-sans",
+    bio: "Growing JAPA's market presence and building strong client partnerships."
+  },
+  {
+    name: "Tammy Nguyen",
+    position: "Engineering Lead",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=TN&font=open-sans",
+    bio: "Developing cutting-edge sensor technology and IoT infrastructure for smart parking systems."
+  },
+  {
+    name: "D.J. Stephan",
+    position: "CRO",
+    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=DJ&font=open-sans",
+    bio: "Optimizing revenue generation strategies and driving business growth for JAPA."
   }
 ];
 
 const stats = [
   { value: "500+", label: "Parking Facilities", icon: <MapPin className="w-5 h-5" /> },
-  { value: "25K+", label: "Parking Spaces", icon: <Globe className="w-5 h-5" /> },
+  { value: "1M+", label: "Parking Spaces", icon: <Globe className="w-5 h-5" /> },
   { value: "85+", label: "Client Organizations", icon: <Users className="w-5 h-5" /> },
-  { value: "4.8/5", label: "Customer Satisfaction", icon: <MessageSquare className="w-5 h-5" /> }
+  { value: "94%", label: "Customer Satisfaction", icon: <MessageSquare className="w-5 h-5" /> }
 ];
 
 const About = () => {
@@ -348,7 +360,7 @@ const About = () => {
             </p>
           </AnimationWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <AnimationWrapper 
                 key={index} 

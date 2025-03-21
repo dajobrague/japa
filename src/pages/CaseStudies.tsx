@@ -35,7 +35,7 @@ const CaseStudies: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="pb-24">
+      <div className="pb-0">
         <CaseStudyHero />
         
         <div className="container mx-auto px-4 mt-16">

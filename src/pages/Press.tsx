@@ -51,7 +51,7 @@ const Press: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="pb-24">
+      <div className="pb-0">
         <PressHero />
         
         <div className="container mx-auto px-4 mt-16" id="press-releases">
