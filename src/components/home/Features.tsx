@@ -372,7 +372,7 @@ const Features = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-japa-orange relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden -mt-8 md:-mt-4">
       {/* Add the floating animation */}
       <style>
         {`
@@ -439,24 +439,20 @@ const Features = () => {
           }
         `}
       </style>
-    
-      {/* Enhanced Background patterns for contrast */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')] bg-repeat opacity-10 -z-10"></div>
       
-      {/* Floating elements with light color for contrast */}
-      <div className="absolute top-[10%] right-[5%] w-32 h-32 bg-white/10 rounded-full blur-xl -z-10 animate-float"></div>
-      <div className="absolute bottom-[15%] left-[7%] w-40 h-40 bg-white/5 rounded-full blur-xl -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-[40%] left-[15%] w-24 h-24 bg-white/5 rounded-full blur-xl -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* Floating elements with orange color for contrast with white background */}
+      <div className="absolute top-[10%] right-[5%] w-32 h-32 bg-japa-orange/10 rounded-full blur-xl -z-10 animate-float"></div>
+      <div className="absolute bottom-[15%] left-[7%] w-40 h-40 bg-japa-orange/10 rounded-full blur-xl -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-[40%] left-[15%] w-24 h-24 bg-japa-blue/10 rounded-full blur-xl -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
       
       <div className="container-wide px-4 md:px-6 relative z-10">
         <AnimationWrapper animation="fade-up">
-          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
-            <Pill className="mb-3 md:mb-4 inline-flex bg-white text-japa-orange border-none">Our Solutions</Pill>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 max-w-2xl mx-auto leading-tight text-white">
+          <div className="text-center max-w-3xl mx-auto mb-4 md:mb-6 lg:mb-8">
+            <Pill className="mb-3 md:mb-4 inline-flex bg-japa-orange text-white border-none">Our Solutions</Pill>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 max-w-2xl mx-auto leading-tight text-japa-slate">
               Comprehensive Smart Parking Solutions
             </h2>
-            <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto">
+            <p className="text-japa-slate/80 text-lg md:text-xl max-w-xl mx-auto">
               Our integrated suite of parking technologies delivers real-time data, actionable insights, and enhanced user experiences.
             </p>
           </div>
@@ -557,8 +553,8 @@ const Features = () => {
                 onClick={() => scrollToIndex(index)} 
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === activeDot 
-                    ? 'bg-white w-6' 
-                    : 'bg-white/30 hover:bg-white/60'
+                    ? 'bg-japa-orange w-6' 
+                    : 'bg-japa-orange/30 hover:bg-japa-orange/60'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               ></button>
@@ -635,9 +631,9 @@ const Features = () => {
         <AnimationWrapper animation="fade-up" delay={600}>
           <div className="mt-10 md:mt-12 lg:mt-16 text-center">
             <AnimatedButton 
-              variant="secondary"
+              variant="primary"
               icon={<ArrowRight size={16} />}
-              className="group hover:scale-105 transition-transform shadow-lg shadow-japa-orange/30 bg-white text-japa-orange border-none"
+              className="group hover:scale-105 transition-transform shadow-lg shadow-japa-orange/20 bg-japa-orange text-white border-none"
               onClick={() => window.location.href = '/solutions'}
             >
               <span className="group-hover:translate-x-1 transition-transform inline-block">

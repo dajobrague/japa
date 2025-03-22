@@ -47,7 +47,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   if (images.length === 0) return null;
 
   return (
-    <div className={`relative rounded-xl overflow-hidden shadow-xl ${className}`}>
+    <div className={`relative rounded-xl overflow-hidden shadow-lg border border-japa-orange/10 bg-white/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${className}`}>
       {/* Images */}
       <div className="relative h-[300px] md:h-[400px]">
         {images.map((image, index) => (
@@ -66,15 +66,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                 e.currentTarget.src = "https://images.unsplash.com/photo-1611288875785-bac4435af0e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         ))}
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - more transparent */}
       <button 
         onClick={goToPrevious}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full z-20 transition-colors"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/15 hover:bg-black/30 text-white p-2 rounded-full z-20 transition-colors"
         aria-label="Previous image"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -83,7 +83,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
       </button>
       <button 
         onClick={goToNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full z-20 transition-colors"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/15 hover:bg-black/30 text-white p-2 rounded-full z-20 transition-colors"
         aria-label="Next image"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -91,9 +91,9 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         </svg>
       </button>
 
-      {/* Caption */}
+      {/* Caption - semi-transparent background */}
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
-        <div className="bg-white text-japa-orange inline-block px-3 py-1 rounded-md text-sm font-semibold mb-2">
+        <div className="bg-white/90 text-japa-orange inline-block px-3 py-1 rounded-md text-sm font-semibold mb-2">
           15-30 Minutes
         </div>
         <h3 className="text-xl font-bold">Per Sensor Installation</h3>

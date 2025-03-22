@@ -64,7 +64,7 @@ const Testimonials = () => {
   };
   
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-white to-japa-orange/10">
+    <section className="py-8 md:py-12 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 -z-10 opacity-20">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-japa-orange/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/4"></div>
@@ -73,25 +73,25 @@ const Testimonials = () => {
       
       <div className="container-wide px-4 md:px-6">
         <AnimationWrapper animation="fade-up" delay={100}>
-          <Pill className="mb-6">
+          <Pill className="mb-4">
             Client Success Stories
           </Pill>
         </AnimationWrapper>
         
         <AnimationWrapper animation="fade-up" delay={200}>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-12 text-japa-slate">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8 text-japa-slate">
             Hear From Our <span className="text-japa-orange">Satisfied Clients</span>
           </h2>
         </AnimationWrapper>
         
         {/* Featured testimonial */}
         <AnimationWrapper animation="fade-up" delay={300}>
-          <div className="relative max-w-4xl mx-auto mb-16">
+          <div className="relative max-w-4xl mx-auto mb-10">
             <div className="absolute -top-6 -left-6 text-japa-orange opacity-20">
-              <Quote size={80} strokeWidth={1} />
+              <Quote size={80} />
             </div>
             
-            <div className="bg-white rounded-xl shadow-xl p-8 md:p-10 relative border border-japa-orange/10">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 md:p-10 relative border border-japa-orange/10">
               <div className="flex items-start gap-6 flex-col md:flex-row">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-japa-orange/15 text-japa-orange font-bold text-xl flex items-center justify-center">
@@ -131,7 +131,7 @@ const Testimonials = () => {
               ].map((testimonial, index) => (
                 <div 
                   key={testimonial.id} 
-                  className="bg-white/80 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-100"
+                  className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-100"
                 >
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 rounded-full bg-japa-orange/15 text-japa-orange font-bold text-sm flex items-center justify-center mr-3">

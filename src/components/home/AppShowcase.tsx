@@ -8,7 +8,7 @@ const AppShowcase = () => {
   const { openDemoForm } = useDemoForm();
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-japa-orange to-japa-orange/90 relative overflow-hidden text-white">
+    <section className="py-20 md:py-28 bg-gradient-to-br from-japa-orange to-japa-orange/90 relative overflow-hidden text-white z-10">
       {/* Enhanced decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
@@ -99,7 +99,7 @@ const AppShowcase = () => {
             <AnimationWrapper animation="fade-up" delay={150}>
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/Info Screen-white-.png" 
+                  src="/lovable-uploads/PerSpace-dark-.png" 
                   alt="JAPA Mobile App Interface"
                   className="w-full h-auto max-w-[280px] md:max-w-[320px] relative z-10 rounded-xl"
                 />

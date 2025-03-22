@@ -10,53 +10,53 @@ const partnerLogos = [
   {
     id: 1,
     name: "University of California",
-    logo: "/partners/university-logo.svg",
+    logo: "/lovable-uploads/University-of-California-logo.png",
     alt: "University of California logo",
     category: "University",
   },
   {
     id: 2,
     name: "City of Austin",
-    logo: "/partners/city-logo.svg",
+    logo: "/lovable-uploads/Flag_of_Austin,_Texas.svg.png",
     alt: "City of Austin logo",
     category: "City",
   },
   {
     id: 3,
-    name: "Smart City Alliance",
-    logo: "/partners/organization-logo.svg",
-    alt: "Smart City Alliance logo",
-    category: "Organization",
+    name: "Gillette Stadium",
+    logo: "/lovable-uploads/Gillette.jpeg",
+    alt: "Gillette Stadium logo",
+    category: "Venue",
   },
   {
     id: 4,
     name: "American Hospital Association",
-    logo: "/partners/hospital-logo.svg",
+    logo: "/lovable-uploads/american-hospital-association.svg",
     alt: "American Hospital Association logo",
     category: "Organization",
   },
   {
     id: 5,
-    name: "National Parking Association",
-    logo: "/partners/association-logo.svg",
-    alt: "National Parking Association logo",
-    category: "Organization",
+    name: "CalPoly Pomona",
+    logo: "/lovable-uploads/calpolypamona.jpg",
+    alt: "CalPoly Pomona logo",
+    category: "University",
   },
   {
     id: 6,
-    name: "Event Management Solutions",
-    logo: "/partners/industry-logo.svg",
-    alt: "Event Management Solutions logo",
+    name: "Paysafe",
+    logo: "/lovable-uploads/paysafe-logo-240x240.png",
+    alt: "Paysafe logo",
     category: "Industry",
   }
 ];
 
 // Partner stats for highlight section
 const partnerStats = [
-  { value: "50+", label: "Universities" },
-  { value: "35+", label: "Cities" },
-  { value: "100+", label: "Organizations" },
-  { value: "25K+", label: "Parking Stalls" }
+  { value: "100+", label: "Universities" },
+  { value: "75+", label: "Cities" },
+  { value: "200+", label: "Organizations" },
+  { value: "1M+", label: "Parking Spaces" }
 ];
 
 const Partners = () => {
@@ -75,7 +75,7 @@ const Partners = () => {
   };
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white to-japa-gray/20">
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden">
       {/* Add the animations */}
       <style>
         {`
@@ -135,13 +135,13 @@ const Partners = () => {
       
       <div className="container-wide px-4 md:px-6">
         {/* Sección de título centrada */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+        <div className="text-center mb-8 md:mb-10 lg:mb-12">
           <AnimationWrapper animation="fade-up" delay={100}>
-            <Pill className="inline-flex mb-4">Our Partners</Pill>
-            <h2 className="text-balance font-display font-bold text-japa-slate text-3xl sm:text-4xl md:text-5xl mb-4 md:mb-6 leading-tight mx-auto max-w-3xl">
+            <Pill className="inline-flex mb-3">Our Partners</Pill>
+            <h2 className="text-balance font-display font-bold text-japa-slate text-3xl sm:text-4xl md:text-5xl mb-3 md:mb-4 leading-tight mx-auto max-w-3xl">
               Trusted by <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-japa-orange to-japa-blue animate-gradient bg-size-200">Industry Leaders</span>
             </h2>
-            <p className="text-japa-slate/80 text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto">
+            <p className="text-japa-slate/80 text-lg md:text-xl mb-4 md:mb-6 max-w-2xl mx-auto">
               We're proud to collaborate with universities, cities, and organizations across the country 
               to transform parking management and create smarter urban environments.
             </p>
@@ -262,26 +262,9 @@ const Partners = () => {
                         <div className="mt-2 text-center">
                           <p className="text-japa-slate/80 text-sm font-medium truncate">{partner.name}</p>
                         </div>
-                        
-                        {/* View details button on hover */}
-                        <div className={`absolute inset-x-0 bottom-0 flex justify-center transition-all duration-300 ${
-                          activePartner === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                        }`}>
-                          <a href="#" className="text-japa-orange text-xs flex items-center gap-1 hover:underline">
-                            View details <ExternalLink size={10} />
-                          </a>
-                        </div>
                       </div>
                     ))}
                   </div>
-                </div>
-                
-                {/* Bottom action area */}
-                <div className="bg-gradient-to-r from-japa-slate/5 to-japa-slate/10 px-6 py-4 border-t border-gray-100 text-center">
-                  <Link to="/partners" className="text-japa-blue hover:text-japa-orange text-sm font-medium transition-colors duration-300 flex items-center justify-center gap-1 group">
-                    <span>View all partners</span>
-                    <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
                 </div>
               </div>
             </AnimationWrapper>

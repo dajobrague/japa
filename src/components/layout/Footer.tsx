@@ -49,9 +49,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-gray-100 relative">
-      {/* Top accent line with JAPA gradient */}
-      <div className="h-1 w-full bg-gradient-to-r from-japa-orange via-japa-blue to-japa-slate"></div>
+    <footer className="bg-white border-t border-gray-100/50 relative">
+      {/* Top accent line with JAPA gradient - more subtle version */}
+      <div className="h-px w-full bg-gradient-to-r from-japa-orange/70 via-japa-blue/70 to-japa-slate/70 opacity-75"></div>
       
       <div className="container-wide px-4 md:px-6">
         {/* Main footer content */}
@@ -83,7 +83,7 @@ const Footer = () => {
                   <input 
                     type="email" 
                     placeholder="Enter your email" 
-                    className="flex-grow px-3 py-2 text-sm text-japa-slate placeholder:text-japa-slate/50 bg-gray-50 rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-japa-orange/30"
+                    className="flex-grow px-3 py-2 text-sm text-japa-slate placeholder:text-japa-slate/50 bg-white/90 backdrop-blur-sm rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-japa-orange/30"
                   />
                   <button className="px-3 md:px-4 bg-japa-orange text-white text-sm font-medium rounded-r-lg transition-colors hover:bg-japa-orange/90 flex-shrink-0">
                     Subscribe
@@ -105,7 +105,7 @@ const Footer = () => {
                   <div className="md:hidden">
                     <button 
                       onClick={() => toggleSection(section.title)}
-                      className="flex items-center justify-between w-full py-3 border-b border-gray-100 text-left"
+                      className="flex items-center justify-between w-full py-3 border-b border-gray-100/50 text-left"
                     >
                       <h4 className="font-display font-semibold text-japa-slate text-sm">
                         {section.title}
@@ -193,13 +193,13 @@ const Footer = () => {
         </div>
         
         {/* Mobile Newsletter - Separated to save space */}
-        <div className="md:hidden py-6 border-t border-gray-100">
+        <div className="md:hidden py-6 border-t border-gray-100/50">
           <h4 className="font-display font-semibold text-japa-slate text-sm mb-3">Subscribe to Updates</h4>
           <div className="flex">
             <input 
               type="email" 
               placeholder="Your email" 
-              className="flex-grow px-3 py-2 text-sm text-japa-slate placeholder:text-japa-slate/50 bg-gray-50 rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-japa-orange/30"
+              className="flex-grow px-3 py-2 text-sm text-japa-slate placeholder:text-japa-slate/50 bg-white/90 backdrop-blur-sm rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-japa-orange/30"
             />
             <button className="px-3 bg-japa-orange text-white text-sm font-medium rounded-r-lg transition-colors hover:bg-japa-orange/90 flex-shrink-0">
               Go
@@ -208,7 +208,7 @@ const Footer = () => {
         </div>
         
         {/* Social links bar */}
-        <div className="py-4 md:py-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4 md:gap-6">
+        <div className="py-4 md:py-6 border-t border-gray-100/50 flex flex-col sm:flex-row justify-between items-center gap-4 md:gap-6">
           <AnimationWrapper animation="fade-up">
             <div className="flex gap-2 md:gap-3">
               {socialLinks.map((social) => (
@@ -218,7 +218,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-gray-100 flex items-center justify-center text-japa-slate/80 transition-all duration-300 ${social.hoverColor} hover:text-white`}
+                  className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-japa-slate/80 transition-all duration-300 ${social.hoverColor} hover:text-white`}
                 >
                   {social.icon}
                 </a>
@@ -236,7 +236,7 @@ const Footer = () => {
         </div>
         
         {/* Copyright */}
-        <div className="py-4 md:py-6 border-t border-gray-100 flex justify-center sm:justify-start">
+        <div className="py-4 md:py-6 border-t border-gray-100/50 flex justify-center sm:justify-start">
           <AnimationWrapper animation="fade-up">
             <p className="text-xs md:text-sm text-japa-slate/60 text-center sm:text-left">
               © {new Date().getFullYear()} JAPA Inc. All rights reserved.

@@ -64,7 +64,7 @@ export default {
 					gray: "#f8fafc", // Light background
 					darkGray: "#64748b", // For secondary text
 					lightGray: "#f1f5f9", // For subtle backgrounds
-					orange: "#d15809", // Alias for the main color
+					orange: "#CD5E14", // Updated to JAPA's official orange
 					lightOrange: "#fec6a1", // Soft pastel orange
 					paleOrange: "#fde1d3", // Very soft background
 					dark: "#354558", // New dark blue brand color

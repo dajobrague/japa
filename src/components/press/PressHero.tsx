@@ -3,7 +3,7 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 
 const PressHero = () => {
   return (
-    <section className="relative pt-24 pb-16 md:py-24 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-orange/5">
+    <section className="relative pt-24 pb-16 md:py-24 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-grid-pattern-light"></div>

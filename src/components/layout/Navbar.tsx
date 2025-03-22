@@ -56,8 +56,8 @@ const Navbar = () => {
       className={cn(
         "sticky w-full top-0 z-50 transition-all duration-300",
         scrolled 
-          ? "py-3 bg-white shadow-sm" 
-          : "py-5 bg-white"
+          ? "py-3 bg-white/80 backdrop-blur-sm shadow-sm" 
+          : "py-5 bg-transparent"
       )}
     >
       <div className="container-wide flex items-center justify-between">
@@ -126,8 +126,8 @@ const Navbar = () => {
       {/* Mobile Navigation - Part of document flow */}
       <div 
         className={cn(
-          "bg-white shadow-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
-          isOpen ? "max-h-[500px] opacity-100 border-t border-gray-100" : "max-h-0 opacity-0"
+          "absolute top-full right-0 left-0 bg-white/90 backdrop-blur-sm shadow-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="flex flex-col gap-2 px-4 py-4">

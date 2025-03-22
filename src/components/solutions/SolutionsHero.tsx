@@ -9,8 +9,8 @@ const SolutionsHero: React.FC = () => {
   const { openDemoForm } = useDemoForm();
   
   return (
-    <section className="pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-orange/20 via-white to-japa-blue/5">
-      {/* Background pattern */}
+    <section className="pt-24 pb-20 md:pt-28 md:pb-24 overflow-hidden relative">
+      {/* Background pattern - keeping decorative elements */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-grid-pattern-light"></div>
       </div>

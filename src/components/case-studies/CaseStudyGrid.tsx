@@ -26,7 +26,7 @@ const CaseStudyGrid: React.FC<CaseStudyGridProps> = ({
     : caseStudies.filter(study => study.category === category);
 
   return (
-    <section id="case-studies" className="py-16">
+    <section id="case-studies" className="pt-8 pb-16">
       <div className="container-wide">
         <AnimationWrapper animation="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-12">

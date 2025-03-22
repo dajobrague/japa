@@ -6,7 +6,7 @@ export const featuresData: FeatureContent[] = [
     id: "real-time-data",
     title: "Real-Time Parking Data",
     description: "Convert every parking stall and lane into a live data hub with our high-precision sensors, providing accurate occupancy information in real time.",
-    icon: <Gauge className="text-japa-blue w-8 h-8" />,
+    icon: <Gauge className="text-japa-orange w-8 h-8" />,
     tags: ["Precision Sensors", "Live Updates", "99% Accuracy"],
     bgImage: "/lovable-uploads/aerial-parking-lot.jpg",
     detailedContent: {
@@ -34,7 +34,7 @@ export const featuresData: FeatureContent[] = [
     id: "analytics",
     title: "Analytics & Historical Data",
     description: "Gain actionable insights with daily peak occupancy reports, average stay times, heatmaps, and detailed historical data analysis.",
-    icon: <BarChart3 className="text-japa-blue w-8 h-8" />,
+    icon: <BarChart3 className="text-japa-orange w-8 h-8" />,
     tags: ["Trend Analysis", "Custom Reports", "Data Export"],
     bgImage: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
     detailedContent: {
@@ -62,7 +62,7 @@ export const featuresData: FeatureContent[] = [
     id: "violation-tracking",
     title: "Violation Tracking",
     description: "Detect and track parking violations efficiently with automated time-zone monitoring, improving enforcement and increasing turnover.",
-    icon: <Shield className="text-japa-blue w-8 h-8" />,
+    icon: <Shield className="text-japa-orange w-8 h-8" />,
     tags: ["Automated Detection", "Alert System", "Enforcement API"],
     bgImage: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
     detailedContent: {
@@ -88,28 +88,28 @@ export const featuresData: FeatureContent[] = [
   },
   {
     id: "integration",
-    title: "Integration & Hardware",
-    description: "Seamlessly integrate with existing parking systems using our waterproof, minimal-maintenance sensors with 99%+ accuracy.",
-    icon: <RefreshCw className="text-japa-blue w-8 h-8" />,
-    tags: ["Open API", "Waterproof Design", "5+ Year Battery"],
-    bgImage: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
+    title: "Wireless Parking Sensors",
+    description: "Deploy our cutting-edge, wireless parking sensors with minimal installation effort and no surface cutting required. Fully waterproof with 99%+ detection accuracy.",
+    icon: <RefreshCw className="text-japa-orange w-8 h-8" />,
+    tags: ["5-Minute Installation", "Wireless", "5+ Year Battery", "Weatherproof"],
+    bgImage: "/lovable-uploads/NWA-004. 4bat. Embedded sensor expl.png",
     detailedContent: {
-      overview: "Our hardware and integration solutions are designed for seamless deployment in any environment, with minimal disruption to existing infrastructure and operations.",
+      overview: "Our wireless parking sensors represent the latest in parking detection technology, designed for ultra-simple installation with no wiring, drilling, or pavement cutting required.",
       benefits: [
-        "Works with existing parking management systems",
-        "Minimal maintenance with long-life battery technology",
-        "Withstands extreme weather conditions and heavy traffic",
-        "Simple installation with no wiring or pavement cutting required"
+        "Install in minutes with industrial-grade adhesive - no wiring needed",
+        "Fully wireless operation with secure communications protocol",
+        "Withstands extreme weather conditions from -40°F to 185°F",
+        "5+ year battery life minimizes maintenance requirements"
       ],
-      technicalDetails: "JAPA sensors feature IP68-rated waterproof enclosures, 5+ year battery life, and are installed in minutes using industrial-grade adhesive. The open API architecture allows for integration with payment systems, enforcement software, mobile apps, and other smart city technologies.",
+      technicalDetails: "JAPA sensors feature IP68-rated waterproof enclosures, 5+ year battery life, and are installed in minutes using industrial-grade adhesive. Each sensor communicates wirelessly with our secure gateway, and the open API architecture allows for integration with payment systems, enforcement software, mobile apps, and other smart city technologies.",
       useCases: [
         {
-          title: "Ski Resort",
-          description: "Deploying sensors in harsh winter environments with snow and ice, maintaining accurate detection throughout seasonal extremes."
+          title: "Rapid Deployment",
+          description: "Installing hundreds of sensors across a university campus in just days rather than weeks, without disrupting normal parking operations."
         },
         {
-          title: "Metropolitan Transit Authority",
-          description: "Integrating with existing payment and permit systems at park-and-ride facilities to create a unified management platform."
+          title: "Harsh Environments",
+          description: "Deploying sensors in challenging conditions like extreme heat, cold, snow and ice while maintaining reliable detection performance."
         }
       ]
     }
@@ -118,7 +118,7 @@ export const featuresData: FeatureContent[] = [
     id: "management-console",
     title: "Management Console",
     description: "Access our user-friendly web-based dashboard for comprehensive reporting tools and real-time parking management.",
-    icon: <Layers className="text-japa-blue w-8 h-8" />,
+    icon: <Layers className="text-japa-orange w-8 h-8" />,
     tags: ["Intuitive UI", "Role-Based Access", "Real-time Alerts"],
     bgImage: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
     detailedContent: {
@@ -144,28 +144,32 @@ export const featuresData: FeatureContent[] = [
   },
   {
     id: "mobile-app",
-    title: "Mobile App",
-    description: "Help commuters locate parking in real time with our companion mobile app, reducing the stress of finding a spot.",
-    icon: <Smartphone className="text-japa-blue w-8 h-8" />,
-    tags: ["iOS & Android", "Navigation", "Push Notifications"],
-    bgImage: "/lovable-uploads/doug-bagg-FB406CKGL0Q-unsplash.jpg",
+    title: "Mobile App Experience",
+    description: "Deliver a premium parking experience with our feature-rich mobile app, helping users find, navigate to, and pay for parking spaces in real-time.",
+    icon: <Smartphone className="text-japa-orange w-8 h-8" />,
+    tags: ["iOS & Android", "Turn-by-Turn Navigation", "Real-Time Updates", "In-App Payments"],
+    bgImage: "/lovable-uploads/PerSpace-dark-.png",
     detailedContent: {
-      overview: "Our mobile app puts real-time parking information directly in the hands of drivers, helping them quickly find available spaces and navigate to their destination.",
+      overview: "Our comprehensive mobile app puts the power of smart parking in users' hands, creating a seamless end-to-end parking experience from finding a space to payment and beyond.",
       benefits: [
-        "Reduces time and frustration finding parking",
+        "Eliminates parking frustration with real-time availability information",
+        "Reduces time spent searching for parking by up to 30%",
         "Provides turn-by-turn directions to available spaces",
-        "Remembers parking location for easy return navigation",
-        "Supports payment integration where available"
+        "Integrates payment, time extensions, and parking history in one app"
       ],
-      technicalDetails: "Available for both iOS and Android, the app uses GPS and Bluetooth technology to provide precise navigation to available parking spaces. Users can filter by price, time limits, or special features (e.g., EV charging, handicap accessible). The app can be white-labeled for municipalities and organizations.",
+      technicalDetails: "Available for both iOS and Android, the app features high-performance GPS navigation, Bluetooth proximity detection, push notifications for expiration alerts, and secure payment processing. Organizations can opt for white-labeled versions with custom branding, pricing tiers, and special features for their specific parking ecosystem.",
       useCases: [
         {
-          title: "Urban Navigation",
-          description: "Helping city visitors find affordable parking near their destinations without circling blocks multiple times."
+          title: "Campus Navigation",
+          description: "Helping students and visitors navigate complex university parking systems, reducing tardiness and improving campus experience."
         },
         {
-          title: "Commuter Planning",
-          description: "Allowing daily commuters to check parking availability before leaving home, adjusting departure times or routes accordingly."
+          title: "Downtown Shopping",
+          description: "Enabling shoppers to find parking near their destination, pay electronically, and extend their session if shopping runs longer than expected."
+        },
+        {
+          title: "Event Parking",
+          description: "Streamlining the parking experience at large events by directing attendees to available spaces and offering pre-booking options."
         }
       ]
     }

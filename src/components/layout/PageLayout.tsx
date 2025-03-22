@@ -1,11 +1,11 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { useLocation } from 'react-router-dom';
 import LoadingScreen from '../ui/LoadingScreen';
 
 interface PageLayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 
@@ -14,35 +14,57 @@ interface PageLayoutProps {
  * including the Navbar and Footer with appropriate spacing and transitions
  */
 const PageLayout: React.FC<PageLayoutProps> = ({ children, className = '' }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+  
+  // Check if current page is homepage or solutions page
+  const isHomePage = location.pathname === '/' || location.pathname === '/index';
+  const isSolutionsPage = location.pathname === '/solutions';
+  const isUseCasesPage = location.pathname === '/use-cases';
+  const isCaseStudiesPage = location.pathname === '/case-studies';
+  const isAboutPage = location.pathname === '/about';
+  const isPressPage = location.pathname === '/press';
+  const isFAQsPage = location.pathname === '/faqs';
+  const hasGlobalBackground = isHomePage || isSolutionsPage || isUseCasesPage || isCaseStudiesPage || isAboutPage || isPressPage || isFAQsPage;
 
-  // Handle page transitions and loading state
   useEffect(() => {
-    // Initial page load
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setIsVisible(true);
-    }, 300);
-
-    // Cleanup
-    return () => clearTimeout(timer);
+    setIsVisible(true);
+    
+    const handleStart = () => {
+      setIsLoading(true);
+      setIsVisible(false);
+    };
+    
+    const handleComplete = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsVisible(true);
+      }, 300); // Short delay for smoother transitions
+    };
+    
+    // Cleanup function will be called on unmount
+    return () => {
+      // No cleanup needed for location-based navigation
+    };
   }, []);
 
   // Handle route changes for page transitions
   useEffect(() => {
-    // Reset visibility and loading state on route change
     setIsVisible(false);
     setIsLoading(true);
     
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
       setIsLoading(false);
       setIsVisible(true);
     }, 300);
     
-    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   // Add smooth scrolling for anchor links
@@ -70,8 +92,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, className = '' }) => 
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Page transition animations */}
+    <div className="flex flex-col min-h-screen">
       <style>
         {`
           @keyframes fadeIn {
@@ -137,10 +158,37 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, className = '' }) => 
       <Navbar />
       
       <main 
-        className={`flex-grow page-transition ${className} ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}
+        className={`flex-grow page-transition ${className} ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'} ${hasGlobalBackground ? 'global-background-page relative' : ''}`}
         style={{ transition: 'opacity 0.5s ease, transform 0.5s ease' }}
       >
-        {children}
+        {/* Global background gradient - Redesigned with higher z-index and more visible gradient */}
+        {hasGlobalBackground && (
+          <div className="fixed inset-0 z-0 pointer-events-none">
+            {/* Main gradient background - visible throughout the entire page */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-japa-orange/5 to-white"></div>
+            
+            {/* Secondary gradients for depth and visual interest */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-japa-orange/10 via-transparent to-japa-blue/5"></div>
+            
+            {/* Subtle patterns and texture */}
+            <div className="absolute inset-0 bg-grid-pattern-light opacity-10"></div>
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
+            
+            {/* Optional: Debug outline to see section boundaries - remove in production */}
+            {false && (
+              <style>
+                {`
+                  section {
+                    outline: 1px dashed rgba(249, 115, 22, 0.2);
+                  }
+                `}
+              </style>
+            )}
+          </div>
+        )}
+        <div className={`${hasGlobalBackground ? 'relative z-10' : ''}`}>
+          {children}
+        </div>
       </main>
       
       <Footer />

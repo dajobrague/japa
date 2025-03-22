@@ -164,7 +164,7 @@ const About = () => {
   return (
     <PageLayout>
       {/* Enhanced Hero Section */}
-      <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+      <section className="relative pt-24 pb-20 md:py-28 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute inset-0 bg-grid-pattern-light"></div>
@@ -256,7 +256,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container-wide">
           <div className="text-center mb-12">
             <Pill className="mx-auto">Our Story</Pill>
@@ -350,7 +350,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24">
         <div className="container-wide">
           <AnimationWrapper animation="fade-up" className="text-center mb-16">
             <Pill className="mb-4">Our Team</Pill>

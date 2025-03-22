@@ -74,8 +74,9 @@ const Solutions = () => {
     <PageLayout>
       <SolutionsHero />
       
-      {/* Testimonial Section - Updated with strong orange background */}
-      <section className="py-14 bg-japa-orange relative overflow-hidden">
+      {/* Testimonial Section - Updated with orange background */}
+      <section className="pt-16 pb-12 md:pt-20 md:pb-16 bg-japa-orange relative overflow-hidden">
+        {/* Decorative elements for orange background */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -z-10"></div>
         
@@ -111,48 +112,48 @@ const Solutions = () => {
       
       <FeaturesGrid features={featuresData} onOpenModal={handleOpenModal} />
       
-      {/* Easy Installation Section - Updated with strong orange background */}
-      <section className="py-20 bg-japa-orange relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10"></div>
+      {/* Easy Installation Section - Updated to work with global background */}
+      <section className="py-12 md:py-16 relative overflow-hidden bg-transparent">
+        {/* Decorative elements - reduced opacity further to allow global background to show through */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-japa-orange/3 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-japa-blue/3 rounded-full blur-3xl -z-10"></div>
         
-        <div className="container-wide">
+        <div className="container-wide bg-transparent">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimationWrapper animation="fade-right">
-              {/* Replace static image with the ImageSlider component */}
+              {/* Image Slider with transparent background */}
               <ImageSlider images={sensorImages} interval={4000} />
             </AnimationWrapper>
             
             <AnimationWrapper animation="fade-left">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Quick & Easy <span className="text-white font-extrabold">Installation</span>
+              <div className="bg-transparent">
+                <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-6">
+                  Quick & Easy <span className="text-japa-orange font-extrabold">Installation</span>
                 </h2>
-                <p className="text-white/90 text-lg mb-6">
+                <p className="text-japa-slate/80 text-lg mb-6">
                   Our solution is designed for minimal disruption to your operations. Our sensors install in minutes without requiring expensive infrastructure changes or surface cutting.
                 </p>
                 
                 <div className="space-y-5 mb-8">
-                  {/* Installation Benefits */}
-                  <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold">1</div>
+                  {/* Installation Benefits - Enhanced with better shadows and borders */}
+                  <div className="flex items-start gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-md border border-japa-orange/10 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold shadow-sm">1</div>
                     <div>
                       <h3 className="font-bold text-japa-slate mb-1">No Drilling or Cutting Required</h3>
                       <p className="text-japa-slate/70">Our sensors attach securely to the surface with industrial-grade adhesive.</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold">2</div>
+                  <div className="flex items-start gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-md border border-japa-orange/10 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold shadow-sm">2</div>
                     <div>
                       <h3 className="font-bold text-japa-slate mb-1">Wireless Installation</h3>
                       <p className="text-japa-slate/70">No wiring needed - sensors communicate wirelessly with our secure gateway.</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
-                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold">3</div>
+                  <div className="flex items-start gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-lg shadow-md border border-japa-orange/10 hover:shadow-lg transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full bg-japa-orange/20 flex items-center justify-center flex-shrink-0 text-japa-orange font-bold shadow-sm">3</div>
                     <div>
                       <h3 className="font-bold text-japa-slate mb-1">Minimal Maintenance</h3>
                       <p className="text-japa-slate/70">5+ year battery life with weather-resistant design for all conditions.</p>
@@ -162,7 +163,7 @@ const Solutions = () => {
                 
                 <button 
                   onClick={openDemoForm}
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-japa-orange font-medium py-3 px-6 rounded-lg shadow-lg transition-all hover:scale-105 w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-japa-orange hover:bg-japa-orange/90 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition-all hover:scale-105 w-full"
                 >
                   Schedule Your Demo Today
                 </button>
@@ -172,32 +173,32 @@ const Solutions = () => {
         </div>
       </section>
       
-      {/* Final CTA Section - White background */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
+      {/* Final CTA Section - Keeping solid orange background */}
+      <section className="py-12 md:py-16 bg-japa-orange relative overflow-hidden">
+        {/* Decorative elements - Updated for orange background */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10"></div>
         
         <div className="container-wide">
           <AnimationWrapper animation="fade-up">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-5xl font-bold text-japa-slate mb-6">
-                Ready to Transform Your <span className="text-japa-orange font-extrabold">Parking Experience</span>?
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your <span className="text-white font-extrabold">Parking Experience</span>?
               </h2>
-              <p className="text-japa-slate/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+              <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
                 Join hundreds of organizations that have optimized their parking operations with JAPA's smart parking solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button 
                   onClick={openDemoForm}
-                  className="inline-flex items-center justify-center gap-2 bg-japa-orange hover:bg-japa-orange/90 text-white font-medium py-4 px-8 rounded-lg shadow-lg transition-all hover:scale-105 min-w-[200px]"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-white/90 text-japa-orange font-medium py-4 px-8 rounded-lg shadow-lg transition-all hover:scale-105 min-w-[200px]"
                 >
                   Schedule Your Demo Today
                 </button>
                 <a 
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white border-2 border-japa-orange hover:bg-japa-orange/5 text-japa-orange font-medium py-4 px-8 rounded-lg transition-all hover:scale-105 min-w-[200px]"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium py-4 px-8 rounded-lg transition-all hover:scale-105 min-w-[200px]"
                 >
                   Contact Our Team
                 </a>

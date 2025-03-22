@@ -43,7 +43,7 @@ const PressReleaseList: React.FC<PressReleaseListProps> = ({ pressReleases }) =>
               {featuredReleases.slice(0, 2).map((release) => (
                 <div 
                   key={release.id}
-                  className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100 cursor-pointer"
+                  className="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100 cursor-pointer"
                   onClick={() => handleSelectRelease(release)}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -109,7 +109,7 @@ const PressReleaseList: React.FC<PressReleaseListProps> = ({ pressReleases }) =>
             regularReleases.map((release) => (
               <div 
                 key={release.id}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 cursor-pointer"
+                className="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 cursor-pointer"
                 onClick={() => handleSelectRelease(release)}
               >
                 <div className="relative h-40 overflow-hidden">

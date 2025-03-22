@@ -11,18 +11,18 @@ interface FeaturesGridProps {
 
 const FeaturesGrid: React.FC<FeaturesGridProps> = ({ features, onOpenModal }) => {
   return (
-    <section id="solutions" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Add subtle orange decorative elements */}
-      <div className="absolute -top-40 right-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute -bottom-40 left-0 w-96 h-96 bg-japa-orange/5 rounded-full blur-3xl -z-10"></div>
+    <section id="solutions" className="py-12 md:py-16 relative overflow-hidden">
+      {/* Add subtle orange decorative elements - made more transparent */}
+      <div className="absolute -top-40 right-0 w-96 h-96 bg-japa-orange/3 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute -bottom-40 left-0 w-96 h-96 bg-japa-orange/3 rounded-full blur-3xl -z-10"></div>
       
       <div className="container-wide">
         <AnimationWrapper animation="fade-up">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <Pill className="mb-4 inline-flex">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+            <Pill className="mb-3 inline-flex">
               Complete Ecosystem
             </Pill>
-            <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-japa-slate mb-4">
               Smart Solutions for Every <span className="text-japa-orange">Parking Challenge</span>
             </h2>
             <p className="text-lg text-japa-slate/80">

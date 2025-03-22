@@ -6,7 +6,7 @@ import AnimatedButton from '@/components/ui/AnimatedButton';
 
 const CaseStudyHero = () => {
   return (
-    <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+    <section className="relative pt-24 pb-10 md:pt-28 md:pb-14 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-grid-pattern-light"></div>

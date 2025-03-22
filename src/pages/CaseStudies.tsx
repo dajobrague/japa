@@ -38,7 +38,7 @@ const CaseStudies: React.FC = () => {
       <div className="pb-0">
         <CaseStudyHero />
         
-        <div className="container mx-auto px-4 mt-16">
+        <div className="container mx-auto px-4 mt-6">
           <CaseStudyGrid 
             caseStudies={caseStudies} 
             category={activeCategory} 

@@ -179,7 +179,7 @@ const FAQs = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-japa-gray/40 via-white to-japa-blue/5">
+      <section className="relative pt-24 pb-10 md:py-20 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute inset-0 bg-grid-pattern-light"></div>
@@ -260,13 +260,13 @@ const FAQs = () => {
       </section>
 
       {/* FAQ Categories and Accordion */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-8 md:py-12 -mt-8">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Category sidebar */}
             <div className="lg:col-span-3">
               <AnimationWrapper animation="fade-right">
-                <div className="sticky top-32 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="sticky top-32 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                   <div className="p-4 border-b border-gray-100 bg-japa-gray/20">
                     <h3 className="font-bold text-japa-slate">Categories</h3>
                   </div>
@@ -294,7 +294,7 @@ const FAQs = () => {
             <div className="lg:col-span-9">
               {filteredFAQs.length === 0 ? (
                 <AnimationWrapper animation="fade-up">
-                  <div className="text-center py-12">
+                  <div className="text-center py-12 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100">
                     <div className="mx-auto w-16 h-16 rounded-full bg-japa-blue/10 flex items-center justify-center mb-4">
                       <HelpCircle className="w-8 h-8 text-japa-blue" />
                     </div>
@@ -311,81 +311,83 @@ const FAQs = () => {
               ) : (
                 <>
                   {filteredFAQs.map((category, categoryIndex) => (
-                    <div key={categoryIndex} id={`category-${categoryIndex}`} className="mb-12">
+                    <div key={categoryIndex} id={`category-${categoryIndex}`} className="mb-8">
                       <AnimationWrapper animation="fade-up" delay={categoryIndex * 50}>
-                        <div 
-                          className="flex items-center justify-between mb-6 cursor-pointer"
-                          onClick={() => toggleCategory(categoryIndex)}
-                        >
-                          <div className="flex items-center">
-                            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-japa-blue/10 text-japa-blue mr-4">
-                              {category.icon}
+                        <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-gray-100/70 overflow-hidden">
+                          <div 
+                            className="flex items-center justify-between p-6 cursor-pointer border-b border-gray-100/70"
+                            onClick={() => toggleCategory(categoryIndex)}
+                          >
+                            <div className="flex items-center">
+                              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-japa-blue/10 text-japa-blue mr-4">
+                                {category.icon}
+                              </span>
+                              <h2 className="text-2xl font-bold text-japa-slate">
+                                {category.category}
+                              </h2>
+                            </div>
+                            <span className={`p-2 rounded-full ${
+                              expandedCategories[categoryIndex]
+                                ? "bg-japa-blue text-white"
+                                : "bg-japa-blue/10 text-japa-blue"
+                            }`}>
+                              {expandedCategories[categoryIndex] ? 
+                                <ChevronUp size={16} /> : 
+                                <ChevronDown size={16} />
+                              }
                             </span>
-                            <h2 className="text-2xl font-bold text-japa-slate">
-                              {category.category}
-                            </h2>
                           </div>
-                          <span className={`p-2 rounded-full ${
-                            expandedCategories[categoryIndex]
-                              ? "bg-japa-blue text-white"
-                              : "bg-japa-blue/10 text-japa-blue"
+                          
+                          <div className={`p-6 space-y-4 overflow-hidden transition-all duration-500 ${
+                            expandedCategories[categoryIndex] 
+                              ? "max-h-[5000px] opacity-100" 
+                              : "max-h-0 opacity-0 p-0"
                           }`}>
-                            {expandedCategories[categoryIndex] ? 
-                              <ChevronUp size={16} /> : 
-                              <ChevronDown size={16} />
-                            }
-                          </span>
-                        </div>
-                        
-                        <div className={`space-y-4 overflow-hidden transition-all duration-500 ${
-                          expandedCategories[categoryIndex] 
-                            ? "max-h-[5000px] opacity-100" 
-                            : "max-h-0 opacity-0"
-                        }`}>
-                          {category.items.map((item, itemIndex) => {
-                            const key = `${categoryIndex}-${itemIndex}`;
-                            const isOpen = openItems[key] || false;
-                            
-                            return (
-                              <div 
-                                key={itemIndex}
-                                className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-all hover:border-japa-blue/20"
-                              >
-                                <button
-                                  className={`flex items-center justify-between w-full p-6 text-left transition-colors ${
-                                    isOpen 
-                                      ? "bg-japa-blue/5 text-japa-blue" 
-                                      : "bg-white hover:bg-gray-50 text-japa-slate"
-                                  }`}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    toggleItem(categoryIndex, itemIndex);
-                                  }}
-                                  aria-expanded={isOpen}
-                                >
-                                  <span className="font-medium">{item.question}</span>
-                                  <span className={`ml-4 p-2 rounded-full ${
-                                    isOpen
-                                      ? "bg-japa-blue text-white"
-                                      : "bg-japa-blue/10 text-japa-blue"
-                                  }`}>
-                                    {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                  </span>
-                                </button>
+                            {category.items.map((item, itemIndex) => {
+                              const key = `${categoryIndex}-${itemIndex}`;
+                              const isOpen = openItems[key] || false;
+                              
+                              return (
                                 <div 
-                                  className={`transition-all duration-300 ${
-                                    isOpen 
-                                      ? "max-h-[500px] opacity-100 border-t border-gray-100" 
-                                      : "max-h-0 opacity-0"
-                                  }`}
+                                  key={itemIndex}
+                                  className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-all hover:border-japa-blue/20 bg-white/90 backdrop-blur-sm"
                                 >
-                                  <div className="p-6 text-japa-slate/80 leading-relaxed">
-                                    {item.answer}
+                                  <button
+                                    className={`flex items-center justify-between w-full p-6 text-left transition-colors ${
+                                      isOpen 
+                                        ? "bg-japa-blue/5 text-japa-blue" 
+                                        : "bg-white/90 backdrop-blur-sm hover:bg-gray-50/90 text-japa-slate"
+                                    }`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      toggleItem(categoryIndex, itemIndex);
+                                    }}
+                                    aria-expanded={isOpen}
+                                  >
+                                    <span className="font-medium">{item.question}</span>
+                                    <span className={`ml-4 p-2 rounded-full ${
+                                      isOpen
+                                        ? "bg-japa-blue text-white"
+                                        : "bg-japa-blue/10 text-japa-blue"
+                                    }`}>
+                                      {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                    </span>
+                                  </button>
+                                  <div 
+                                    className={`transition-all duration-300 ${
+                                      isOpen 
+                                        ? "max-h-[500px] opacity-100 border-t border-gray-100" 
+                                        : "max-h-0 opacity-0"
+                                    }`}
+                                  >
+                                    <div className="p-6 text-japa-slate/80 leading-relaxed">
+                                      {item.answer}
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            );
-                          })}
+                              );
+                            })}
+                          </div>
                         </div>
                       </AnimationWrapper>
                     </div>
