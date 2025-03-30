@@ -28,6 +28,7 @@ const features = [
     link: "/solutions#real-time",
     color: "bg-japa-blue",
     bgImage: "/lovable-uploads/aerial-parking-lot.jpg",
+    modalImage: "/lovable-uploads/aerial-parking-lot.jpg",
     detailedContent: {
       overview: "Our real-time parking data solution transforms traditional parking spaces into smart, connected data hubs that continuously monitor occupancy status with incredible precision.",
       benefits: [
@@ -59,6 +60,7 @@ const features = [
     link: "/solutions#analytics",
     color: "bg-japa-slate",
     bgImage: "/lovable-uploads/analytics-dashboard.jpg",
+    modalImage: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
     detailedContent: {
       overview: "Our analytics platform transforms raw parking data into meaningful insights that help operators optimize space utilization, improve revenue, and plan for future needs.",
       benefits: [
@@ -90,6 +92,7 @@ const features = [
     link: "/solutions#violations",
     color: "bg-japa-blue",
     bgImage: "/lovable-uploads/parking-enforcement.jpg",
+    modalImage: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
     detailedContent: {
       overview: "Our violation tracking system automatically monitors parking duration in time-limited spaces, generating alerts for enforcement personnel when violations occur.",
       benefits: [
@@ -121,6 +124,7 @@ const features = [
     link: "/solutions#integration",
     color: "bg-japa-slate",
     bgImage: "/lovable-uploads/integration-hardware.jpg",
+    modalImage: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
     detailedContent: {
       overview: "Our hardware and integration solutions are designed for seamless deployment in any environment, with minimal disruption to existing infrastructure and operations.",
       benefits: [
@@ -152,6 +156,7 @@ const features = [
     link: "/solutions#console",
     color: "bg-japa-blue",
     bgImage: "/lovable-uploads/management-console.jpg",
+    modalImage: "/lovable-uploads/Console 1210.21.png",
     detailedContent: {
       overview: "Our management console serves as the central command center for parking operations, providing administrators with complete control and visibility over their parking assets.",
       benefits: [
@@ -183,6 +188,7 @@ const features = [
     link: "/solutions#mobile",
     color: "bg-japa-slate",
     bgImage: "/lovable-uploads/mobile-app.jpg",
+    modalImage: "/lovable-uploads/Info Screen-white-.png",
     detailedContent: {
       overview: "Our mobile app puts real-time parking information directly in the hands of drivers, helping them quickly find available spaces and navigate to their destination.",
       benefits: [
@@ -222,11 +228,14 @@ const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen 
         className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header con imagen de fondo */}
-        <div 
-          className="h-40 md:h-56 bg-cover bg-center relative rounded-t-2xl"
-          style={{ backgroundImage: `url(${feature.bgImage})` }}
-        >
+        {/* Header with proper image handling */}
+        <div className="h-40 md:h-56 relative rounded-t-2xl overflow-hidden">
+          {/* Direct image element for better control */}
+          <img 
+            src={feature.modalImage || feature.bgImage} 
+            alt={feature.title}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 rounded-t-2xl"></div>
           
           {/* Close button */}

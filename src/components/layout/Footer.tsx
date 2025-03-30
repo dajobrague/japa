@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ExternalLink, Twitter, Linkedin, Facebook, Instagram, ChevronRight, ChevronDown } from "lucide-react";
 import AnimationWrapper from "../ui/AnimationWrapper";
+import { useDemoForm } from "@/contexts/DemoFormContext";
 
 // Social media links with hover colors
 const socialLinks = [
@@ -31,7 +32,7 @@ const quickLinks = [
     title: "Resources",
     links: [
       { name: "Use Cases", url: "/use-cases" },
-      { name: "Case Studies", url: "/case-studies" },
+      { name: "Projects", url: "/projects" },
       { name: "FAQs", url: "/faqs" }
     ]
   }
@@ -39,6 +40,7 @@ const quickLinks = [
 
 const Footer = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const { openDemoForm } = useDemoForm();
   
   const toggleSection = (title: string) => {
     if (expandedSection === title) {
@@ -46,6 +48,11 @@ const Footer = () => {
     } else {
       setExpandedSection(title);
     }
+  };
+
+  // Function to open HubSpot meetings in a popup
+  const handleContactClick = () => {
+    openDemoForm();
   };
 
   return (
@@ -62,13 +69,10 @@ const Footer = () => {
               <Link to="/" className="inline-block" aria-label="JAPA Home">
                 <div className="flex items-center">
                   <img 
-                    src="/lovable-uploads/location-pin.png" 
+                    src="/lovable-uploads/010113ec-e217-447e-b10d-06b06d31ed9f.jpg" 
                     alt="JAPA Logo" 
                     className="h-8 md:h-10 w-auto"
                   />
-                  <div className="ml-3 font-display font-bold text-xl md:text-2xl text-japa-slate">
-                    JAPA<span className="text-japa-orange">.</span>
-                  </div>
                 </div>
               </Link>
               
@@ -188,6 +192,13 @@ const Footer = () => {
                   </div>
                 </li>
               </ul>
+
+              <button
+                onClick={handleContactClick}
+                className="text-japa-slate/80 hover:text-japa-orange transition-colors text-sm"
+              >
+                Contact Us
+              </button>
             </AnimationWrapper>
           </div>
         </div>

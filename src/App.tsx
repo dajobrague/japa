@@ -7,7 +7,7 @@ import DemoFormProvider from "./contexts/DemoFormContext";
 import Index from "./pages/Index";
 import Solutions from "./pages/Solutions";
 import UseCases from "./pages/UseCases";
-import CaseStudies from "./pages/CaseStudies";
+import Projects from "./pages/Projects";
 import Partners from "./pages/Partners";
 import About from "./pages/About";
 import FAQs from "./pages/FAQs";
@@ -128,7 +128,7 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/solutions" element={<Solutions />} />
                   <Route path="/use-cases" element={<UseCases />} />
-                  <Route path="/case-studies" element={<CaseStudies />} />
+                  <Route path="/projects" element={<Projects />} />
                   <Route path="/partners" element={<Partners />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/faqs" element={<FAQs />} />

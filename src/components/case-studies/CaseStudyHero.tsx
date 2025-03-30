@@ -3,8 +3,11 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import Pill from '@/components/ui/Pill';
 import { ChevronRight } from 'lucide-react';
 import AnimatedButton from '@/components/ui/AnimatedButton';
+import { useDemoForm } from '@/contexts/DemoFormContext';
 
 const CaseStudyHero = () => {
+  const { openDemoForm } = useDemoForm();
+  
   return (
     <section className="relative pt-24 pb-10 md:pt-28 md:pb-14 overflow-hidden">
       {/* Background pattern */}
@@ -23,7 +26,11 @@ const CaseStudyHero = () => {
                 Explore how our smart parking solutions have delivered measurable improvements for organizations across various sectors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <AnimatedButton variant="primary" size="lg">
+                <AnimatedButton 
+                  variant="primary" 
+                  size="lg"
+                  onClick={openDemoForm}
+                >
                   Schedule a Demo
                 </AnimatedButton>
                 <AnimatedButton 
@@ -31,10 +38,10 @@ const CaseStudyHero = () => {
                   size="lg"
                   icon={<ChevronRight className="w-4 h-4" />}
                   onClick={() => {
-                    document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  View Case Studies
+                  View Projects
                 </AnimatedButton>
               </div>
             </div>
@@ -51,7 +58,6 @@ const CaseStudyHero = () => {
                       </svg>
                     ))}
                   </div>
-                  <span className="ml-2 text-sm text-japa-slate/70">Based on 120+ client reviews</span>
                 </div>
 
                 <div className="mb-6">

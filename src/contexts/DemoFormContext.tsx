@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import DemoFormModal from '@/components/forms/DemoFormModal';
+import HubSpotModal from '@/components/ui/HubSpotModal';
 
 // Define the context type
 type DemoFormContextType = {
@@ -28,7 +28,7 @@ export const DemoFormProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   return (
     <DemoFormContext.Provider value={{ openDemoForm, closeDemoForm, isOpen }}>
       {children}
-      <DemoFormModal isOpen={isOpen} onClose={closeDemoForm} />
+      <HubSpotModal isOpen={isOpen} onClose={closeDemoForm} />
     </DemoFormContext.Provider>
   );
 };

@@ -269,13 +269,13 @@ const About = () => {
                     From Campus Project to Industry Leader
                   </h2>
                   <p className="text-japa-slate/80 mb-6">
-                    JAPA began as a university project aimed at solving the everyday frustration of finding parking on campus. What started as a simple idea has grown into a comprehensive smart parking platform that serves universities, cities, stadiums, healthcare facilities, and more across the United States.
+                    JAPA started as a university project, tackling one of the biggest daily frustrations: finding parking. What began as a simple idea has evolved into a powerful smart parking platform serving universities, cities, stadiums, healthcare facilities, and more across the United States.
                   </p>
                   <p className="text-japa-slate/80 mb-6">
-                    Our name, JAPA, reflects our mission: to make the Japanese concept of continuous improvement (Kaizen) a reality in the parking industry. We believe that by making small, incremental improvements to parking systems, we can create transformative change in how people experience parking.
+                    Our name, JAPA, stands for Just A Parking App, but we've become much more than that. We provide cutting-edge parking management software that optimizes parking operations, enhances enforcement, and improves the overall parking experience for both operators and drivers.
                   </p>
                   <p className="text-japa-slate/80 mb-8">
-                    Today, JAPA is the leading provider of cost-effective smart parking solutions in the U.S., helping organizations optimize their parking resources while improving the user experience for commuters and visitors.
+                    Today, JAPA is a leader in cost-effective, easy-to-implement smart parking solutions, helping organizations maximize efficiency, increase revenue, and reduce congestion, all while making parking stress-free.
                   </p>
                   <AnimatedButton variant="primary">
                     Learn More About Our Solutions

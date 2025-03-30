@@ -395,9 +395,6 @@ const UseCases = () => {
                           {solution.icon}
                         </div>
                       </div>
-                      <div className="bg-japa-orange/90 backdrop-blur-sm py-1 px-3 rounded-lg text-white text-sm font-medium">
-                        {solution.stats.value}
-                      </div>
                     </div>
                   </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Check, ArrowRight } from 'lucide-react';
 import { FeatureContent } from '@/types/solutions';
+import { useDemoForm } from '@/contexts/DemoFormContext';
 
 interface FeatureModalProps {
   feature: FeatureContent;
@@ -8,6 +9,8 @@ interface FeatureModalProps {
 }
 
 const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) => {
+  const { openDemoForm } = useDemoForm();
+
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
       <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
@@ -70,12 +73,12 @@ const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) => {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <a href="#" className="inline-flex items-center justify-center bg-japa-blue hover:bg-japa-darkBlue text-white font-medium py-3 px-6 rounded-lg transition-colors">
+            <button 
+              onClick={openDemoForm}
+              className="inline-flex items-center justify-center bg-japa-blue hover:bg-japa-darkBlue text-white font-medium py-3 px-6 rounded-lg transition-colors"
+            >
               Request a Demo
-            </a>
-            <a href="#" className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-japa-slate border border-gray-200 font-medium py-3 px-6 rounded-lg transition-colors">
-              Download Specifications <ArrowRight className="ml-2 w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

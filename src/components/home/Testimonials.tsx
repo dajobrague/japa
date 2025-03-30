@@ -9,10 +9,10 @@ import Pill from "../ui/Pill";
 const testimonials = [
   {
     id: 1,
-    initials: "UC",
-    name: "University of California",
-    position: "Transportation Director",
-    text: "JAPA's smart parking solution has transformed our campus parking experience. Students and faculty can easily find available spots, and our parking management team has valuable insights into usage patterns.",
+    initials: "MY",
+    name: "MIKE YU",
+    position: "Parking Director at Cal Poly Pomona University",
+    text: "One of biggest challenges with a car counting project was the need for infrastructure. Digging trenches and pulling cables can be incredibly expensive. JAPA made all of the pain points go away with their virtually wireless system. I highly recommend JAPA for car counting solutions.",
     rating: 5,
     featured: true
   },
@@ -36,10 +36,10 @@ const testimonials = [
   },
   {
     id: 4,
-    initials: "NCU",
-    name: "North Central University",
-    position: "Campus Operations Director",
-    text: "We've been able to optimize our parking resources and significantly improve the campus experience for everyone. The installation was remarkably simple, and the cost savings have exceeded our expectations.",
+    initials: "UC",
+    name: "University of California",
+    position: "Transportation Director",
+    text: "JAPA's smart parking solution has transformed our campus parking experience. Students and faculty can easily find available spots, and our parking management team has valuable insights into usage patterns.",
     rating: 5,
     featured: false
   }

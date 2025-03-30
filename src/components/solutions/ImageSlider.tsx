@@ -94,7 +94,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
       {/* Caption - semi-transparent background */}
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
         <div className="bg-white/90 text-japa-orange inline-block px-3 py-1 rounded-md text-sm font-semibold mb-2">
-          15-30 Minutes
+          Install in Minutes
         </div>
         <h3 className="text-xl font-bold">Per Sensor Installation</h3>
       </div>

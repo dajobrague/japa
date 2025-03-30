@@ -3,12 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
 import { cn } from "@/lib/utils";
+import { useDemoForm } from "@/contexts/DemoFormContext";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Solutions", href: "/solutions" },
   { name: "Use Cases", href: "/use-cases" },
-  { name: "Case Studies", href: "/case-studies" },
+  { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
   { name: "Press", href: "/press" },
   { name: "FAQs", href: "/faqs" },
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { openDemoForm } = useDemoForm();
   
   // Handle scroll event to change navbar appearance
   useEffect(() => {
@@ -49,6 +51,11 @@ const Navbar = () => {
   // Función para abrir el login en el sitio original
   const handleLoginClick = () => {
     window.open("https://parkjapa.com/login", "_blank");
+  };
+
+  // Function to open HubSpot meetings in a popup
+  const handleContactClick = () => {
+    openDemoForm();
   };
 
   return (
@@ -106,8 +113,11 @@ const Navbar = () => {
           
           {/* Contact Button */}
           <AnimatedButton 
-            variant="primary" 
+            variant="primary"
             size="sm"
+            icon={<LogIn size={16} />}
+            className="bg-japa-orange text-white hover:bg-japa-orange/90"
+            onClick={handleContactClick}
           >
             Contact Us
           </AnimatedButton>
@@ -161,9 +171,11 @@ const Navbar = () => {
           
           <div className="mt-2">
             <AnimatedButton 
-              variant="primary" 
-              fullWidth
-              onClick={() => setIsOpen(false)}
+              variant="primary"
+              size="sm"
+              icon={<LogIn size={16} />}
+              className="bg-japa-orange text-white hover:bg-japa-orange/90 w-full"
+              onClick={handleContactClick}
             >
               Contact Us
             </AnimatedButton>

@@ -33,11 +33,11 @@ const Hero = () => {
     const timer = setTimeout(() => {
       const interval = setInterval(() => {
         setStats(prev => {
-          const newSpaces = Math.min(prev.spaces + 10000, 1000000);
-          const newEfficiency = Math.min(prev.efficiency + 1, 40);
-          const newSatisfaction = Math.min(prev.satisfaction + 1, 94);
+          const newSpaces = Math.min(prev.spaces + 1, 20);
+          const newEfficiency = Math.min(prev.efficiency + 1, 50);
+          const newSatisfaction = Math.min(prev.satisfaction + 1, 120);
           
-          if (newSpaces === 1000000 && newEfficiency === 40 && newSatisfaction === 94) {
+          if (newSpaces === 20 && newEfficiency === 50 && newSatisfaction === 120) {
             clearInterval(interval);
           }
           
@@ -143,6 +143,12 @@ const Hero = () => {
                 Parking.
                 <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-japa-orange to-japa-blue"> Made Intelligent.</span>
               </h1>
+              {/* White bubbles underneath the title */}
+              <div className="flex justify-center lg:justify-start gap-2 mt-2">
+                <div className="w-2 h-2 rounded-full bg-white/80 backdrop-blur-sm"></div>
+                <div className="w-2 h-2 rounded-full bg-white/80 backdrop-blur-sm"></div>
+                <div className="w-2 h-2 rounded-full bg-white/80 backdrop-blur-sm"></div>
+              </div>
             </AnimationWrapper>
             
             <AnimationWrapper animation="fade-up" delay={300}>
@@ -171,15 +177,15 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-2 lg:gap-4 py-2 my-2 lg:ml-0 mx-auto">
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    {stats.spaces.toLocaleString()}+
+                    {stats.spaces}+
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">Parking Spaces</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">Locations</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    {stats.efficiency}%
+                    {stats.efficiency}%+
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">More Efficient</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">Quicker Parking</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">

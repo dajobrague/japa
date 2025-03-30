@@ -5,58 +5,50 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
 
-// Enhanced partner data with more realistic info
+// Partner data with original names - TBD flag removed
 const partnerLogos = [
   {
     id: 1,
     name: "University of California",
     logo: "/lovable-uploads/University-of-California-logo.png",
     alt: "University of California logo",
-    category: "University",
+    category: "University"
   },
   {
     id: 2,
     name: "City of Austin",
     logo: "/lovable-uploads/Flag_of_Austin,_Texas.svg.png",
     alt: "City of Austin logo",
-    category: "City",
+    category: "City"
   },
   {
     id: 3,
     name: "Gillette Stadium",
     logo: "/lovable-uploads/Gillette.jpeg",
     alt: "Gillette Stadium logo",
-    category: "Venue",
+    category: "Venue"
   },
   {
     id: 4,
     name: "American Hospital Association",
     logo: "/lovable-uploads/american-hospital-association.svg",
     alt: "American Hospital Association logo",
-    category: "Organization",
+    category: "Organization"
   },
   {
     id: 5,
     name: "CalPoly Pomona",
     logo: "/lovable-uploads/calpolypamona.jpg",
     alt: "CalPoly Pomona logo",
-    category: "University",
+    category: "University"
   },
   {
     id: 6,
     name: "Paysafe",
     logo: "/lovable-uploads/paysafe-logo-240x240.png",
     alt: "Paysafe logo",
-    category: "Industry",
+    category: "Industry"
   }
-];
-
-// Partner stats for highlight section
-const partnerStats = [
-  { value: "100+", label: "Universities" },
-  { value: "75+", label: "Cities" },
-  { value: "200+", label: "Organizations" },
-  { value: "1M+", label: "Parking Spaces" }
 ];
 
 const Partners = () => {
@@ -149,32 +141,11 @@ const Partners = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-start">
-          {/* Left side: Stats & CTA */}
+          {/* Left side: Success Stories */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
             <AnimationWrapper animation="fade-up">
-              {/* Partner stats section */}
-              <div className="grid grid-cols-2 gap-4 mb-8 md:mb-10">
-                {partnerStats.map((stat, index) => (
-                  <AnimationWrapper 
-                    key={index} 
-                    animation="fade-up" 
-                    delay={100 * (index + 1)}
-                  >
-                    <div className="stat-card text-center p-4 md:p-5 rounded-xl bg-white shadow-md border border-gray-100 hover:border-japa-orange/20 relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-japa-orange/5 via-japa-blue/5 to-japa-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-shimmer -z-10"></div>
-                      <div className="text-xl md:text-2xl lg:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-japa-orange to-japa-blue mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-japa-slate/70 text-xs md:text-sm">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </AnimationWrapper>
-                ))}
-              </div>
-              
-              {/* Replacing the partnership button with a testimonial highlight */}
-              <div className="p-6 rounded-xl bg-white shadow-md border border-gray-100 mb-8 relative overflow-hidden">
+              {/* Partner success stories section - replaces stats */}
+              <div className="p-6 rounded-xl bg-white shadow-md border border-gray-100 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-japa-orange/5 to-japa-blue/5 rounded-full -z-10 transform translate-x-16 -translate-y-20"></div>
                 
                 <div className="flex items-start gap-4">
@@ -226,13 +197,13 @@ const Partners = () => {
                   <h3 className="text-japa-slate font-medium text-lg">Featured Partners</h3>
                 </div>
                 
-                {/* Logo grid with improved styling */}
+                {/* Logo grid with improved styling - now each partner is clickable */}
                 <div className="p-6 md:p-8">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                     {partnerLogos.map((partner, index) => (
                       <div 
                         key={partner.id} 
-                        className="partner-logo relative group"
+                        className="partner-logo relative group block"
                         onMouseEnter={() => setActivePartner(index)}
                         onMouseLeave={() => setActivePartner(null)}
                       >

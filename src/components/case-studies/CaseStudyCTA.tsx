@@ -1,9 +1,12 @@
 import React from 'react';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { BarChart, Users, Clock } from 'lucide-react';
+import { BarChart, Users, Clock, ArrowDown } from 'lucide-react';
+import { useDemoForm } from '@/contexts/DemoFormContext';
 
 const CaseStudyCTA = () => {
+  const { openDemoForm } = useDemoForm();
+
   return (
     <section className="pt-20 pb-0 bg-japa-orange">
       <div className="container-wide">
@@ -11,11 +14,11 @@ const CaseStudyCTA = () => {
           <div className="relative z-10 max-w-3xl mx-auto">
             <AnimationWrapper animation="fade-up">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  Ready to Write Your Success Story?
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-5">
+                  Ready to See Similar Results <span className="text-white font-extrabold">for Your Organization?</span>
                 </h2>
-                <p className="text-white/90 text-lg mb-10">
-                  Join the growing list of organizations that have transformed their parking operations with JAPA's intelligent solutions.
+                <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                  Explore how our smart parking solutions can enhance your parking operations, improve user satisfaction, and increase revenue.
                 </p>
               </div>
               
@@ -51,12 +54,14 @@ const CaseStudyCTA = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AnimatedButton variant="secondary" size="lg" className="bg-white text-japa-orange hover:bg-white/90">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <AnimatedButton 
+                  variant="primary" 
+                  size="lg"
+                  className="bg-white text-japa-orange hover:bg-white/90 border-none"
+                  onClick={openDemoForm}
+                >
                   Schedule a Demo
-                </AnimatedButton>
-                <AnimatedButton variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Download Case Studies
                 </AnimatedButton>
               </div>
             </AnimationWrapper>

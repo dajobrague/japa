@@ -15,6 +15,11 @@ const benefits = [
 const CallToAction = () => {
   const { openDemoForm } = useDemoForm();
 
+  // Function to open HubSpot meetings in a popup
+  const handleContactClick = () => {
+    openDemoForm();
+  };
+
   return (
     <section className="py-8 md:py-12 relative overflow-hidden">
       {/* Enhanced background with overlay pattern - transparent */}
@@ -66,7 +71,7 @@ const CallToAction = () => {
                   icon={<Calendar size={18} />}
                   iconPosition="left"
                   className="bg-japa-orange text-white hover:bg-japa-orange/90 border-none w-full sm:w-auto shadow-lg shadow-japa-orange/20"
-                  onClick={openDemoForm}
+                  onClick={handleContactClick}
                 >
                   Schedule a Demo
                 </AnimatedButton>
@@ -76,6 +81,7 @@ const CallToAction = () => {
                   icon={<Phone size={18} />}
                   iconPosition="left"
                   className="text-japa-orange border-japa-orange hover:bg-japa-orange/10 w-full sm:w-auto"
+                  onClick={handleContactClick}
                 >
                   Contact Sales
                 </AnimatedButton>

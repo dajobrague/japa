@@ -3,12 +3,12 @@ import { CaseStudy } from '@/types/caseStudies';
 import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 
-interface CaseStudyModalProps {
+interface ProjectModalProps {
   caseStudy: CaseStudy | null;
   onClose: () => void;
 }
 
-const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ caseStudy, onClose }) => {
   if (!caseStudy) return null;
 
   return (
@@ -132,4 +132,4 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ caseStudy, onClose }) =
   );
 };
 
-export default CaseStudyModal; 
+export default ProjectModal; 

@@ -26,7 +26,7 @@ const CaseStudyGrid: React.FC<CaseStudyGridProps> = ({
     : caseStudies.filter(study => study.category === category);
 
   return (
-    <section id="case-studies" className="pt-8 pb-16">
+    <section id="projects" className="pt-8 pb-16">
       <div className="container-wide">
         <AnimationWrapper animation="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -67,7 +67,7 @@ const CaseStudyGrid: React.FC<CaseStudyGridProps> = ({
           ) : (
             <AnimationWrapper animation="fade-up">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-                <h3 className="text-xl font-bold text-japa-slate mb-2">No case studies found</h3>
+                <h3 className="text-xl font-bold text-japa-slate mb-2">No projects found</h3>
                 <p className="text-japa-slate/80">We're constantly adding new success stories. Check back soon!</p>
               </div>
             </AnimationWrapper>
