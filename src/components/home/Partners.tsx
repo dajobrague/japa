@@ -145,7 +145,7 @@ const Partners = () => {
           <div className="lg:col-span-5 lg:sticky lg:top-24">
             <AnimationWrapper animation="fade-up">
               {/* Partner success stories section - replaces stats */}
-              <div className="p-6 rounded-xl bg-white shadow-md border border-gray-100 relative overflow-hidden">
+              <div className="p-6 rounded-xl bg-white shadow-md border border-gray-100 relative overflow-hidden h-full flex flex-col">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-japa-orange/5 to-japa-blue/5 rounded-full -z-10 transform translate-x-16 -translate-y-20"></div>
                 
                 <div className="flex items-start gap-4">
@@ -153,28 +153,50 @@ const Partners = () => {
                     UC
                   </div>
                   <div>
-                    <h3 className="text-japa-slate font-semibold text-lg mb-1">
+                    <h3 className="text-japa-slate font-semibold text-lg mb-3">
                       Partner Success Stories
                     </h3>
-                    <div className="mb-3">
-                      <p className="text-japa-slate/90 italic text-sm">
-                        "JAPA's smart parking solution has transformed our campus parking experience, reducing search time by 45% and significantly improving student satisfaction."
+                    <div className="mb-4">
+                      <p className="text-japa-slate/90 italic text-base leading-relaxed">
+                        "The Data JAPA provides for my parking operation helps manage our inventory and our commuters are happier!"
                       </p>
                     </div>
-                    <div className="text-xs text-japa-slate/70">
-                      <span className="font-medium text-japa-slate">Robert Chen</span> - Transportation Director, UC Berkeley
+                    <div className="text-sm text-japa-slate/70 mb-6">
+                      <span className="font-medium text-japa-slate">Yasser Jabbari</span> - Parking Director, UCRiverside
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-5 pt-5 border-t border-gray-100">
-                  <h4 className="text-japa-slate font-medium text-sm mb-3">Why organizations choose JAPA:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-japa-orange/10 rounded-full text-xs text-japa-orange">Precision Sensors</span>
-                    <span className="px-3 py-1 bg-japa-blue/10 rounded-full text-xs text-japa-blue">Data Analytics</span>
-                    <span className="px-3 py-1 bg-green-100 rounded-full text-xs text-green-600">Easy Installation</span>
-                    <span className="px-3 py-1 bg-japa-slate/10 rounded-full text-xs text-japa-slate">24/7 Support</span>
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <h4 className="text-japa-slate font-medium text-base mb-4">Why organizations choose JAPA:</h4>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-japa-orange"></span>
+                      <span className="text-japa-slate/80 text-sm">Precision Sensors</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-japa-blue"></span>
+                      <span className="text-japa-slate/80 text-sm">Data Analytics</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                      <span className="text-japa-slate/80 text-sm">Easy Installation</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-japa-slate"></span>
+                      <span className="text-japa-slate/80 text-sm">24/7 Support</span>
+                    </div>
                   </div>
+                </div>
+                
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <p className="text-sm text-japa-slate/70 mb-2">Ready to transform your parking operation?</p>
+                  <Link 
+                    to="/contact" 
+                    className="text-japa-blue font-medium text-sm hover:text-japa-orange transition-colors flex items-center gap-1"
+                  >
+                    Request a demo <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             </AnimationWrapper>

@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
-import { CheckCircle, Shield, BarChart, Zap, Globe, Smartphone, ArrowRight, ChevronLeft, ChevronRight, X, Check } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
+import { CheckCircle, Shield, BarChart, Zap, Globe, Smartphone, ArrowRight, ChevronLeft, ChevronRight, X, Check, ChevronDown } from "lucide-react";
 import AnimationWrapper from "../ui/AnimationWrapper";
 import Pill from "../ui/Pill";
 import { Link } from "react-router-dom";
 import AnimatedButton from "../ui/AnimatedButton";
+import { createPortal } from "react-dom";
 
 // Definición de estructura de datos para el contenido detallado
 interface DetailedContent {
@@ -220,12 +221,38 @@ interface SolutionModalProps {
 }
 
 const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen }) => {
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  
+  useEffect(() => {
+    if (isOpen) {
+      // Add scroll event listener to hide indicator when user scrolls
+      const modalContainer = document.querySelector('.modal-container');
+      if (modalContainer) {
+        const handleScroll = () => {
+          if (modalContainer.scrollTop > 50) {
+            setShowScrollIndicator(false);
+          } else {
+            setShowScrollIndicator(true);
+          }
+        };
+        
+        modalContainer.addEventListener('scroll', handleScroll);
+        return () => modalContainer.removeEventListener('scroll', handleScroll);
+      }
+    }
+  }, [isOpen]);
+  
   if (!isOpen) return null;
   
-  return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto" onClick={onClose}>
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4" 
+         style={{
+           backgroundColor: 'rgba(0, 0, 0, 0.5)',
+           backdropFilter: 'blur(4px)'
+         }}
+         onClick={onClose}>
       <div 
-        className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-y-auto modal-container relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with proper image handling */}
@@ -237,6 +264,9 @@ const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 rounded-t-2xl"></div>
+          
+          {/* Enhanced gradient overlay for better visibility of scroll indicator */}
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
           
           {/* Close button */}
           <button 
@@ -258,8 +288,21 @@ const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen 
           </div>
         </div>
 
-        {/* Modal content */}
-        <div className="p-6 md:p-8">
+        {/* Scroll indicator - positioned at the bottom of the modal */}
+        {showScrollIndicator && (
+          <div className="absolute bottom-5 left-0 right-0 flex justify-center items-center z-30">
+            <div className="flex items-center bg-gradient-to-t from-japa-orange/90 to-japa-orange/60 px-4 py-2 rounded-full shadow-lg animate-bounce-soft">
+              <span className="text-xs font-semibold text-white">
+                Scroll for details
+              </span>
+              <ChevronDown className="w-5 h-5 text-white ml-1" />
+            </div>
+          </div>
+        )}
+
+        {/* Modal content with scrollable area */}
+        <div className="p-6 md:p-8 pr-8 overflow-y-auto flex-grow"
+            style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}>
           {/* Overview */}
           <div className="mb-8">
             <h3 className="text-xl font-bold text-japa-slate mb-3">Overview</h3>
@@ -333,7 +376,8 @@ const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen 
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
@@ -370,14 +414,18 @@ const Features = () => {
 
   const handleOpenModal = (id: string) => {
     setOpenModalId(id);
-    // Prevenir el scroll del body cuando el modal está abierto
+    // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
+    // Add class to hide header
+    document.body.classList.add('modal-open');
   };
 
   const handleCloseModal = () => {
     setOpenModalId(null);
-    // Restaurar el scroll del body
-    document.body.style.overflow = 'auto';
+    // Re-enable scrolling when modal is closed
+    document.body.style.overflow = '';
+    // Remove class that hides header
+    document.body.classList.remove('modal-open');
   };
 
   return (
@@ -418,6 +466,19 @@ const Features = () => {
             animation: gradient-shift 8s ease infinite;
           }
           
+          @keyframes bounce-soft {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(8px);
+            }
+          }
+          
+          .animate-bounce-soft {
+            animation: bounce-soft 1.5s infinite ease-in-out;
+          }
+          
           .feature-card {
             transition: all 0.4s ease;
           }
@@ -445,6 +506,42 @@ const Features = () => {
           
           .feature-card:hover .card-shine {
             transform: translateX(100%);
+          }
+
+          /* Hide header when modal is open */
+          body.modal-open header {
+            visibility: hidden;
+          }
+          
+          /* Improved modal scrolling with custom scrollbar */
+          .modal-container {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+          }
+          
+          /* Custom scrollbar styling - invisible but functional */
+          .modal-container::-webkit-scrollbar {
+            width: 0px; /* Make scrollbar width zero */
+            background: transparent; /* Make scrollbar transparent */
+          }
+          
+          .modal-container::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          
+          .modal-container::-webkit-scrollbar-thumb {
+            background: transparent;
+          }
+          
+          /* Firefox scrollbar styling */
+          .modal-container {
+            scrollbar-width: none; /* Hide scrollbar in Firefox */
+            scrollbar-color: transparent transparent;
+          }
+          
+          /* IE and Edge */
+          .modal-container {
+            -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
           }
         `}
       </style>

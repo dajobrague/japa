@@ -6,10 +6,10 @@ import { useDemoForm } from "@/contexts/DemoFormContext";
 
 // Social media links with hover colors
 const socialLinks = [
-  { icon: <Twitter size={18} />, url: "https://twitter.com", name: "Twitter", hoverColor: "hover:bg-[#1DA1F2]" },
-  { icon: <Linkedin size={18} />, url: "https://linkedin.com", name: "LinkedIn", hoverColor: "hover:bg-[#0A66C2]" },
-  { icon: <Facebook size={18} />, url: "https://facebook.com", name: "Facebook", hoverColor: "hover:bg-[#1877F2]" },
-  { icon: <Instagram size={18} />, url: "https://instagram.com", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" }
+  { icon: <Twitter size={18} />, url: "https://twitter.com/parkjapa", name: "Twitter", hoverColor: "hover:bg-[#1DA1F2]" },
+  { icon: <Linkedin size={18} />, url: "https://www.linkedin.com/company/japa/", name: "LinkedIn", hoverColor: "hover:bg-[#0A66C2]" },
+  { icon: <Facebook size={18} />, url: "https://www.facebook.com/parkJapa/", name: "Facebook", hoverColor: "hover:bg-[#1877F2]" },
+  { icon: <Instagram size={18} />, url: "https://instagram.com/parkjapa", name: "Instagram", hoverColor: "hover:bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#5851DB]" }
 ];
 
 // Quick links for the footer - Updated to match only existing pages

@@ -62,15 +62,15 @@ const CaseStudyHero = () => {
 
                 <div className="mb-6">
                   <blockquote className="text-lg italic text-japa-slate/80">
-                    "JAPA's smart parking system has revolutionized our parking operations. We've seen a 35% improvement in utilization and significantly higher satisfaction from our students and faculty."
+                    "The Data JAPA provides for my parking operation helps manage our inventory and our commuters are happier!"
                   </blockquote>
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-japa-blue/10 flex items-center justify-center text-japa-blue font-bold">UC</div>
+                  <div className="w-12 h-12 rounded-full bg-japa-blue/10 flex items-center justify-center text-japa-blue font-bold">YJ</div>
                   <div className="ml-3">
-                    <p className="font-bold text-japa-slate">Dr. Catherine Reynolds</p>
-                    <p className="text-sm text-japa-slate/70">Campus Operations Director, UC Berkeley</p>
+                    <p className="font-bold text-japa-slate">Yasser Jabbari</p>
+                    <p className="text-sm text-japa-slate/70">Parking Director, UCRiverside</p>
                   </div>
                 </div>
 

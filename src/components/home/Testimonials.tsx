@@ -18,28 +18,28 @@ const testimonials = [
   },
   {
     id: 2,
-    initials: "CP", 
-    name: "City of Portland",
-    position: "Parking Operations Manager",
-    text: "Since implementing JAPA's sensors and analytics dashboard, we've seen a 30% reduction in traffic congestion around our busiest downtown areas. The data has been invaluable for urban planning.",
+    initials: "PH", 
+    name: "Perry H",
+    position: "Parking Director, UCDavis",
+    text: "Parking has always been my worst nightmare! It has been a godsend to be able to see what spots at which lots are available. Super easy to use and user friendly and such a time saver!",
     rating: 5,
     featured: false
   },
   {
     id: 3,
-    initials: "MH",
-    name: "Memorial Hospital",
-    position: "Facilities Manager",
-    text: "Our hospital's parking challenges were significant before JAPA. Now, patients and visitors can easily find parking, reducing stress during already difficult situations.",
+    initials: "YJ",
+    name: "Yasser Jabbari",
+    position: "Parking Director, UCRiverside",
+    text: "The Data JAPA provides for my parking operation helps manage our inventory and our commuters are happier!",
     rating: 5,
     featured: false
   },
   {
     id: 4,
-    initials: "UC",
-    name: "University of California",
-    position: "Transportation Director",
-    text: "JAPA's smart parking solution has transformed our campus parking experience. Students and faculty can easily find available spots, and our parking management team has valuable insights into usage patterns.",
+    initials: "N",
+    name: "Nestor",
+    position: "Parking Director, UCSB",
+    text: "JAPA provided accurate real-time data, improved system usability, and significantly reduced customer complaints.",
     rating: 5,
     featured: false
   }

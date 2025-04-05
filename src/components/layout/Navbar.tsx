@@ -74,11 +74,10 @@ const Navbar = () => {
           className="flex items-center gap-2 font-display font-bold text-xl text-japa-slate"
         >
           <img 
-            src="/lovable-uploads/location-pin.png" 
+            src="/lovable-uploads/010113ec-e217-447e-b10d-06b06d31ed9f.jpg" 
             alt="JAPA Logo" 
-            className="h-8 md:h-10 w-auto"
+            className="h-5 md:h-6 w-auto"
           />
-          <span>JAPA<span className="text-japa-orange">.</span></span>
         </Link>
         
         {/* Desktop Navigation */}

@@ -157,7 +157,7 @@ const AppShowcase = () => {
                   Schedule a Demo
                 </AnimatedButton>
                 <a 
-                  href="/solutions#mobile" 
+                  href="/solutions#mobile-app" 
                   className="inline-flex items-center justify-center gap-2 text-white font-medium border border-white/30 py-2.5 px-5 rounded-lg transition-all hover:bg-white/10 hover:border-white/50 text-sm"
                 >
                   Learn more
