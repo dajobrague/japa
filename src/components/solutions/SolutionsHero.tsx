@@ -76,12 +76,10 @@ const SolutionsHero: React.FC = () => {
                 ))}
               </ul>
               <button 
-                onClick={() => {
-                  document.getElementById('simulator')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={openDemoForm}
                 className="inline-flex items-center text-japa-orange hover:text-japa-orange/80 font-medium"
               >
-                Try interactive demo <ArrowRight className="ml-2 w-4 h-4" />
+                Schedule a Demo <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
           </AnimationWrapper>

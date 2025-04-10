@@ -28,8 +28,8 @@ const features = [
     statLabel: "Accuracy",
     link: "/solutions#real-time",
     color: "bg-japa-blue",
-    bgImage: "/lovable-uploads/aerial-parking-lot.jpg",
-    modalImage: "/lovable-uploads/aerial-parking-lot.jpg",
+    bgImage: "/lovable-uploads/image.png",
+    modalImage: "/lovable-uploads/image.png",
     detailedContent: {
       overview: "Our real-time parking data solution transforms traditional parking spaces into smart, connected data hubs that continuously monitor occupancy status with incredible precision.",
       benefits: [
@@ -60,8 +60,8 @@ const features = [
     statLabel: "Improved Efficiency",
     link: "/solutions#analytics",
     color: "bg-japa-slate",
-    bgImage: "/lovable-uploads/analytics-dashboard.jpg",
-    modalImage: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
+    bgImage: "/lovable-uploads/analytics_image.png",
+    modalImage: "/lovable-uploads/analytics_image.png",
     detailedContent: {
       overview: "Our analytics platform transforms raw parking data into meaningful insights that help operators optimize space utilization, improve revenue, and plan for future needs.",
       benefits: [
@@ -92,8 +92,8 @@ const features = [
     statLabel: "Increased Revenue",
     link: "/solutions#violations",
     color: "bg-japa-blue",
-    bgImage: "/lovable-uploads/parking-enforcement.jpg",
-    modalImage: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
+    bgImage: "/lovable-uploads/violation_image.png",
+    modalImage: "/lovable-uploads/violation_image.png",
     detailedContent: {
       overview: "Our violation tracking system automatically monitors parking duration in time-limited spaces, generating alerts for enforcement personnel when violations occur.",
       benefits: [
@@ -124,8 +124,8 @@ const features = [
     statLabel: "Compatible Systems",
     link: "/solutions#integration",
     color: "bg-japa-slate",
-    bgImage: "/lovable-uploads/integration-hardware.jpg",
-    modalImage: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
+    bgImage: "/lovable-uploads/JAPA_ILLUSTRATION.png",
+    modalImage: "/lovable-uploads/JAPA_ILLUSTRATION.png",
     detailedContent: {
       overview: "Our hardware and integration solutions are designed for seamless deployment in any environment, with minimal disruption to existing infrastructure and operations.",
       benefits: [
@@ -156,7 +156,7 @@ const features = [
     statLabel: "Accessibility",
     link: "/solutions#console",
     color: "bg-japa-blue",
-    bgImage: "/lovable-uploads/management-console.jpg",
+    bgImage: "/lovable-uploads/Console 1210.21.png",
     modalImage: "/lovable-uploads/Console 1210.21.png",
     detailedContent: {
       overview: "Our management console serves as the central command center for parking operations, providing administrators with complete control and visibility over their parking assets.",
@@ -182,13 +182,13 @@ const features = [
   {
     id: "mobile",
     icon: <Smartphone className="h-6 w-6 text-white" />,
-    title: "Mobile Application",
+    title: "Commuter Mobile App",
     description: "Help commuters quickly find available parking with our intuitive mobile app, reducing congestion and frustration.",
     stat: "4.8",
     statLabel: "App Rating",
     link: "/solutions#mobile",
     color: "bg-japa-slate",
-    bgImage: "/lovable-uploads/mobile-app.jpg",
+    bgImage: "/lovable-uploads/Info Screen-white-.png",
     modalImage: "/lovable-uploads/Info Screen-white-.png",
     detailedContent: {
       overview: "Our mobile app puts real-time parking information directly in the hands of drivers, helping them quickly find available spaces and navigate to their destination.",
@@ -317,6 +317,21 @@ const SolutionModal: React.FC<SolutionModalProps> = ({ feature, onClose, isOpen 
                 </li>
               ))}
             </ul>
+
+            {/* Feature illustration */}
+            <div className="mb-8 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src={feature.id === "real-time" ? "/lovable-uploads/image.png" : 
+                     feature.id === "analytics" ? "/lovable-uploads/analytics_image.png" : 
+                     feature.id === "violations" ? "/lovable-uploads/violation_image.png" : 
+                     feature.id === "integration" ? "/lovable-uploads/JAPA_ILLUSTRATION.png" : 
+                     feature.id === "console" ? "/lovable-uploads/Console 1210.21.png" : 
+                     feature.id === "mobile" ? "/lovable-uploads/Info Screen-white-.png" : 
+                     feature.bgImage} 
+                alt={`${feature.title} illustration`}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           {/* Technical Details */}

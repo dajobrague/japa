@@ -9,13 +9,11 @@ import { FeatureContent } from "@/types/solutions";
 import { Quote } from "lucide-react";
 import AnimationWrapper from "@/components/ui/AnimationWrapper";
 import { useDemoForm } from "@/contexts/DemoFormContext";
+import AnimatedButton from '@/components/ui/AnimatedButton';
+import { ChevronRight, ChevronDown, Filter, X, ExternalLink, CalendarCheck } from 'lucide-react';
 
 // Define the sensor images for the slider
 const sensorImages = [
-  {
-    src: "/lovable-uploads/sensor-1080x720.png",
-    alt: "JAPA Sensor Installation - Primary View"
-  },
   {
     src: "/lovable-uploads/sensor12.png",
     alt: "JAPA Sensor Installation - Secondary View"
@@ -23,6 +21,14 @@ const sensorImages = [
   {
     src: "/lovable-uploads/NWA-004. 4bat. Embedded sensor expl.png",
     alt: "JAPA Embedded Sensor Exploded View"
+  },
+  {
+    src: "/lovable-uploads/4279DBC0-BEF5-494C-BEEC-F54801983C32_1_105_c.jpeg",
+    alt: "JAPA Sensor Installation - New View 1"
+  },
+  {
+    src: "/lovable-uploads/IMG_5475.jpg",
+    alt: "JAPA Sensor Installation - New View 2"
   }
 ];
 
@@ -196,12 +202,12 @@ const Solutions = () => {
                 >
                   Schedule Your Demo Today
                 </button>
-                <a 
-                  href="/contact"
+                <button 
+                  onClick={openDemoForm}
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium py-4 px-8 rounded-lg transition-all hover:scale-105 min-w-[200px]"
                 >
                   Contact Our Team
-                </a>
+                </button>
               </div>
             </div>
           </AnimationWrapper>

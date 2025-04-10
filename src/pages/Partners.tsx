@@ -3,7 +3,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import Pill from "@/components/ui/Pill";
 import AnimationWrapper from "@/components/ui/AnimationWrapper";
 import AnimatedButton from "@/components/ui/AnimatedButton";
-import { ArrowRight, CheckCircle2, ChevronRight, Globe, Shield, UserPlus } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight, Globe, Shield, UserPlus, ChevronDown, Filter, X, ExternalLink } from "lucide-react";
+import { useDemoForm } from '@/contexts/DemoFormContext';
 
 // Partner categories
 type PartnerCategory = 'Education' | 'Municipal' | 'Healthcare' | 'Technology' | 'Industry' | 'Aviation' | 'Events' | 'Research' | 'All';
@@ -156,13 +157,14 @@ const Partners = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // State for selected category filter
-  const [selectedCategory, setSelectedCategory] = useState<PartnerCategory>('All');
+  const [activeCategory, setActiveCategory] = useState<PartnerCategory>('All');
+  const [expandedPartner, setExpandedPartner] = useState<number | null>(null);
+  const { openDemoForm } = useDemoForm();
 
   // Filter partners based on selected category
-  const filteredPartners = selectedCategory === 'All' 
+  const filteredPartners = activeCategory === 'All' 
     ? partners 
-    : partners.filter(partner => partner.category === selectedCategory);
+    : partners.filter(partner => partner.category === activeCategory);
 
   // Extract unique categories from partners data
   const categories = ['All', ...Array.from(new Set(partners.map(partner => partner.category)))] as PartnerCategory[];
@@ -282,11 +284,11 @@ const Partners = () => {
                 <button
                   key={category}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedCategory === category
+                    activeCategory === category
                       ? 'bg-japa-blue text-white shadow-md'
                       : 'bg-white text-japa-slate/70 hover:bg-japa-gray/20 border border-gray-200'
                   }`}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => setActiveCategory(category)}
                 >
                   {category === 'All' ? 'All Partners' : `${category} Partners`}
                 </button>
@@ -295,7 +297,7 @@ const Partners = () => {
           </AnimationWrapper>
           
           {/* Featured Partners (only show when All is selected) */}
-          {selectedCategory === 'All' && (
+          {activeCategory === 'All' && (
             <div className="mb-16">
               <AnimationWrapper animation="fade-up">
                 <div className="mb-8 text-center">
@@ -353,19 +355,19 @@ const Partners = () => {
             <AnimationWrapper animation="fade-up">
               <div className="mb-10 text-center">
                 <h2 className="text-3xl font-bold text-japa-slate">
-                  {selectedCategory === 'All' ? 'All Partners' : `${selectedCategory} Partners`}
+                  {activeCategory === 'All' ? 'All Partners' : `${activeCategory} Partners`}
                 </h2>
                 <p className="text-japa-slate/80 max-w-3xl mx-auto mt-3">
-                  {selectedCategory === 'All' 
+                  {activeCategory === 'All' 
                     ? 'Explore our diverse network of partners across multiple sectors.' 
-                    : `Our ${selectedCategory} partners help us develop specialized solutions for this sector.`}
+                    : `Our ${activeCategory} partners help us develop specialized solutions for this sector.`}
                 </p>
               </div>
             </AnimationWrapper>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {filteredPartners
-                .filter(p => selectedCategory !== 'All' || !p.featured)
+                .filter(p => activeCategory !== 'All' || !p.featured)
                 .map((partner, index) => (
                 <AnimationWrapper 
                   key={partner.id} 
@@ -451,6 +453,7 @@ const Partners = () => {
                   variant="outline" 
                   size="lg"
                   className="bg-white text-japa-blue hover:bg-white/90"
+                  onClick={openDemoForm}
                 >
                   Contact Us About Partnership
                 </AnimatedButton>

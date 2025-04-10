@@ -192,13 +192,6 @@ const Footer = () => {
                   </div>
                 </li>
               </ul>
-
-              <button
-                onClick={handleContactClick}
-                className="text-japa-slate/80 hover:text-japa-orange transition-colors text-sm"
-              >
-                Contact Us
-              </button>
             </AnimationWrapper>
           </div>
         </div>
@@ -239,8 +232,11 @@ const Footer = () => {
           
           <AnimationWrapper animation="fade-up" delay={100}>
             <div className="flex items-center flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
-              <Link to="/about" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
-                About
+              <Link to="/privacy" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="text-japa-slate/70 hover:text-japa-orange transition-colors">
+                Terms of Service
               </Link>
             </div>
           </AnimationWrapper>

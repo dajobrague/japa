@@ -8,24 +8,24 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 // Carousel images from other pages
 const carouselImages = [
   {
-    src: "/lovable-uploads/aerial-parking-lot.jpg",
-    alt: "Smart Parking Aerial View"
+    src: "/lovable-uploads/image.png",
+    alt: "Real-Time Parking Data"
   },
   {
-    src: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
-    alt: "University Parking Solution"
+    src: "/lovable-uploads/analytics_image.png",
+    alt: "Analytics & Insights"
   },
   {
-    src: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
-    alt: "City Center Parking"
+    src: "/lovable-uploads/violation_image.png",
+    alt: "Violation Tracking"
   },
   {
-    src: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
-    alt: "Stadium Parking System"
+    src: "/lovable-uploads/JAPA_ILLUSTRATION.png",
+    alt: "Seamless Integration"
   },
   {
-    src: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
-    alt: "Healthcare Facility Parking"
+    src: "/lovable-uploads/Console 1210.21.png",
+    alt: "Web Management Console"
   }
 ];
 
@@ -99,37 +99,37 @@ const teamMembers = [
   {
     name: "Mathew Magno",
     position: "CEO & Co-founder",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MM&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_Matt.jpeg",
     bio: "Driving JAPA's vision to transform parking management through innovative smart solutions."
   },
   {
     name: "Charles Chen",
     position: "CTO & Co-founder",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=CC&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_Charles.jpeg",
     bio: "Leading the technological innovation and engineering excellence at JAPA."
   },
   {
     name: "Kevin Burnham",
     position: "Project Manager",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=KB&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_Kevin.jpeg",
     bio: "Ensuring seamless delivery and implementation of JAPA's smart parking solutions."
   },
   {
-    name: "Mariana Aracaya",
+    name: "Mariana Arcaya",
     position: "Sales Manager",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=MA&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_Mariana.jpeg",
     bio: "Growing JAPA's market presence and building strong client partnerships."
   },
   {
     name: "Tammy Nguyen",
     position: "Engineering Lead",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=TN&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_Tammy.jpeg",
     bio: "Developing cutting-edge sensor technology and IoT infrastructure for smart parking systems."
   },
   {
     name: "D.J. Stephan",
     position: "CRO",
-    image: "https://placehold.co/300x300/e0f2fe/0369a1?text=DJ&font=open-sans",
+    image: "/lovable-uploads/LinkedIn_DJ.jpeg",
     bio: "Optimizing revenue generation strategies and driving business growth for JAPA."
   }
 ];
@@ -172,7 +172,7 @@ const About = () => {
         
         <div className="container-wide relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-5">
               <AnimationWrapper animation="fade-right">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-japa-slate mb-6 leading-tight">
                   Parking. <span className="text-japa-blue">Made Intelligent.</span>
@@ -180,35 +180,12 @@ const About = () => {
                 <p className="text-lg md:text-xl text-japa-slate/80 max-w-xl mb-8 leading-relaxed">
                   JAPA is transforming parking through smart technology, creating more efficient, sustainable, and user-friendly parking experiences for all.
                 </p>
-                
-                {/* Stats section with fixed sizes */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
-                  {stats.map((stat, index) => (
-                    <AnimationWrapper 
-                      key={index} 
-                      animation="fade-up" 
-                      delay={100 * (index + 1)}
-                    >
-                      <div className="text-center p-4 rounded-lg bg-white shadow-sm border border-gray-100 h-[120px] flex flex-col items-center justify-center">
-                        <div className="flex justify-center text-japa-blue/70 mb-2">
-                          {stat.icon}
-                        </div>
-                        <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-japa-blue to-japa-blue/80 bg-clip-text text-transparent mb-1">
-                          {stat.value}
-                        </div>
-                        <div className="text-japa-slate/70 text-xs md:text-sm">
-                          {stat.label}
-                        </div>
-                      </div>
-                    </AnimationWrapper>
-                  ))}
-                </div>
               </AnimationWrapper>
             </div>
             
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-7">
               <AnimationWrapper animation="fade-left" delay={150}>
-                <div className="relative rounded-xl overflow-hidden h-[300px] md:h-[400px] shadow-lg">
+                <div className="relative rounded-xl overflow-hidden h-[300px] md:h-[400px] lg:h-[450px] shadow-lg">
                   {/* Image Carousel */}
                   {carouselImages.map((image, index) => (
                     <div 
@@ -220,7 +197,7 @@ const About = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt} 
-                        className="w-full h-full object-cover" 
+                        className="w-full h-full object-contain bg-gray-50" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-japa-slate/60 to-transparent"></div>
                     </div>
@@ -229,7 +206,7 @@ const About = () => {
                   {/* Caption */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
                     <p className="text-white/90 text-sm md:text-base font-medium">
-                      Helping cities and institutions create smarter parking systems
+                      {carouselImages[currentImageIndex].alt}
                     </p>
                   </div>
                   

@@ -40,7 +40,7 @@ const solutionCategories = [
       "Space-by-space monitoring capabilities",
       "Customizable data collection parameters"
     ],
-    bgImage: "/lovable-uploads/aerial-parking-lot.jpg",
+    bgImage: "/lovable-uploads/image.png",
     stats: {
       key: "Availability Accuracy",
       value: "99%"
@@ -48,7 +48,7 @@ const solutionCategories = [
   },
   {
     id: "analytics",
-    title: "Analytics & Reporting",
+    title: "Analytics & Insights",
     description: "Gain actionable insights into parking behavior with comprehensive analytics and customizable reports.",
     icon: <BarChart3 className="w-10 h-10 text-japa-orange" />,
     capabilities: [
@@ -57,7 +57,7 @@ const solutionCategories = [
       "Custom report generation and scheduling",
       "Data export capabilities for integration"
     ],
-    bgImage: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
+    bgImage: "/lovable-uploads/analytics_image.png",
     stats: {
       key: "Data Points Processed",
       value: "1M+"
@@ -65,7 +65,7 @@ const solutionCategories = [
   },
   {
     id: "violation-tracking",
-    title: "Violation Management",
+    title: "Violation Tracking",
     description: "Automate parking enforcement with precise time monitoring and violation detection, increasing compliance.",
     icon: <Shield className="w-10 h-10 text-japa-orange" />,
     capabilities: [
@@ -74,15 +74,15 @@ const solutionCategories = [
       "Customizable enforcement parameters",
       "Detailed violation reporting and analytics"
     ],
-    bgImage: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
+    bgImage: "/lovable-uploads/violation_image.png",
     stats: {
       key: "Enforcement Efficiency",
       value: "+40%"
     }
   },
   {
-    id: "hardware",
-    title: "Wireless Sensor Technology",
+    id: "integration",
+    title: "Wireless Parking Sensors",
     description: "Deploy cutting-edge wireless sensors with simple installation, minimal maintenance, and maximum reliability.",
     icon: <RefreshCw className="w-10 h-10 text-japa-orange" />,
     capabilities: [
@@ -98,8 +98,8 @@ const solutionCategories = [
     }
   },
   {
-    id: "management",
-    title: "Management Console",
+    id: "management-console",
+    title: "Web Management Console",
     description: "Control your entire parking operation from a comprehensive, user-friendly management dashboard.",
     icon: <Layers className="w-10 h-10 text-japa-orange" />,
     capabilities: [
@@ -108,7 +108,7 @@ const solutionCategories = [
       "System health monitoring and diagnostics",
       "Configuration and customization options"
     ],
-    bgImage: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
+    bgImage: "/lovable-uploads/Console 1210.21.png",
     stats: {
       key: "Management Efficiency",
       value: "+35%"
@@ -116,7 +116,7 @@ const solutionCategories = [
   },
   {
     id: "mobile-app",
-    title: "Mobile Application",
+    title: "Commuter Mobile App",
     description: "Empower drivers with a feature-rich mobile app for finding, navigating to, and paying for parking spaces.",
     icon: <Smartphone className="w-10 h-10 text-japa-orange" />,
     capabilities: [

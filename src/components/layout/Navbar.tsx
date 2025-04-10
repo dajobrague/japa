@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn } from "lucide-react";
 import AnimatedButton from "../ui/AnimatedButton";
@@ -15,28 +15,45 @@ const navLinks = [
   { name: "FAQs", href: "/faqs" },
 ];
 
+// Debounce helper function
+const debounce = <T extends (...args: any[]) => void>(
+  func: T,
+  wait: number
+): ((...args: Parameters<T>) => void) => {
+  let timeout: NodeJS.Timeout;
+  
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { openDemoForm } = useDemoForm();
   
-  // Handle scroll event to change navbar appearance
-  useEffect(() => {
-    const handleScroll = () => {
+  // Debounced scroll handler
+  const handleScroll = useCallback(
+    debounce(() => {
       const offset = window.scrollY;
       if (offset > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-    };
+    }, 10),
+    []
+  );
 
-    window.addEventListener("scroll", handleScroll);
+  // Handle scroll event to change navbar appearance
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   // Check if the current path matches the link's href
   const isActive = (href: string) => {
@@ -50,7 +67,7 @@ const Navbar = () => {
 
   // Función para abrir el login en el sitio original
   const handleLoginClick = () => {
-    window.open("https://parkjapa.com/login", "_blank");
+    window.location.href = "https://console.parkjapa.com/";
   };
 
   // Function to open HubSpot meetings in a popup
@@ -61,20 +78,23 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "sticky w-full top-0 z-50 transition-all duration-300",
+        "sticky w-full top-0 z-50 h-16",
         scrolled 
-          ? "py-3 bg-white/80 backdrop-blur-sm shadow-sm" 
-          : "py-5 bg-transparent"
+          ? "bg-white/80 backdrop-blur-sm shadow-sm" 
+          : "bg-transparent"
       )}
+      style={{
+        transition: "background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out"
+      }}
     >
-      <div className="container-wide flex items-center justify-between">
+      <div className="container-wide h-full flex items-center justify-between">
         {/* Logo */}
         <Link 
           to="/" 
           className="flex items-center gap-2 font-display font-bold text-xl text-japa-slate"
         >
           <img 
-            src="/lovable-uploads/010113ec-e217-447e-b10d-06b06d31ed9f.jpg" 
+            src="/lovable-uploads/Logo-01.png" 
             alt="JAPA Logo" 
             className="h-5 md:h-6 w-auto"
           />
@@ -132,10 +152,10 @@ const Navbar = () => {
         </button>
       </div>
       
-      {/* Mobile Navigation - Part of document flow */}
+      {/* Mobile Navigation */}
       <div 
         className={cn(
-          "absolute top-full right-0 left-0 bg-white/90 backdrop-blur-sm shadow-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
+          "fixed top-16 right-0 left-0 bg-white/90 backdrop-blur-sm shadow-md overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
           isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         )}
       >

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import Hero from "@/components/home/Hero";
+import VideoSection from "@/components/home/VideoSection";
 import Features from "@/components/home/Features";
 import Partners from "@/components/home/Partners";
 import AppShowcase from "@/components/home/AppShowcase";
@@ -14,9 +15,15 @@ const Index = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Video URL from parkjapa.com
+  const videoUrl = "https://www.parkjapa.com/public/japavid.mp4";
+
   return (
     <PageLayout>
       <Hero />
+      <SectionTransition animation="fade-up" threshold={0.1} id="video-section">
+        <VideoSection videoUrl={videoUrl} />
+      </SectionTransition>
       <SectionTransition animation="fade-up" threshold={0.1} id="features-section">
         <Features />
       </SectionTransition>

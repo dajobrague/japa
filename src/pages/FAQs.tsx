@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import Pill from "@/components/ui/Pill";
 import AnimationWrapper from "@/components/ui/AnimationWrapper";
-import { ChevronDown, ChevronUp, Search, HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, Search, HelpCircle, X } from "lucide-react";
 import AnimatedButton from "@/components/ui/AnimatedButton";
+import { useDemoForm } from '@/contexts/DemoFormContext';
 
 // Carousel images from other pages
 const carouselImages = [
@@ -125,6 +126,8 @@ const FAQs = () => {
 
   // State for image carousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const { openDemoForm } = useDemoForm();
 
   // Image carousel rotation effect
   useEffect(() => {
@@ -422,15 +425,9 @@ const FAQs = () => {
                   variant="secondary" 
                   size="lg" 
                   className="bg-white text-japa-orange hover:bg-white/90"
+                  onClick={openDemoForm}
                 >
-                  Contact Our Team
-                </AnimatedButton>
-                <AnimatedButton 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white/10"
-                >
-                  Schedule a Demo
+                  Contact Us
                 </AnimatedButton>
               </div>
             </AnimationWrapper>

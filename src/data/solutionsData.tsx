@@ -8,7 +8,7 @@ export const featuresData: FeatureContent[] = [
     description: "Convert every parking stall and lane into a live data hub with our high-precision sensors, providing accurate occupancy information in real time.",
     icon: <Gauge className="text-japa-orange w-8 h-8" />,
     tags: ["Precision Sensors", "Live Updates", "99% Accuracy"],
-    bgImage: "/lovable-uploads/aerial-parking-lot.jpg",
+    bgImage: "/lovable-uploads/image.png",
     detailedContent: {
       overview: "Our real-time parking data solution transforms traditional parking spaces into smart, connected data hubs that continuously monitor occupancy status with incredible precision.",
       benefits: [
@@ -32,11 +32,11 @@ export const featuresData: FeatureContent[] = [
   },
   {
     id: "analytics",
-    title: "Analytics & Historical Data",
+    title: "Analytics & Insights",
     description: "Gain actionable insights with daily peak occupancy reports, average stay times, heatmaps, and detailed historical data analysis.",
     icon: <BarChart3 className="text-japa-orange w-8 h-8" />,
     tags: ["Trend Analysis", "Custom Reports", "Data Export"],
-    bgImage: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
+    bgImage: "/lovable-uploads/analytics_image.png",
     detailedContent: {
       overview: "Our analytics platform transforms raw parking data into meaningful insights that help operators optimize space utilization, improve revenue, and plan for future needs.",
       benefits: [
@@ -64,7 +64,7 @@ export const featuresData: FeatureContent[] = [
     description: "Detect and track parking violations efficiently with automated time-zone monitoring, improving enforcement and increasing turnover.",
     icon: <Shield className="text-japa-orange w-8 h-8" />,
     tags: ["Automated Detection", "Alert System", "Enforcement API"],
-    bgImage: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
+    bgImage: "/lovable-uploads/violation_image.png",
     detailedContent: {
       overview: "Our violation tracking system automatically monitors parking duration in time-limited spaces, generating alerts for enforcement personnel when violations occur.",
       benefits: [
@@ -116,11 +116,11 @@ export const featuresData: FeatureContent[] = [
   },
   {
     id: "management-console",
-    title: "Management Console",
+    title: "Web Management Console",
     description: "Access our user-friendly web-based dashboard for comprehensive reporting tools and real-time parking management.",
     icon: <Layers className="text-japa-orange w-8 h-8" />,
     tags: ["Intuitive UI", "Role-Based Access", "Real-time Alerts"],
-    bgImage: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
+    bgImage: "/lovable-uploads/Console 1210.21.png",
     detailedContent: {
       overview: "Our management console serves as the central command center for parking operations, providing administrators with complete control and visibility over their parking assets.",
       benefits: [
@@ -144,7 +144,7 @@ export const featuresData: FeatureContent[] = [
   },
   {
     id: "mobile-app",
-    title: "Mobile App Experience",
+    title: "Commuter Mobile App",
     description: "Deliver a premium parking experience with our feature-rich mobile app, helping users find, navigate to, and pay for parking spaces in real-time.",
     icon: <Smartphone className="text-japa-orange w-8 h-8" />,
     tags: ["iOS & Android", "Turn-by-Turn Navigation", "Real-Time Updates", "In-App Payments"],

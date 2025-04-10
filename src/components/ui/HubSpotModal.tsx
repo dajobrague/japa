@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface HubSpotModalProps {
   isOpen: boolean;
@@ -6,6 +6,15 @@ interface HubSpotModalProps {
 }
 
 const HubSpotModal: React.FC<HubSpotModalProps> = ({ isOpen, onClose }) => {
+  const [iframeUrl, setIframeUrl] = useState<string>('');
+  
+  useEffect(() => {
+    // Use a more reliable approach to get the HubSpot URL
+    // This ensures it works in both localhost and production
+    const hubspotUrl = process.env.REACT_APP_HUBSPOT_URL || 'https://meetings.hubspot.com/mathewmagno';
+    setIframeUrl(hubspotUrl);
+  }, []);
+
   if (!isOpen) return null;
 
   return (
@@ -40,12 +49,14 @@ const HubSpotModal: React.FC<HubSpotModalProps> = ({ isOpen, onClose }) => {
 
         {/* Iframe */}
         <div className="w-full aspect-[4/3]">
-          <iframe
-            src="https://meetings.hubspot.com/mathewmagno"
-            className="w-full h-full rounded-xl"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          {iframeUrl && (
+            <iframe
+              src={iframeUrl}
+              className="w-full h-full rounded-xl"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          )}
         </div>
       </div>
     </div>

@@ -50,6 +50,15 @@ const FeatureModal: React.FC<FeatureModalProps> = ({ feature, onClose }) => {
                 </li>
               ))}
             </ul>
+            
+            {/* Feature illustration */}
+            <div className="mb-8 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src={feature.bgImage} 
+                alt={`${feature.title} illustration`}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           {/* Technical Details */}

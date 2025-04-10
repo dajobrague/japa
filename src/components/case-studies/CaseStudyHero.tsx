@@ -70,7 +70,7 @@ const CaseStudyHero = () => {
                   <div className="w-12 h-12 rounded-full bg-japa-blue/10 flex items-center justify-center text-japa-blue font-bold">YJ</div>
                   <div className="ml-3">
                     <p className="font-bold text-japa-slate">Yasser Jabbari</p>
-                    <p className="text-sm text-japa-slate/70">Parking Director, UCRiverside</p>
+                    <p className="text-sm text-japa-slate/70">Parking Director, UC Riverside</p>
                   </div>
                 </div>
 
