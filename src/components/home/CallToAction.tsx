@@ -44,7 +44,7 @@ const CallToAction = () => {
           </AnimationWrapper>
           
           <AnimationWrapper animation="fade-up" delay={200}>
-            <div className="mb-6 md:mb-8">
+            <div className="mb-6 md:mb-8 flex justify-center">
               <ul className="space-y-2 md:space-y-3 text-sm md:text-base inline-block text-left">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2 md:gap-3">
@@ -87,13 +87,13 @@ const CallToAction = () => {
       <div className="container-wide mt-12 md:mt-16">
         <AnimationWrapper animation="fade-up" delay={400}>
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-lg border border-gray-100 max-w-3xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-6 items-start">
+            <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 rounded-full bg-japa-orange/20 flex items-center justify-center text-japa-orange font-bold text-xl">
                   JD
                 </div>
               </div>
-              <div>
+              <div className="text-center md:text-left">
                 <p className="text-japa-slate/90 italic mb-4">
                   "JAPA's smart parking solution has transformed how we manage our campus parking. We've seen a 25% increase in parking turnover and significantly reduced enforcement costs."
                 </p>

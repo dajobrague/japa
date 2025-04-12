@@ -24,8 +24,8 @@ const Hero = () => {
 
   // Animated stats with counter effect
   const [stats, setStats] = useState({
-    spaces: 0,
-    efficiency: 0,
+    emissions: 0,
+    turnover: 0,
     satisfaction: 0
   });
 
@@ -33,17 +33,17 @@ const Hero = () => {
     const timer = setTimeout(() => {
       const interval = setInterval(() => {
         setStats(prev => {
-          const newSpaces = Math.min(prev.spaces + 1, 20);
-          const newEfficiency = Math.min(prev.efficiency + 1, 50);
+          const newEmissions = Math.min(prev.emissions + 1, 30);
+          const newTurnover = Math.min(prev.turnover + 1, 2);
           const newSatisfaction = Math.min(prev.satisfaction + 1, 120);
           
-          if (newSpaces === 20 && newEfficiency === 50 && newSatisfaction === 120) {
+          if (newEmissions === 30 && newTurnover === 2 && newSatisfaction === 120) {
             clearInterval(interval);
           }
           
           return {
-            spaces: newSpaces,
-            efficiency: newEfficiency,
+            emissions: newEmissions,
+            turnover: newTurnover,
             satisfaction: newSatisfaction
           };
         });
@@ -177,15 +177,15 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-2 lg:gap-4 py-2 my-2 lg:ml-0 mx-auto">
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    {stats.spaces}+
+                    {stats.emissions}%+
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">Locations</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">Fewer Vehicle Emissions</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    {stats.efficiency}%+
+                    {stats.turnover}x
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">Quicker Parking</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">Increased Parking Turnover</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">

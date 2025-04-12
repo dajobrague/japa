@@ -1,0 +1,86 @@
+[
+  {
+    "id": 5638,
+    "title": "JapaParking Revolutionizes Urban Parking Solutions",
+    "category": "News Release",
+    "date": "2025-04-12T04:49:25.093Z",
+    "slug": "japaparking-revolutionizes-urban-parking-solutions",
+    "summary": "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
+    "content": "<p>Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas</p>",
+    "image": "/assets/images/press/default-press-image.jpg",
+    "source": {
+      "name": "JAPA Inc.",
+      "logo": "/assets/images/japa-logo.svg"
+    },
+    "featured": true,
+    "tags": [
+      "Parking",
+      "Smart Technology",
+      "Urban"
+    ],
+    "links": {
+      "pdf": "/assets/documents/press/press-release.pdf"
+    }
+  },
+  {
+    "id": 2099,
+    "title": "AI-Powered Parking Management Platform Launches",
+    "category": "News Release",
+    "date": "2025-04-05T04:49:25.094Z",
+    "slug": "aipowered-parking-management-platform-launches",
+    "summary": "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
+    "content": "<p>JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots</p>",
+    "image": "/assets/images/press/default-press-image.jpg",
+    "source": {
+      "name": "JAPA Inc.",
+      "logo": "/assets/images/japa-logo.svg"
+    },
+    "featured": true,
+    "tags": [
+      "Parking",
+      "AI"
+    ],
+    "links": {}
+  },
+  {
+    "id": 3850,
+    "title": "JapaParking Expands to 10 New Cities",
+    "category": "News Release",
+    "date": "2025-03-29T04:49:25.094Z",
+    "slug": "japaparking-expands-to-10-new-cities",
+    "summary": "Strategic expansion brings smart parking solutions to major urban centers, serving over 1 million drivers monthly",
+    "content": "<p>Strategic expansion brings smart parking solutions to major urban centers, serving over 1 million drivers monthly</p>",
+    "image": "/assets/images/press/default-press-image.jpg",
+    "source": {
+      "name": "JAPA Inc.",
+      "logo": "/assets/images/japa-logo.svg"
+    },
+    "featured": false,
+    "tags": [
+      "Parking",
+      "Smart Technology",
+      "Urban"
+    ],
+    "links": {}
+  },
+  {
+    "id": 1689,
+    "title": "Sustainability Award for Green Parking Innovation",
+    "category": "Award",
+    "date": "2025-03-22T04:49:25.094Z",
+    "slug": "sustainability-award-for-green-parking-innovation",
+    "summary": "JapaParking receives Environmental Excellence Award for reducing carbon emissions through efficient parking solutions",
+    "content": "<p>JapaParking receives Environmental Excellence Award for reducing carbon emissions through efficient parking solutions</p>",
+    "image": "/assets/images/press/default-press-image.jpg",
+    "source": {
+      "name": "JAPA Inc.",
+      "logo": "/assets/images/japa-logo.svg"
+    },
+    "featured": false,
+    "tags": [
+      "Parking",
+      "AI"
+    ],
+    "links": {}
+  }
+]

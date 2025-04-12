@@ -6,24 +6,55 @@ import PressReleaseList from '@/components/press/PressReleaseList';
 // import PressKitSection from '@/components/press/PressKitSection';
 // import PressContactSection from '@/components/press/PressContactSection';
 import PressFilters from '@/components/press/PressFilters';
-import { pressReleases } from '@/data/pressData';
+import { fetchNotionPressItems } from '@/services/notionPressService';
 import { PressCategory, PressItem } from '@/types/press';
 import PressCaseStudyCTA from '@/components/press/PressCaseStudyCTA';
-
-// Extract unique categories from press releases
-const categories = Array.from(
-  new Set(pressReleases.map(item => item.category))
-) as PressCategory[];
 
 const Press: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<PressCategory | 'All'>('All');
   const [activeYear, setActiveYear] = useState<string>('All');
-  const [filteredReleases, setFilteredReleases] = useState<PressItem[]>(pressReleases);
+  const [filteredReleases, setFilteredReleases] = useState<PressItem[]>([]);
+  const [pressReleases, setPressReleases] = useState<PressItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [categories, setCategories] = useState<PressCategory[]>([]);
+  const [years, setYears] = useState<string[]>([]);
   
-  // Extract available years from press releases
-  const years = Array.from(
-    new Set(pressReleases.map(item => new Date(item.date).getFullYear().toString()))
-  ).sort((a, b) => parseInt(b) - parseInt(a)); // Sort descending
+  // Load data from Notion when component mounts
+  useEffect(() => {
+    const loadNotionData = async () => {
+      try {
+        setIsLoading(true);
+        console.log('📢 Press page: Starting to load Notion data...');
+        
+        // Use only Notion data, not merging with static data
+        const notionData = await fetchNotionPressItems();
+        console.log('📢 Press page: Notion data loaded:', notionData.length, 'items');
+        
+        setPressReleases(notionData);
+        
+        // Update categories and years based on the data
+        const cats = Array.from(
+          new Set(notionData.map(item => item.category))
+        ) as PressCategory[];
+        setCategories(cats);
+        console.log('📢 Press page: Categories updated:', cats);
+        
+        const yrs = Array.from(
+          new Set(notionData.map(item => new Date(item.date).getFullYear().toString()))
+        ).sort((a, b) => parseInt(b) - parseInt(a)); // Sort descending
+        setYears(yrs);
+        console.log('📢 Press page: Years updated:', yrs);
+      } catch (error) {
+        console.error('❌ Error loading Notion data:', error);
+        setPressReleases([]);
+        console.log('📢 Press page: Error loading data, showing empty press list');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadNotionData();
+  }, []);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,7 +78,7 @@ const Press: React.FC = () => {
     filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     
     setFilteredReleases(filtered);
-  }, [activeCategory, activeYear]);
+  }, [activeCategory, activeYear, pressReleases]);
 
   return (
     <PageLayout>
@@ -69,7 +100,14 @@ const Press: React.FC = () => {
               setActiveYear={setActiveYear}
             />
             
-            <PressReleaseList pressReleases={filteredReleases} />
+            {isLoading ? (
+              <div className="text-center py-12">
+                <div className="inline-block w-8 h-8 border-t-2 border-japa-blue rounded-full animate-spin"></div>
+                <p className="mt-4 text-japa-slate/70">Loading press releases...</p>
+              </div>
+            ) : (
+              <PressReleaseList pressReleases={filteredReleases} />
+            )}
           </div>
           
           {/* Press kit section hidden for now but can be added later */}

@@ -1,0 +1,548 @@
+{
+  "rawRows": [
+    {
+      "object": "block",
+      "id": "1d376841-73f9-8049-9bd3-c7ed32c9df82",
+      "parent": {
+        "type": "block_id",
+        "block_id": "1d376841-73f9-80e2-8ab3-c98d4feae0f0"
+      },
+      "created_time": "2025-04-12T04:29:00.000Z",
+      "last_edited_time": "2025-04-12T04:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Title",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Title",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Description",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Description",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Image Link",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Image Link",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Attachments",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Attachments",
+              "href": null
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d376841-73f9-8026-8f62-c0bfbd5de9d8",
+      "parent": {
+        "type": "block_id",
+        "block_id": "1d376841-73f9-80e2-8ab3-c98d4feae0f0"
+      },
+      "created_time": "2025-04-12T04:29:00.000Z",
+      "last_edited_time": "2025-04-12T04:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "JapaParking Revolutionizes Urban Parking Solutions",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "JapaParking Revolutionizes Urban Parking Solutions",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "[Image placeholder: Smart parking interface]",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "[Image placeholder: Smart parking interface]",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Press Release, Product Photos",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Press Release, Product Photos",
+              "href": null
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d376841-73f9-806a-8155-c91c57c46509",
+      "parent": {
+        "type": "block_id",
+        "block_id": "1d376841-73f9-80e2-8ab3-c98d4feae0f0"
+      },
+      "created_time": "2025-04-12T04:29:00.000Z",
+      "last_edited_time": "2025-04-12T04:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "AI-Powered Parking Management Platform Launches",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "AI-Powered Parking Management Platform Launches",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "[Image placeholder: AI visualization dashboard]",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "[Image placeholder: AI visualization dashboard]",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Technical Specifications, Case Study",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Technical Specifications, Case Study",
+              "href": null
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d376841-73f9-80b8-926d-ee0d9368b367",
+      "parent": {
+        "type": "block_id",
+        "block_id": "1d376841-73f9-80e2-8ab3-c98d4feae0f0"
+      },
+      "created_time": "2025-04-12T04:29:00.000Z",
+      "last_edited_time": "2025-04-12T04:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "JapaParking Expands to 10 New Cities",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "JapaParking Expands to 10 New Cities",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Strategic expansion brings smart parking solutions to major urban centers, serving over 1 million drivers monthly",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Strategic expansion brings smart parking solutions to major urban centers, serving over 1 million drivers monthly",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "[Image placeholder: City implementation map]",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "[Image placeholder: City implementation map]",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Market Analysis Report, Growth Statistics",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Market Analysis Report, Growth Statistics",
+              "href": null
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "1d376841-73f9-8056-8dbe-d02827efc685",
+      "parent": {
+        "type": "block_id",
+        "block_id": "1d376841-73f9-80e2-8ab3-c98d4feae0f0"
+      },
+      "created_time": "2025-04-12T04:29:00.000Z",
+      "last_edited_time": "2025-04-12T04:29:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "64cdcf2b-b1a2-4cd9-abdd-8f0ce803e2af"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Sustainability Award for Green Parking Innovation",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Sustainability Award for Green Parking Innovation",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "JapaParking receives Environmental Excellence Award for reducing carbon emissions through efficient parking solutions",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "JapaParking receives Environmental Excellence Award for reducing carbon emissions through efficient parking solutions",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "[Image placeholder: Award ceremony]",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "[Image placeholder: Award ceremony]",
+              "href": null
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": {
+                "content": "Environmental Impact Study, Award Certificate",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Environmental Impact Study, Award Certificate",
+              "href": null
+            }
+          ]
+        ]
+      }
+    }
+  ],
+  "structuredData": {
+    "headers": [
+      "Title",
+      "Description",
+      "Image Link",
+      "Attachments"
+    ],
+    "data": [
+      {
+        "Title": "JapaParking Revolutionizes Urban Parking Solutions",
+        "Description": "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
+        "Image Link": "[Image placeholder: Smart parking interface]",
+        "Attachments": "Press Release, Product Photos"
+      },
+      {
+        "Title": "AI-Powered Parking Management Platform Launches",
+        "Description": "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
+        "Image Link": "[Image placeholder: AI visualization dashboard]",
+        "Attachments": "Technical Specifications, Case Study"
+      },
+      {
+        "Title": "JapaParking Expands to 10 New Cities",
+        "Description": "Strategic expansion brings smart parking solutions to major urban centers, serving over 1 million drivers monthly",
+        "Image Link": "[Image placeholder: City implementation map]",
+        "Attachments": "Market Analysis Report, Growth Statistics"
+      },
+      {
+        "Title": "Sustainability Award for Green Parking Innovation",
+        "Description": "JapaParking receives Environmental Excellence Award for reducing carbon emissions through efficient parking solutions",
+        "Image Link": "[Image placeholder: Award ceremony]",
+        "Attachments": "Environmental Impact Study, Award Certificate"
+      }
+    ]
+  }
+}

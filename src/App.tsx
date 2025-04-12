@@ -100,8 +100,8 @@ const App = () => {
   console.log('BASE_URL:', import.meta.env.BASE_URL);
   console.log('Basename configurado:', basename);
   
-  // Usar HashRouter en producción para evitar problemas con las rutas
-  const Router = isProduction ? HashRouter : BrowserRouter;
+  // Always use BrowserRouter for clean URLs
+  const Router = BrowserRouter;
   
   useEffect(() => {
     console.log("App montada. El DOM debería estar renderizando.");

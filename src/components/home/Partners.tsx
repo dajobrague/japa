@@ -10,44 +10,128 @@ import { useDemoForm } from "@/contexts/DemoFormContext";
 const partnerLogos = [
   {
     id: 1,
-    name: "University of California",
-    logo: "/lovable-uploads/University-of-California-logo.png",
-    alt: "University of California logo",
+    name: "University of California, Berkeley",
+    logo: "/partner-logos/ucb-logo-2000x2000.png",
+    alt: "UC Berkeley logo",
     category: "University"
   },
   {
     id: 2,
-    name: "City of Austin",
-    logo: "/lovable-uploads/Flag_of_Austin,_Texas.svg.png",
-    alt: "City of Austin logo",
-    category: "City"
+    name: "University of California, Davis",
+    logo: "/partner-logos/UCDavis.png",
+    alt: "UC Davis logo",
+    category: "University"
   },
   {
     id: 3,
+    name: "UC Davis Health",
+    logo: "/partner-logos/UCDavis_Health.png",
+    alt: "UC Davis Health logo",
+    category: "Healthcare"
+  },
+  {
+    id: 4,
+    name: "City of Vacaville",
+    logo: "/partner-logos/vacaville.gif",
+    alt: "City of Vacaville logo",
+    category: "City"
+  },
+  {
+    id: 5,
+    name: "City of Woodland",
+    logo: "/partner-logos/Woodland.png",
+    alt: "City of Woodland logo",
+    category: "City"
+  },
+  {
+    id: 6,
+    name: "City of Dana Point",
+    logo: "/partner-logos/DanaPoint.png",
+    alt: "City of Dana Point logo",
+    category: "City"
+  },
+  {
+    id: 7,
+    name: "Sacramento Municipal Utility District",
+    logo: "/partner-logos/Sacramento-Muni-Utility-District.png",
+    alt: "Sacramento Municipal Utility District logo",
+    category: "Organization"
+  },
+  {
+    id: 8,
     name: "Gillette Stadium",
-    logo: "/lovable-uploads/Gillette.jpeg",
+    logo: "/partner-logos/Gillette (1).jpeg",
     alt: "Gillette Stadium logo",
     category: "Venue"
   },
   {
-    id: 4,
-    name: "American Hospital Association",
-    logo: "/lovable-uploads/american-hospital-association.svg",
-    alt: "American Hospital Association logo",
-    category: "Organization"
+    id: 9,
+    name: "Scottish Rite Children's Hospital",
+    logo: "/partner-logos/ScottishRiteHospital.png",
+    alt: "Scottish Rite Children's Hospital logo",
+    category: "Healthcare"
   },
   {
-    id: 5,
-    name: "CalPoly Pomona",
-    logo: "/lovable-uploads/calpolypamona.jpg",
-    alt: "CalPoly Pomona logo",
+    id: 10,
+    name: "Cal Poly Pomona University",
+    logo: "/partner-logos/calpolypamona (1).jpg",
+    alt: "Cal Poly Pomona University logo",
     category: "University"
   },
   {
-    id: 6,
-    name: "Paysafe",
-    logo: "/lovable-uploads/paysafe-logo-240x240.png",
-    alt: "Paysafe logo",
+    id: 11,
+    name: "NC State University",
+    logo: "/partner-logos/NCStateUniversity.jpg",
+    alt: "NC State University logo",
+    category: "University"
+  },
+  {
+    id: 12,
+    name: "University of California, San Francisco",
+    logo: "/partner-logos/UC-SanFrancisco.jpg",
+    alt: "UC San Francisco logo",
+    category: "University"
+  },
+  {
+    id: 13,
+    name: "Castro District",
+    logo: "/partner-logos/CastroDistrict.jpg",
+    alt: "Castro District logo",
+    category: "District"
+  },
+  {
+    id: 14,
+    name: "USC",
+    logo: "/partner-logos/USC.png",
+    alt: "USC logo",
+    category: "University"
+  },
+  {
+    id: 15,
+    name: "UCLA",
+    logo: "/partner-logos/UCLA 2.jpg",
+    alt: "UCLA logo",
+    category: "University"
+  },
+  {
+    id: 16,
+    name: "Columbus International Airport",
+    logo: "/partner-logos/Columbus Airport Pilot.webp",
+    alt: "Columbus International Airport logo",
+    category: "Airport"
+  },
+  {
+    id: 17,
+    name: "Siemens",
+    logo: "/partner-logos/siemens-logo-240x240.png",
+    alt: "Siemens logo",
+    category: "Industry"
+  },
+  {
+    id: 18,
+    name: "NWave",
+    logo: "/partner-logos/nwave-logo-2000x2000.png",
+    alt: "NWave logo",
     category: "Industry"
   }
 ];
@@ -335,7 +419,7 @@ const Partners = () => {
                     </p>
                   </div>
                   <div className="text-sm text-japa-slate/70 mb-6">
-                    <span className="font-medium text-japa-slate">Yasser Jabbari</span> - Parking Director, UCRiverside
+                    <span className="font-medium text-japa-slate">Yasser Jabbari</span> - Parking Director, UC Riverside
                   </div>
                 </div>
               </div>

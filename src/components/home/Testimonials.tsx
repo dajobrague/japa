@@ -29,7 +29,7 @@ const testimonials = [
     id: 3,
     initials: "YJ",
     name: "Yasser Jabbari",
-    position: "Parking Director, UCRiverside",
+    position: "Parking Director, UC Riverside",
     text: "The Data JAPA provides for my parking operation helps manage our inventory and our commuters are happier!",
     rating: 5,
     featured: false
