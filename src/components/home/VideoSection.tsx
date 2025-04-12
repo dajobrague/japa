@@ -82,7 +82,6 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoUrl }) => {
                 ref={videoRef}
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 controls={isPlaying}
-                muted
                 loop
                 playsInline
                 preload="metadata"

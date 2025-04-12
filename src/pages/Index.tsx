@@ -25,14 +25,14 @@ const Index = () => {
       <SectionTransition animation="fade-in" threshold={0.1} id="illustration-section">
         <IllustrationSection />
       </SectionTransition>
-      <SectionTransition animation="fade-up" threshold={0.1} id="features-section">
-        <Features />
-      </SectionTransition>
       <SectionTransition animation="slide-in-right" threshold={0.1} id="partners-section">
         <Partners />
       </SectionTransition>
       <SectionTransition animation="fade-up" threshold={0.1} id="video-section">
         <VideoSection videoUrl={videoUrl} />
+      </SectionTransition>
+      <SectionTransition animation="fade-up" threshold={0.1} id="features-section">
+        <Features />
       </SectionTransition>
       <SectionTransition animation="fade-in" threshold={0.1} id="app-showcase-section">
         <AppShowcase />
