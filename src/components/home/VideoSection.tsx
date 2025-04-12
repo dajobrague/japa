@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import AnimationWrapper from '../ui/AnimationWrapper';
 import Pill from '../ui/Pill';
-import { Play, Pause } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 interface VideoSectionProps {
   videoUrl: string;
@@ -45,6 +45,10 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoUrl }) => {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
+        // Reset to beginning when starting playback
+        if (!isPlaying) {
+          videoRef.current.currentTime = 0;
+        }
         videoRef.current.play();
       }
       setIsPlaying(!isPlaying);
@@ -100,18 +104,6 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoUrl }) => {
                 >
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-japa-orange/90 flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
                     <Play className="w-10 h-10 md:w-12 md:h-12 text-white ml-1" />
-                  </div>
-                </div>
-              )}
-              
-              {/* Pause button overlay - only visible when video is playing */}
-              {isPlaying && (
-                <div 
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer opacity-0 hover:opacity-100 transition-opacity"
-                  onClick={togglePlay}
-                >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/50 flex items-center justify-center">
-                    <Pause className="w-8 h-8 md:w-10 md:h-10 text-white" />
                   </div>
                 </div>
               )}
