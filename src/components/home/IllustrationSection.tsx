@@ -4,13 +4,13 @@ import Pill from '../ui/Pill';
 
 const IllustrationSection = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-1/4 right-0 w-64 h-64 bg-japa-orange/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-japa-blue/5 rounded-full blur-3xl -z-10" />
       
       <div className="container-wide px-4 md:px-6">
-        <div className="text-center mb-8 md:mb-10 lg:mb-12">
+        <div className="text-center mb-6 md:mb-8 lg:mb-10">
           <AnimationWrapper animation="fade-up" delay={100}>
             <Pill className="inline-flex mb-3">JAPA Overview</Pill>
             <h2 className="text-balance font-display font-bold text-japa-slate text-3xl sm:text-4xl md:text-5xl mb-3 md:mb-4 leading-tight mx-auto max-w-3xl">
@@ -23,49 +23,50 @@ const IllustrationSection = () => {
         </div>
         
         <AnimationWrapper animation="fade-up" delay={200}>
-          <div className="relative max-w-5xl mx-auto">
+          {/* Increased max-width from 5xl to 6xl and added more negative margin for full-width effect */}
+          <div className="relative max-w-6xl mx-auto -mx-4 sm:mx-auto px-4 sm:px-0">
             {/* Enhanced shadow effect */}
             <div className="absolute inset-0 rounded-xl md:rounded-2xl shadow-2xl opacity-20 transform translate-y-4 scale-95 blur-md"></div>
             
             {/* Illustration container with subtle hover effect */}
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-gray-100/50 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
-              {/* Responsive image handling */}
-              <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden">
+              {/* Responsive image handling - increased height with larger aspect ratio */}
+              <div className="relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[21/8] overflow-hidden">
                 <img 
                   src="/lovable-uploads/JAPA_ILLUSTRATION.png" 
                   alt="JAPA Smart Parking Platform Illustration" 
-                  className="w-full h-full object-contain object-center"
+                  className="w-full h-full object-contain object-center scale-110"
                 />
                 
                 {/* Subtle gradient overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-30"></div>
               </div>
               
-              {/* Caption for the illustration */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg py-1.5 px-3 shadow-md border border-gray-100 hidden md:block">
+              {/* Caption for the illustration - adjusted positioning */}
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg py-2 px-4 shadow-md border border-gray-100 hidden md:block">
                   <span className="text-japa-slate text-sm font-medium">Integrated Parking Ecosystem</span>
                 </div>
                 
-                <div className="bg-japa-orange/90 backdrop-blur-sm rounded-lg py-1.5 px-3 shadow-md border border-japa-orange/20 hidden md:block">
+                <div className="bg-japa-orange/90 backdrop-blur-sm rounded-lg py-2 px-4 shadow-md border border-japa-orange/20 hidden md:block">
                   <span className="text-white text-sm font-medium">IoT Sensors & Analytics</span>
                 </div>
               </div>
             </div>
             
-            {/* Floating badges for different screen sizes */}
-            <div className="absolute -bottom-5 -right-5 bg-white rounded-full p-3 shadow-lg border border-gray-100 hidden lg:block transform rotate-12">
+            {/* Floating badges for different screen sizes - adjusted positioning for larger container */}
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-full p-3 shadow-lg border border-gray-100 hidden lg:block transform rotate-12">
               <div className="bg-japa-blue/10 rounded-full p-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-japa-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-japa-blue">
                   <circle cx="12" cy="12" r="4"></circle>
                   <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
                 </svg>
               </div>
             </div>
             
-            <div className="absolute -top-5 -left-5 bg-white rounded-full p-3 shadow-lg border border-gray-100 hidden lg:block transform -rotate-12">
+            <div className="absolute -top-6 -left-6 bg-white rounded-full p-3 shadow-lg border border-gray-100 hidden lg:block transform -rotate-12">
               <div className="bg-japa-orange/10 rounded-full p-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-japa-orange">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-japa-orange">
                   <path d="M18 6H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path>
                   <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
                   <circle cx="10" cy="13" r="2"></circle>
