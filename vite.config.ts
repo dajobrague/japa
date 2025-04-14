@@ -40,6 +40,9 @@ export default defineConfig(({ mode }) => ({
           if (assetInfo.name && assetInfo.name.endsWith('.css')) {
             return 'assets/index.css';
           }
+          if (assetInfo.name && assetInfo.name.startsWith('partner-logos/')) {
+            return 'partner-logos/[name].[ext]';
+          }
           return 'assets/[name].[ext]';
         },
         manualChunks: {
@@ -67,5 +70,6 @@ export default defineConfig(({ mode }) => ({
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
     'import.meta.env.BASE_URL': JSON.stringify('./')
-  }
+  },
+  publicDir: 'public',
 }));

@@ -11,126 +11,126 @@ const partnerLogos = [
   {
     id: 1,
     name: "University of California, Berkeley",
-    logo: "/partner-logos/ucb-logo-2000x2000.png",
+    logo: "/assets/images/ucb-logo-2000x2000.png",
     alt: "UC Berkeley logo",
     category: "University"
   },
   {
     id: 2,
     name: "University of California, Davis",
-    logo: "/partner-logos/UCDavis.png",
+    logo: "/assets/images/UCDavis.png",
     alt: "UC Davis logo",
     category: "University"
   },
   {
     id: 3,
     name: "UC Davis Health",
-    logo: "/partner-logos/UCDavis_Health.png",
+    logo: "/assets/images/UCDavis_Health.png",
     alt: "UC Davis Health logo",
     category: "Healthcare"
   },
   {
     id: 4,
     name: "City of Vacaville",
-    logo: "/partner-logos/vacaville.gif",
+    logo: "/assets/images/vacaville.gif",
     alt: "City of Vacaville logo",
     category: "City"
   },
   {
     id: 5,
     name: "City of Woodland",
-    logo: "/partner-logos/Woodland.png",
+    logo: "/assets/images/Woodland.png",
     alt: "City of Woodland logo",
     category: "City"
   },
   {
     id: 6,
     name: "City of Dana Point",
-    logo: "/partner-logos/DanaPoint.png",
+    logo: "/assets/images/DanaPoint.png",
     alt: "City of Dana Point logo",
     category: "City"
   },
   {
     id: 7,
     name: "Sacramento Municipal Utility District",
-    logo: "/partner-logos/Sacramento-Muni-Utility-District.png",
+    logo: "/assets/images/Sacramento-Muni-Utility-District.png",
     alt: "Sacramento Municipal Utility District logo",
     category: "Organization"
   },
   {
     id: 8,
     name: "Gillette Stadium",
-    logo: "/partner-logos/Gillette (1).jpeg",
+    logo: "/assets/images/Gillette (1).jpeg",
     alt: "Gillette Stadium logo",
     category: "Venue"
   },
   {
     id: 9,
     name: "Scottish Rite Children's Hospital",
-    logo: "/partner-logos/ScottishRiteHospital.png",
+    logo: "/assets/images/ScottishRiteHospital.png",
     alt: "Scottish Rite Children's Hospital logo",
     category: "Healthcare"
   },
   {
     id: 10,
     name: "Cal Poly Pomona University",
-    logo: "/partner-logos/calpolypamona (1).jpg",
+    logo: "/assets/images/calpolypamona (1).jpg",
     alt: "Cal Poly Pomona University logo",
     category: "University"
   },
   {
     id: 11,
     name: "NC State University",
-    logo: "/partner-logos/NCStateUniversity.jpg",
+    logo: "/assets/images/NCStateUniversity.jpg",
     alt: "NC State University logo",
     category: "University"
   },
   {
     id: 12,
     name: "University of California, San Francisco",
-    logo: "/partner-logos/UC-SanFrancisco.jpg",
+    logo: "/assets/images/UC-SanFrancisco.jpg",
     alt: "UC San Francisco logo",
     category: "University"
   },
   {
     id: 13,
     name: "Castro District",
-    logo: "/partner-logos/CastroDistrict.jpg",
+    logo: "/assets/images/CastroDistrict.jpg",
     alt: "Castro District logo",
     category: "District"
   },
   {
     id: 14,
     name: "USC",
-    logo: "/partner-logos/USC.png",
+    logo: "/assets/images/USC.png",
     alt: "USC logo",
     category: "University"
   },
   {
     id: 15,
     name: "UCLA",
-    logo: "/partner-logos/UCLA 2.jpg",
+    logo: "/assets/images/UCLA 2.jpg",
     alt: "UCLA logo",
     category: "University"
   },
   {
     id: 16,
     name: "Columbus International Airport",
-    logo: "/partner-logos/Columbus Airport Pilot.webp",
+    logo: "/assets/images/Columbus Airport Pilot.webp",
     alt: "Columbus International Airport logo",
     category: "Airport"
   },
   {
     id: 17,
     name: "Siemens",
-    logo: "/partner-logos/siemens-logo-240x240.png",
+    logo: "/assets/images/siemens-logo-240x240.png",
     alt: "Siemens logo",
     category: "Industry"
   },
   {
     id: 18,
     name: "NWave",
-    logo: "/partner-logos/nwave-logo-2000x2000.png",
+    logo: "/assets/images/nwave-logo-2000x2000.png",
     alt: "NWave logo",
     category: "Industry"
   }
