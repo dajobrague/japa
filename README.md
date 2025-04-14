@@ -1,8 +1,8 @@
-# SmartPark Hub
+# JAPA
 
-![SmartPark Hub Logo](public/assets/images/logo.png)
+![JAPA Logo](public/assets/images/logo.png)
 
-SmartPark Hub is a modern web application for managing and optimizing parking operations. It provides real-time parking data, analytics, and management tools for organizations of all sizes.
+JAPA is a modern web application for managing and optimizing parking operations. It provides real-time parking data, analytics, and management tools for organizations of all sizes.
 
 ## 🌟 Features
 
@@ -79,7 +79,7 @@ If you're experiencing issues with the Notion API:
 ## 🏗️ Project Structure
 
 ```
-smartpark-hub/
+japa/
 ├── public/                 # Static assets
 │   └── assets/             # Images, fonts, etc.
 ├── src/                    # Source code
@@ -109,7 +109,7 @@ smartpark-hub/
 
 ### Features Section
 
-The Features section showcases the main capabilities of SmartPark Hub. It includes:
+The Features section showcases the main capabilities of JAPA. It includes:
 
 - Feature cards with icons, titles, descriptions, and statistics
 - Interactive modals with detailed information about each feature
@@ -117,7 +117,7 @@ The Features section showcases the main capabilities of SmartPark Hub. It includ
 
 ### Video Section
 
-The Video section demonstrates the SmartPark Hub platform in action:
+The Video section demonstrates the JAPA platform in action:
 
 - Embedded video with custom controls
 - Play functionality with no pause button overlay
@@ -125,7 +125,7 @@ The Video section demonstrates the SmartPark Hub platform in action:
 
 ### Partners Section
 
-The Partners section highlights organizations that trust SmartPark Hub:
+The Partners section highlights organizations that trust JAPA:
 
 - Partner logos with hover effects
 - "Why organizations choose JAPA" section with key benefits
@@ -142,7 +142,7 @@ The Partners section highlights organizations that trust SmartPark Hub:
 
 ## 📱 Responsive Design
 
-SmartPark Hub is fully responsive and works on all device sizes:
+JAPA is fully responsive and works on all device sizes:
 
 - **Mobile**: Optimized for small screens with touch-friendly controls
 - **Tablet**: Enhanced layout for medium-sized screens
@@ -186,9 +186,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any questions or inquiries, please contact:
 
-- Email: contact@smartparkhub.com
-- Website: https://www.smartparkhub.com
+- Email: contact@japa.com
+- Website: https://www.parkjapa.com
 
 ---
 
-Made with ❤️ by the SmartPark Hub Team
+Made with ❤️ by the Airvues Team
