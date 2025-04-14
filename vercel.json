@@ -7,17 +7,9 @@
       "config": {
         "distDir": "dist"
       }
-    },
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/api/notion/(.*)",
-      "dest": "/server.js"
-    },
     {
       "src": "/assets/(.*)",
       "headers": { 
@@ -29,9 +21,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_NOTION_TOKEN": "@vite_notion_token",
-    "VITE_NOTION_TABLE_BLOCK_ID": "@vite_notion_table_block_id"
-  }
+  ]
 } 

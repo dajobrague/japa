@@ -95,11 +95,13 @@ smartpark-hub/
 │   ├── utils/              # Utility functions
 │   ├── App.tsx             # Main App component
 │   └── main.tsx            # Entry point
+├── server/                 # Backend proxy server for Notion API
 ├── .eslintrc.js            # ESLint configuration
 ├── .prettierrc             # Prettier configuration
 ├── index.html              # HTML template
 ├── package.json            # Project dependencies
 ├── tsconfig.json           # TypeScript configuration
+├── vercel.json             # Vercel deployment configuration
 └── vite.config.ts          # Vite configuration
 ```
 
@@ -118,7 +120,7 @@ The Features section showcases the main capabilities of SmartPark Hub. It includ
 The Video section demonstrates the SmartPark Hub platform in action:
 
 - Embedded video with custom controls
-- Play/pause functionality
+- Play functionality with no pause button overlay
 - Responsive design that adapts to different screen sizes
 
 ### Partners Section
@@ -158,6 +160,13 @@ The project is configured for easy deployment to Vercel:
 # Deploy to Vercel
 vercel --prod
 ```
+
+### Recent Deployment Updates
+
+- Updated image paths in the Partners section to use the correct `/assets/images/` directory
+- Fixed the Test page to remove references to non-existent components
+- Improved the Video section to have a play button overlay but no pause button
+- Updated the FAQ page image carousel to use specific images from the Projects page
 
 ## 🤝 Contributing
 
