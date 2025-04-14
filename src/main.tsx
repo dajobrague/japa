@@ -1,18 +1,18 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import './index.css';
 
-console.log('Aplicación iniciando - Verificando carga...');
+const rootElement = document.getElementById('root');
 
-try {
-  const rootElement = document.getElementById("root");
-  if (!rootElement) {
-    console.error('Elemento root no encontrado');
-  } else {
-    console.log('Elemento root encontrado, renderizando App');
-    createRoot(rootElement).render(<App />);
-    console.log('App renderizada');
-  }
-} catch (error) {
-  console.error('Error al renderizar la aplicación:', error);
+if (!rootElement) {
+  throw new Error('Failed to find the root element');
 }
+
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

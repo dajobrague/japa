@@ -14,8 +14,9 @@ import FAQs from "./pages/FAQs";
 import Press from "./pages/Press";
 import PressAdmin from "./pages/PressAdmin";
 import NotFound from "./pages/NotFound";
+import { Test } from "./pages/Test";
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useState, ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 // Crear un cliente de consulta con opciones de retry
 const queryClient = new QueryClient({
@@ -134,6 +135,7 @@ const App = () => {
                   <Route path="/faqs" element={<FAQs />} />
                   <Route path="/press" element={<Press />} />
                   <Route path="/press-admin" element={<PressAdmin />} />
+                  <Route path="/test" element={<Test />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

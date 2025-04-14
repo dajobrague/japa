@@ -24,8 +24,7 @@ const quickLinks = [
     title: "Company",
     links: [
       { name: "About Us", url: "/about" },
-      { name: "Partners", url: "/partners" },
-      { name: "Press", url: "/press" }
+      { name: "Partners", url: "/partners" }
     ]
   },
   {
@@ -69,7 +68,7 @@ const Footer = () => {
               <Link to="/" className="inline-block" aria-label="JAPA Home">
                 <div className="flex items-center">
                   <img 
-                    src="/lovable-uploads/010113ec-e217-447e-b10d-06b06d31ed9f.jpg" 
+                    src="/assets/images/partners/010113ec-e217-447e-b10d-06b06d31ed9f.jpg" 
                     alt="JAPA Logo" 
                     className="h-8 md:h-10 w-auto"
                   />

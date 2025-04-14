@@ -15,19 +15,19 @@ import { ChevronRight, ChevronDown, Filter, X, ExternalLink, CalendarCheck } fro
 // Define the sensor images for the slider
 const sensorImages = [
   {
-    src: "/lovable-uploads/sensor12.png",
+    src: "/assets/images/sensors/sensor12.png",
     alt: "JAPA Sensor Installation - Secondary View"
   },
   {
-    src: "/lovable-uploads/NWA-004. 4bat. Embedded sensor expl.png",
+    src: "/assets/images/sensors/NWA-004. 4bat. Embedded sensor expl.png",
     alt: "JAPA Embedded Sensor Exploded View"
   },
   {
-    src: "/lovable-uploads/4279DBC0-BEF5-494C-BEEC-F54801983C32_1_105_c.jpeg",
+    src: "/assets/images/sensors/4279DBC0-BEF5-494C-BEEC-F54801983C32_1_105_c.jpeg",
     alt: "JAPA Sensor Installation - New View 1"
   },
   {
-    src: "/lovable-uploads/IMG_5475.jpg",
+    src: "/assets/images/sensors/IMG_5475.jpg",
     alt: "JAPA Sensor Installation - New View 2"
   }
 ];

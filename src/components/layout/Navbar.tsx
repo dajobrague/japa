@@ -11,7 +11,6 @@ const navLinks = [
   { name: "Use Cases", href: "/use-cases" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
-  { name: "Press", href: "/press" },
   { name: "FAQs", href: "/faqs" },
 ];
 
@@ -94,7 +93,7 @@ const Navbar = () => {
           className="flex items-center gap-2 font-display font-bold text-xl text-japa-slate"
         >
           <img 
-            src="/lovable-uploads/Logo-01.png" 
+            src="/assets/images/partners/Logo-01.png" 
             alt="JAPA Logo" 
             className="h-5 md:h-6 w-auto"
           />

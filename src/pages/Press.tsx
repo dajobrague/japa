@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import PressHero from '@/components/press/PressHero';
 import PressReleaseList from '@/components/press/PressReleaseList';
-// import PressCTA from '@/components/press/PressCTA';
-// import PressKitSection from '@/components/press/PressKitSection';
-// import PressContactSection from '@/components/press/PressContactSection';
+import AnimationWrapper from '@/components/common/AnimationWrapper';
 import PressFilters from '@/components/press/PressFilters';
 import { fetchNotionPressItems } from '@/services/notionPressService';
 import { PressCategory, PressItem } from '@/types/press';
@@ -18,17 +16,23 @@ const Press: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState<PressCategory[]>([]);
   const [years, setYears] = useState<string[]>([]);
+  const [error, setError] = useState<string | null>(null);
   
   // Load data from Notion when component mounts
   useEffect(() => {
     const loadNotionData = async () => {
       try {
         setIsLoading(true);
+        setError(null);
         console.log('📢 Press page: Starting to load Notion data...');
         
-        // Use only Notion data, not merging with static data
         const notionData = await fetchNotionPressItems();
         console.log('📢 Press page: Notion data loaded:', notionData.length, 'items');
+        
+        if (notionData.length === 0) {
+          setError('No press releases found. Please try again later.');
+          return;
+        }
         
         setPressReleases(notionData);
         
@@ -46,8 +50,8 @@ const Press: React.FC = () => {
         console.log('📢 Press page: Years updated:', yrs);
       } catch (error) {
         console.error('❌ Error loading Notion data:', error);
+        setError('Failed to load press releases. Please try again later.');
         setPressReleases([]);
-        console.log('📢 Press page: Error loading data, showing empty press list');
       } finally {
         setIsLoading(false);
       }
@@ -104,6 +108,20 @@ const Press: React.FC = () => {
               <div className="text-center py-12">
                 <div className="inline-block w-8 h-8 border-t-2 border-japa-blue rounded-full animate-spin"></div>
                 <p className="mt-4 text-japa-slate/70">Loading press releases...</p>
+              </div>
+            ) : error ? (
+              <div className="text-center py-12">
+                <p className="text-red-500">{error}</p>
+                <button 
+                  onClick={() => window.location.reload()} 
+                  className="mt-4 px-4 py-2 bg-japa-blue text-white rounded-lg hover:bg-japa-blue/90 transition-colors"
+                >
+                  Try Again
+                </button>
+              </div>
+            ) : filteredReleases.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-japa-slate/70">No press releases found for the selected filters.</p>
               </div>
             ) : (
               <PressReleaseList pressReleases={filteredReleases} />

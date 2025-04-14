@@ -30,7 +30,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqItems }) => {
             <AnimationWrapper animation="fade-right">
               <div className="relative rounded-xl overflow-hidden h-full min-h-[300px] shadow-lg">
                 <img 
-                  src="/lovable-uploads/doug-bagg-FB406CKGL0Q-unsplash.jpg" 
+                  src="/assets/images/features/doug-bagg-FB406CKGL0Q-unsplash.jpg" 
                   alt="Smart parking solutions in action" 
                   className="w-full h-full object-cover" 
                 />

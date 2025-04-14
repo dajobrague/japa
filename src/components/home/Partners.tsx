@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import AnimationWrapper from "../ui/AnimationWrapper";
+import AnimationWrapper from "../common/AnimationWrapper";
 import Pill from "../ui/Pill";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import AnimatedButton from "../ui/AnimatedButton";
+import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, CheckCircle2 } from "lucide-react";
+import AnimatedButton from "../common/AnimatedButton";
 import { useDemoForm } from "@/contexts/DemoFormContext";
 
 // Partner data with original names - TBD flag removed
@@ -437,8 +437,8 @@ const Partners = () => {
               
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-japa-orange/15 text-japa-orange flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-japa-orange"></span>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/15 text-green-500 flex items-center justify-center">
+                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
                   </div>
                   <div>
                     <h4 className="text-japa-slate font-medium">Precision Sensors</h4>
@@ -447,8 +447,8 @@ const Partners = () => {
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-japa-blue/15 text-japa-blue flex items-center justify-center">
-                    <span className="w-2 h-2 rounded-full bg-japa-blue"></span>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/15 text-green-500 flex items-center justify-center">
+                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
                   </div>
                   <div>
                     <h4 className="text-japa-slate font-medium">Data Analytics</h4>

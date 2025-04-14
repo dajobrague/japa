@@ -8,23 +8,23 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 // Carousel images from other pages
 const carouselImages = [
   {
-    src: "/lovable-uploads/image.png",
+    src: "/assets/images/features/image.png",
     alt: "Real-Time Parking Data"
   },
   {
-    src: "/lovable-uploads/analytics_image.png",
+    src: "/assets/images/features/analytics_image.png",
     alt: "Analytics & Insights"
   },
   {
-    src: "/lovable-uploads/violation_image.png",
+    src: "/assets/images/features/violation_image.png",
     alt: "Violation Tracking"
   },
   {
-    src: "/lovable-uploads/JAPA_ILLUSTRATION.png",
+    src: "/assets/images/illustrations/JAPA_ILLUSTRATION.png",
     alt: "Seamless Integration"
   },
   {
-    src: "/lovable-uploads/Console 1210.21.png",
+    src: "/assets/images/features/Console 1210.21.png",
     alt: "Web Management Console"
   }
 ];
@@ -99,37 +99,37 @@ const teamMembers = [
   {
     name: "Mathew Magno",
     position: "CEO & Co-founder",
-    image: "/lovable-uploads/LinkedIn_Matt.jpeg",
+    image: "/assets/images/team/LinkedIn_Matt.jpeg",
     bio: "Driving JAPA's vision to transform parking management through innovative smart solutions."
   },
   {
     name: "Charles Chen",
     position: "CTO & Co-founder",
-    image: "/lovable-uploads/LinkedIn_Charles.jpeg",
+    image: "/assets/images/team/LinkedIn_Charles.jpeg",
     bio: "Leading the technological innovation and engineering excellence at JAPA."
   },
   {
     name: "Kevin Burnham",
     position: "Project Manager",
-    image: "/lovable-uploads/LinkedIn_Kevin.jpeg",
+    image: "/assets/images/team/LinkedIn_Kevin.jpeg",
     bio: "Ensuring seamless delivery and implementation of JAPA's smart parking solutions."
   },
   {
     name: "Mariana Arcaya",
     position: "Sales Manager",
-    image: "/lovable-uploads/LinkedIn_Mariana.jpeg",
+    image: "/assets/images/team/LinkedIn_Mariana.jpeg",
     bio: "Growing JAPA's market presence and building strong client partnerships."
   },
   {
     name: "Tammy Nguyen",
     position: "Engineering Lead",
-    image: "/lovable-uploads/LinkedIn_Tammy.jpeg",
+    image: "/assets/images/team/LinkedIn_Tammy.jpeg",
     bio: "Developing cutting-edge sensor technology and IoT infrastructure for smart parking systems."
   },
   {
     name: "D.J. Stephan",
     position: "CRO",
-    image: "/lovable-uploads/LinkedIn_DJ.jpeg",
+    image: "/assets/images/team/LinkedIn_DJ.jpeg",
     bio: "Optimizing revenue generation strategies and driving business growth for JAPA."
   }
 ];

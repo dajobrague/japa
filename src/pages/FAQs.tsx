@@ -9,24 +9,20 @@ import { useDemoForm } from '@/contexts/DemoFormContext';
 // Carousel images from other pages
 const carouselImages = [
   {
-    src: "/lovable-uploads/aerial-parking-lot.jpg",
-    alt: "Smart Parking Aerial View"
+    src: "https://www.parkjapa.com/assets/images/UCBProj.jpg",
+    alt: "University of California, Berkeley"
   },
   {
-    src: "/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg",
-    alt: "University Parking Solution"
+    src: "https://www.parkjapa.com/assets/images/UCDMCProj.jpg",
+    alt: "UC Davis Medical Center"
   },
   {
-    src: "/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg",
-    alt: "City Center Parking"
+    src: "https://www.parkjapa.com/assets/images/vacaville.jpg",
+    alt: "City of Vacaville"
   },
   {
-    src: "/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg",
-    alt: "Stadium Parking System"
-  },
-  {
-    src: "/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg",
-    alt: "Healthcare Facility Parking"
+    src: "https://www.parkjapa.com/assets/images/smud.jpg",
+    alt: "Sacramento Municipal Utility District"
   }
 ];
 

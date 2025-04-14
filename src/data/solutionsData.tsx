@@ -8,7 +8,7 @@ export const featuresData: FeatureContent[] = [
     description: "Convert every parking stall and lane into a live data hub with our high-precision sensors, providing accurate occupancy information in real time.",
     icon: <Gauge className="text-japa-orange w-8 h-8" />,
     tags: ["Precision Sensors", "Live Updates", "99% Accuracy"],
-    bgImage: "/lovable-uploads/image.png",
+    bgImage: "/assets/images/features/image.png",
     detailedContent: {
       overview: "Our real-time parking data solution transforms traditional parking spaces into smart, connected data hubs that continuously monitor occupancy status with incredible precision.",
       benefits: [
@@ -36,7 +36,7 @@ export const featuresData: FeatureContent[] = [
     description: "Gain actionable insights with daily peak occupancy reports, average stay times, heatmaps, and detailed historical data analysis.",
     icon: <BarChart3 className="text-japa-orange w-8 h-8" />,
     tags: ["Trend Analysis", "Custom Reports", "Data Export"],
-    bgImage: "/lovable-uploads/analytics_image.png",
+    bgImage: "/assets/images/features/analytics_image.png",
     detailedContent: {
       overview: "Our analytics platform transforms raw parking data into meaningful insights that help operators optimize space utilization, improve revenue, and plan for future needs.",
       benefits: [
@@ -64,7 +64,7 @@ export const featuresData: FeatureContent[] = [
     description: "Detect and track parking violations efficiently with automated time-zone monitoring, improving enforcement and increasing turnover.",
     icon: <Shield className="text-japa-orange w-8 h-8" />,
     tags: ["Automated Detection", "Alert System", "Enforcement API"],
-    bgImage: "/lovable-uploads/violation_image.png",
+    bgImage: "/assets/images/features/violation_image.png",
     detailedContent: {
       overview: "Our violation tracking system automatically monitors parking duration in time-limited spaces, generating alerts for enforcement personnel when violations occur.",
       benefits: [
@@ -92,7 +92,7 @@ export const featuresData: FeatureContent[] = [
     description: "Deploy our cutting-edge, wireless parking sensors with minimal installation effort and no surface cutting required. Fully waterproof with 99%+ detection accuracy.",
     icon: <RefreshCw className="text-japa-orange w-8 h-8" />,
     tags: ["5-Minute Installation", "Wireless", "5+ Year Battery", "Weatherproof"],
-    bgImage: "/lovable-uploads/NWA-004. 4bat. Embedded sensor expl.png",
+    bgImage: "/assets/images/sensors/NWA-004. 4bat. Embedded sensor expl.png",
     detailedContent: {
       overview: "Our wireless parking sensors represent the latest in parking detection technology, designed for ultra-simple installation with no wiring, drilling, or pavement cutting required.",
       benefits: [
@@ -120,7 +120,7 @@ export const featuresData: FeatureContent[] = [
     description: "Access our user-friendly web-based dashboard for comprehensive reporting tools and real-time parking management.",
     icon: <Layers className="text-japa-orange w-8 h-8" />,
     tags: ["Intuitive UI", "Role-Based Access", "Real-time Alerts"],
-    bgImage: "/lovable-uploads/Console 1210.21.png",
+    bgImage: "/assets/images/features/Console 1210.21.png",
     detailedContent: {
       overview: "Our management console serves as the central command center for parking operations, providing administrators with complete control and visibility over their parking assets.",
       benefits: [
@@ -148,7 +148,7 @@ export const featuresData: FeatureContent[] = [
     description: "Deliver a premium parking experience with our feature-rich mobile app, helping users find, navigate to, and pay for parking spaces in real-time.",
     icon: <Smartphone className="text-japa-orange w-8 h-8" />,
     tags: ["iOS & Android", "Turn-by-Turn Navigation", "Real-Time Updates", "In-App Payments"],
-    bgImage: "/lovable-uploads/PerSpace-dark-.png",
+    bgImage: "/assets/images/features/PerSpace-dark-.png",
     detailedContent: {
       overview: "Our comprehensive mobile app puts the power of smart parking in users' hands, creating a seamless end-to-end parking experience from finding a space to payment and beyond.",
       benefits: [

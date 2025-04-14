@@ -4,8 +4,21 @@
 import { PressItem, PressCategory } from '@/types/press';
 
 // Notion API configuration
-const NOTION_TOKEN = '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';
-const TABLE_BLOCK_ID = '1d376841-73f9-80e2-8ab3-c98d4feae0f0';
+const NOTION_TOKEN = import.meta.env.VITE_NOTION_TOKEN;
+const TABLE_BLOCK_ID = import.meta.env.VITE_NOTION_TABLE_BLOCK_ID;
+const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development';
+const API_BASE_URL = isDev 
+  ? `${window.location.protocol}//${window.location.hostname}:3001/api/notion`
+  : 'https://api.notion.com/v1';
+
+// Validate environment variables
+if (!NOTION_TOKEN || !TABLE_BLOCK_ID) {
+  console.error('❌ Notion Service: Missing required environment variables. Please check your .env file.');
+  console.error('Required variables: VITE_NOTION_TOKEN, VITE_NOTION_TABLE_BLOCK_ID');
+} else {
+  console.log('✅ Notion Service: Environment variables loaded successfully');
+  console.log('🔄 Notion Service: Using API base URL:', API_BASE_URL);
+}
 
 // Mock Notion data for fallback if API fails
 const MOCK_NOTION_DATA: PressItem[] = [
@@ -64,27 +77,62 @@ const MOCK_NOTION_DATA: PressItem[] = [
   }
 ];
 
-// Determine if we're in development or production
-const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development';
-
-// API URL - Use direct API in production, use proxy server in development
-// In development, use the current host with the proxy port
-const getCurrentHost = () => {
-  return window.location.protocol + '//' + window.location.hostname;
-};
-
-// Get API base URL dynamically
-const getApiBaseUrl = (): string => {
-  if (!isDev) {
-    // Use direct API in production
-    return 'https://api.notion.com/v1';
+// Mock Notion data for fallback if API fails
+const MOCK_NOTION_DATA_2: PressItem[] = [
+  {
+    id: 6004,
+    title: "JapaParking Revolutionizes Urban Parking Solutions",
+    category: "News Release",
+    date: new Date().toISOString(),
+    slug: "japaparking-revolutionizes-urban-parking-solutions",
+    summary: "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
+    content: "<p>Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas</p>",
+    image: "/assets/images/press/placeholder.png",
+    source: {
+      name: "JAPA Inc.",
+      logo: "/assets/images/japa-logo.svg",
+    },
+    featured: true,
+    tags: ["Parking", "Smart Technology", "Urban"],
+    links: {
+      pdf: "/assets/documents/press/press-release.pdf",
+    }
+  },
+  {
+    id: 6005,
+    title: "AI-Powered Parking Management Platform Launches",
+    category: "News Release",
+    date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 1 week ago
+    slug: "ai-powered-parking-management-platform-launches",
+    summary: "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
+    content: "<p>JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots</p>",
+    image: "/assets/images/press/placeholder.png",
+    source: {
+      name: "JAPA Inc.",
+      logo: "/assets/images/japa-logo.svg",
+    },
+    featured: true,
+    tags: ["AI", "Parking", "Innovation"],
+    links: {}
+  },
+  {
+    id: 6006,
+    title: "Environmental Award for Green Parking Solutions",
+    category: "Award",
+    date: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(), // 2 weeks ago
+    slug: "environmental-award-green-parking-solutions",
+    summary: "JAPA receives prestigious Environmental Innovation Award for reducing carbon emissions through efficient parking management",
+    content: "<p>JAPA receives prestigious Environmental Innovation Award for reducing carbon emissions through efficient parking management</p>",
+    image: "/assets/images/press/placeholder.png",
+    source: {
+      name: "JAPA Inc.",
+      logo: "/assets/images/japa-logo.svg",
+    },
+    featured: false,
+    tags: ["Award", "Sustainability", "Green Technology"],
+    links: {}
   }
-  
-  // Use proxy server in development (running on port 3001)
-  const host = getCurrentHost();
-  // We need to use the proxy server port 3001, not the current port
-  return `${host}:3001/api/notion`;
-};
+];
 
 // Helper function to generate a semi-unique ID
 const generateId = (): number => {
@@ -116,36 +164,37 @@ const formatTableRow = (row: any) => {
 };
 
 // Function to fetch table rows from Notion
-const fetchTableRows = async (): Promise<any[]> => {
+async function fetchTableRows() {
   try {
-    console.log('🔄 Notion Service: Fetching data from Notion API...');
+    console.log('🔄 Notion Service: Fetching table rows...');
+    console.log('🔄 Notion Service: Using Table Block ID:', TABLE_BLOCK_ID);
     
-    const API_BASE_URL = getApiBaseUrl();
-    const url = `${API_BASE_URL}/blocks/${TABLE_BLOCK_ID}/children?page_size=100`;
-    console.log('🔄 Notion Service: Request URL:', url);
-    
-    const response = await fetch(url, {
+    const response = await fetch(`${API_BASE_URL}/blocks/${TABLE_BLOCK_ID}/children?page_size=100`, {
       method: 'GET',
-      headers: isDev ? {} : {
+      headers: {
         'Authorization': `Bearer ${NOTION_TOKEN}`,
-        'Notion-Version': '2022-06-28'
-      }
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json'
+      },
+      // Add these options to handle CORS and credentials
+      mode: 'cors',
+      credentials: 'include'
     });
 
-    console.log('🔄 Notion Service: API response status:', response.status, response.statusText);
-
     if (!response.ok) {
-      throw new Error(`Notion API error: ${response.status}`);
+      const errorData = await response.json();
+      console.error('❌ Notion Service: API error details:', errorData);
+      throw new Error(`Notion API error: ${response.status} - ${errorData.error || response.statusText}`);
     }
 
     const data = await response.json();
-    console.log(`🔄 Notion Service: Received ${data.results?.length || 0} rows from Notion`);
+    console.log(`✅ Notion Service: Successfully fetched ${data.results?.length || 0} rows`);
     return data.results || [];
   } catch (error) {
-    console.error('❌ Notion Service: Error fetching Notion data:', error);
-    return [];
+    console.error('❌ Notion Service: Error fetching table rows:', error);
+    throw error;
   }
-};
+}
 
 // Convert Notion table data to PressItem format
 const convertToPressItems = (rows: any[]): PressItem[] => {

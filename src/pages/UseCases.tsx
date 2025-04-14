@@ -40,7 +40,7 @@ const solutionCategories = [
       "Space-by-space monitoring capabilities",
       "Customizable data collection parameters"
     ],
-    bgImage: "/lovable-uploads/image.png",
+    bgImage: "/assets/images/features/image.png",
     stats: {
       key: "Availability Accuracy",
       value: "99%"
@@ -57,7 +57,7 @@ const solutionCategories = [
       "Custom report generation and scheduling",
       "Data export capabilities for integration"
     ],
-    bgImage: "/lovable-uploads/analytics_image.png",
+    bgImage: "/assets/images/features/analytics_image.png",
     stats: {
       key: "Data Points Processed",
       value: "1M+"
@@ -74,7 +74,7 @@ const solutionCategories = [
       "Customizable enforcement parameters",
       "Detailed violation reporting and analytics"
     ],
-    bgImage: "/lovable-uploads/violation_image.png",
+    bgImage: "/assets/images/features/violation_image.png",
     stats: {
       key: "Enforcement Efficiency",
       value: "+40%"
@@ -91,7 +91,7 @@ const solutionCategories = [
       "5+ year battery life with minimal maintenance",
       "Weather-resistant design for all environments"
     ],
-    bgImage: "/lovable-uploads/NWA-004. 4bat. Embedded sensor expl.png",
+    bgImage: "/assets/images/sensors/NWA-004. 4bat. Embedded sensor expl.png",
     stats: {
       key: "Battery Life",
       value: "5+ Years"
@@ -108,7 +108,7 @@ const solutionCategories = [
       "System health monitoring and diagnostics",
       "Configuration and customization options"
     ],
-    bgImage: "/lovable-uploads/Console 1210.21.png",
+    bgImage: "/assets/images/features/Console 1210.21.png",
     stats: {
       key: "Management Efficiency",
       value: "+35%"
@@ -125,7 +125,7 @@ const solutionCategories = [
       "In-app payment processing and history",
       "Time expiration notifications and extensions"
     ],
-    bgImage: "/lovable-uploads/PerSpace-dark-.png",
+    bgImage: "/assets/images/features/PerSpace-dark-.png",
     stats: {
       key: "Search Time Reduction",
       value: "30%"
@@ -248,7 +248,7 @@ const UseCases = () => {
                   <div className="space-y-4">
                     <div className="relative overflow-hidden rounded-xl shadow-md transform hover:-translate-y-2 transition-transform duration-300 group">
                       <img 
-                        src="/lovable-uploads/camilo-botia-k4vFDPJoDZk-unsplash.jpg" 
+                        src="https://www.parkjapa.com/assets/images/UCBProj.jpg" 
                         alt="Universities" 
                         className="w-full h-36 object-cover"
                       />
@@ -262,7 +262,7 @@ const UseCases = () => {
                     </div>
                     <div className="relative overflow-hidden rounded-xl shadow-md transform hover:-translate-y-2 transition-transform duration-300 ml-6 group">
                       <img 
-                        src="/lovable-uploads/k-mitch-hodge-iTlM3NiAl0M-unsplash.jpg" 
+                        src="https://www.parkjapa.com/assets/images/vacaville.jpg" 
                         alt="City Centers" 
                         className="w-full h-36 object-cover"
                       />
@@ -278,7 +278,7 @@ const UseCases = () => {
                   <div className="space-y-4 mt-10">
                     <div className="relative overflow-hidden rounded-xl shadow-md transform hover:-translate-y-2 transition-transform duration-300 group">
                       <img 
-                        src="/lovable-uploads/graham-ruttan-b3LF7JHQmms-unsplash.jpg" 
+                        src="https://www.parkjapa.com/assets/images/UCDMCProj.jpg" 
                         alt="Healthcare" 
                         className="w-full h-36 object-cover"
                       />
@@ -292,7 +292,7 @@ const UseCases = () => {
                     </div>
                     <div className="relative overflow-hidden rounded-xl shadow-md transform hover:-translate-y-2 transition-transform duration-300 ml-6 group">
                       <img 
-                        src="/lovable-uploads/willian-justen-de-vasconcellos-cdWjBaLnpPU-unsplash.jpg" 
+                        src="https://www.parkjapa.com/assets/images/smud.jpg" 
                         alt="Corporate Campuses" 
                         className="w-full h-36 object-cover"
                       />
@@ -470,7 +470,7 @@ const UseCases = () => {
             <AnimationWrapper animation="fade-left" delay={100}>
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/sensor-1080x720.png" 
+                  src="/assets/images/sensors/sensor-1080x720.png" 
                   alt="JAPA Integration Capabilities" 
                   className="w-full h-auto rounded-xl"
                 />

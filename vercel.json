@@ -7,9 +7,17 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/notion/(.*)",
+      "dest": "/server.js"
+    },
     {
       "src": "/assets/(.*)",
       "headers": { 
@@ -18,51 +26,12 @@
       "dest": "/assets/$1"
     },
     {
-      "src": "/assets/(.*)\\.js",
-      "headers": { 
-        "content-type": "application/javascript; charset=utf-8", 
-        "x-content-type-options": "nosniff" 
-      },
-      "dest": "/assets/$1.js"
-    },
-    {
-      "src": "/assets/(.*)\\.css",
-      "headers": { 
-        "content-type": "text/css",
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "dest": "/assets/$1.css"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/lovable-uploads/(.*)",
-      "dest": "/lovable-uploads/$1"
-    },
-    {
-      "src": "/(.*)\\.js",
-      "headers": { 
-        "content-type": "application/javascript; charset=utf-8", 
-        "x-content-type-options": "nosniff" 
-      },
-      "dest": "/$1.js"
-    },
-    {
-      "src": "/(.*)\\.css",
-      "headers": { 
-        "content-type": "text/css",
-        "cache-control": "public, max-age=31536000"
-      },
-      "dest": "/$1.css"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "VITE_NOTION_TOKEN": "@vite_notion_token",
+    "VITE_NOTION_TABLE_BLOCK_ID": "@vite_notion_table_block_id"
+  }
 } 

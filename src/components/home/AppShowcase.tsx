@@ -1,6 +1,7 @@
-import React from "react";
-import AnimationWrapper from "../ui/AnimationWrapper";
-import AnimatedButton from "../ui/AnimatedButton";
+import React, { useState } from "react";
+import AnimationWrapper from "../common/AnimationWrapper";
+import AnimatedButton from "../common/AnimatedButton";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useDemoForm } from "@/contexts/DemoFormContext";
 import Pill from "../ui/Pill";
 
@@ -99,7 +100,7 @@ const AppShowcase = () => {
             <AnimationWrapper animation="fade-up" delay={150}>
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/PerSpace-dark-.png" 
+                  src="/assets/images/features/PerSpace-dark-.png" 
                   alt="JAPA Mobile App Interface"
                   className="w-full h-auto max-w-[280px] md:max-w-[320px] relative z-10 rounded-xl"
                 />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, ArrowDown, Play, ChevronRight, Zap, DollarSign } from "lucide-react";
-import AnimatedButton from "../ui/AnimatedButton";
-import AnimationWrapper from "../ui/AnimationWrapper";
-import Pill from "../ui/Pill";
+import AnimatedButton from "../common/AnimatedButton";
+import AnimationWrapper from "../common/AnimationWrapper";
+import Pill from "../common/Pill";
 import { Link } from "react-router-dom";
 import SimulatorModal from "../simulator/SimulatorModal";
 import { useDemoForm } from "@/contexts/DemoFormContext";
@@ -128,7 +128,7 @@ const Hero = () => {
                 {/* Removed tag badges */}
                 
                 <img 
-                  src="/lovable-uploads/Console 1210.21.png" 
+                  src="/assets/images/features/Console 1210.21.png" 
                   alt="JAPA Console" 
                   className="w-full h-auto object-contain rounded-lg shadow-sm max-h-[80vh]"
                 />
