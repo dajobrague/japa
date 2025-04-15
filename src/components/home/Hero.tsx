@@ -26,7 +26,7 @@ const Hero = () => {
   const [stats, setStats] = useState({
     emissions: 0,
     turnover: 0,
-    satisfaction: 0
+    installTime: 0
   });
 
   useEffect(() => {
@@ -35,16 +35,16 @@ const Hero = () => {
         setStats(prev => {
           const newEmissions = Math.min(prev.emissions + 1, 30);
           const newTurnover = Math.min(prev.turnover + 1, 2);
-          const newSatisfaction = Math.min(prev.satisfaction + 1, 120);
+          const newInstallTime = Math.min(prev.installTime + 1, 30);
           
-          if (newEmissions === 30 && newTurnover === 2 && newSatisfaction === 120) {
+          if (newEmissions === 30 && newTurnover === 2 && newInstallTime === 30) {
             clearInterval(interval);
           }
           
           return {
             emissions: newEmissions,
             turnover: newTurnover,
-            satisfaction: newSatisfaction
+            installTime: newInstallTime
           };
         });
       }, 30);
@@ -189,9 +189,9 @@ const Hero = () => {
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    {stats.satisfaction}%
+                    &lt; {stats.installTime}s
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">Satisfaction</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">To Install</div>
                 </div>
               </div>
             </AnimationWrapper>
