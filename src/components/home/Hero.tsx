@@ -128,8 +128,8 @@ const Hero = () => {
                 {/* Removed tag badges */}
                 
                 <img 
-                  src="/assets/images/features/Console 1210.21.png" 
-                  alt="JAPA Console" 
+                  src="/assets/images/features/SFSU Proposal.png" 
+                  alt="SFSU Proposal" 
                   className="w-full h-auto object-contain rounded-lg shadow-sm max-h-[80vh]"
                 />
               </div>
