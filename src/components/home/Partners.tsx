@@ -363,7 +363,7 @@ const Partners = () => {
                                 <img 
                                   src={partner.logo} 
                                   alt={partner.alt}
-                                  className="max-w-[80%] max-h-[60%] transition-all duration-300 group-hover:scale-110"
+                                  className="w-[120px] h-[80px] object-contain transition-all duration-300 group-hover:scale-110"
                                   onError={(e) => handleLogoError(e, (slideIndex * partnersPerSlide + index) % partnerLogos.length)}
                                 />
                               </div>

@@ -24,24 +24,24 @@ const Index = () => {
       {/* 1. Hero Section */}
       <Hero />
       
-      {/* 2. JAPA Illustration Graphic */}
+      {/* 2. Partners Section - Moved up */}
+      <SectionTransition animation="slide-in-right" threshold={0.1} id="partners-section">
+        <Partners />
+      </SectionTransition>
+      
+      {/* 3. JAPA Illustration Graphic */}
       <SectionTransition animation="fade-in" threshold={0.1} id="illustration-section">
         <IllustrationSection />
       </SectionTransition>
       
-      {/* 3. Our Solutions (Features) */}
+      {/* 4. Our Solutions (Features) */}
       <SectionTransition animation="fade-up" threshold={0.1} id="features-section">
         <Features />
       </SectionTransition>
       
-      {/* 4. Video Section */}
+      {/* 5. Video Section */}
       <SectionTransition animation="fade-up" threshold={0.1} id="video-section">
         <VideoSection videoUrl={videoUrl} />
-      </SectionTransition>
-      
-      {/* 5. Partners Section */}
-      <SectionTransition animation="slide-in-right" threshold={0.1} id="partners-section">
-        <Partners />
       </SectionTransition>
       
       {/* 6. Mobile Experience (AppShowcase) */}

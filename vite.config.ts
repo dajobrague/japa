@@ -34,13 +34,13 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: false,
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: (assetInfo) => {
           if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'assets/index.css';
+            return 'assets/index.[hash].css';
           }
-          return 'assets/[name].[ext]';
+          return 'assets/[name].[hash].[ext]';
         },
         manualChunks: {
           vendor: [

@@ -189,9 +189,9 @@ const Hero = () => {
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-lg p-2 lg:p-3 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white hover:scale-105">
                   <div className="text-japa-orange font-bold text-xl lg:text-2xl">
-                    &lt; {stats.installTime}s
+                    &lt; {stats.installTime}
                   </div>
-                  <div className="text-japa-slate/70 text-xs lg:text-sm">To Install</div>
+                  <div className="text-japa-slate/70 text-xs lg:text-sm">Seconds To Install</div>
                 </div>
               </div>
             </AnimationWrapper>
