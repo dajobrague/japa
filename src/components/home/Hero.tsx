@@ -153,7 +153,7 @@ const Hero = () => {
             
             <AnimationWrapper animation="fade-up" delay={300}>
               <p className="text-japa-slate/80 text-base md:text-lg lg:text-xl max-w-xl lg:mx-0 mx-auto">
-                JAPA delivers real-time parking availability, powerful analytics, and seamless integrations that transform how universities and cities manage their parking assets.
+                JAPA delivers real-time parking availability, powerful analytics, and seamless integrations that transform how universities, hospitals, stadiums and cities manage their parking assets.
               </p>
             </AnimationWrapper>
             
