@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import AnimationWrapper from "../common/AnimationWrapper";
 import AnimatedButton from "../common/AnimatedButton";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import { useDemoForm } from "@/contexts/DemoFormContext";
 import Pill from "../ui/Pill";
+
+// App Store button component
+const AppStoreButton = ({ url }: { url: string }) => {
+  return (
+    <a 
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center bg-transparent transition-all hover:opacity-90 hover:-translate-y-1 w-full"
+    >
+      <img 
+        src="/assets/images/Download_on_the_App_Store_Badge.svg.webp" 
+        alt="Download on the App Store"
+        className="w-full max-w-[240px]"
+      />
+    </a>
+  );
+};
 
 const AppShowcase = () => {
   const { openDemoForm } = useDemoForm();
@@ -148,25 +166,33 @@ const AppShowcase = () => {
               </div>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <AnimatedButton 
-                  variant="primary"
-                  size="md"
-                  className="bg-white text-japa-orange hover:bg-white/90 border-none font-medium shadow-lg"
-                  onClick={openDemoForm}
-                >
-                  Schedule a Demo
-                </AnimatedButton>
-                <a 
-                  href="/solutions#mobile-app" 
-                  className="inline-flex items-center justify-center gap-2 text-white font-medium border border-white/30 py-2.5 px-5 rounded-lg transition-all hover:bg-white/10 hover:border-white/50 text-sm"
-                >
-                  Learn more
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-                    <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M8 3.33337L12.6667 8.00004L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <AnimatedButton 
+                    variant="primary"
+                    size="md"
+                    className="bg-white text-japa-orange hover:bg-white/90 border-none font-medium shadow-lg"
+                    onClick={openDemoForm}
+                  >
+                    Schedule a Demo
+                  </AnimatedButton>
+                  
+                  <a 
+                    href="/solutions#mobile-app" 
+                    className="inline-flex items-center justify-center gap-2 text-white font-medium border border-white/30 py-2.5 px-5 rounded-lg transition-all hover:bg-white/10 hover:border-white/50 text-sm"
+                  >
+                    Learn more
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+                      <path d="M3.33337 8H12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 3.33337L12.6667 8.00004L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                </div>
+                
+                {/* App Store Button */}
+                <div className="w-full">
+                  <AppStoreButton url="https://apps.apple.com/us/app/japa-smart-parking/id1237326914" />
+                </div>
               </div>
             </AnimationWrapper>
           </div>

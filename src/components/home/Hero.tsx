@@ -130,7 +130,7 @@ const Hero = () => {
                 <img 
                   src="/assets/images/features/SFSU Proposal.png" 
                   alt="SFSU Proposal" 
-                  className="w-full h-auto object-contain rounded-lg shadow-sm max-h-[80vh]"
+                  className="w-full h-auto object-contain rounded-lg max-h-[90vh]"
                 />
               </div>
             </div>
