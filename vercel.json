@@ -11,6 +11,13 @@
   ],
   "routes": [
     {
+      "src": "/favicon.ico",
+      "headers": { 
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "dest": "/favicon.ico"
+    },
+    {
       "src": "/assets/index\\.[a-f0-9]+\\.css",
       "headers": { 
         "cache-control": "public, max-age=3600, must-revalidate"
