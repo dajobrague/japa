@@ -1,56 +1,163 @@
 // Notion Press Service
-// This service provides mock press data for the Press page
+// This service fetches press data from the Notion database
 
 import { PressItem, PressCategory } from '@/types/press';
 
-// Mock Notion data
-const MOCK_NOTION_DATA: PressItem[] = [
-  {
-    id: 6001,
-    title: "JapaParking Revolutionizes Urban Parking Solutions",
-    category: "News Release",
-    date: new Date().toISOString(),
-    slug: "japaparking-revolutionizes-urban-parking-solutions",
-    summary: "Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas",
-    content: "<p>Innovative smart parking system reduces search time by 60% and decreases urban congestion in major metropolitan areas</p>",
-    image: "/assets/images/press/placeholder.png",
-    source: {
-      name: "JAPA Inc.",
-      logo: "/assets/images/japa-logo.svg",
-    },
-    featured: true,
-    tags: ["Parking", "Smart Technology", "Urban"],
-    links: {
-      pdf: "/assets/documents/press/press-release.pdf",
-    }
-  },
-  {
-    id: 6002,
-    title: "AI-Powered Parking Management Platform Launches",
-    category: "News Release",
-    date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 1 week ago
-    slug: "ai-powered-parking-management-platform-launches",
-    summary: "JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots",
-    content: "<p>JapaParking's new AI algorithm predicts parking availability with 95% accuracy, transforming the way drivers find parking spots</p>",
-    image: "/assets/images/press/placeholder.png",
-    source: {
-      name: "JAPA Inc.",
-      logo: "/assets/images/japa-logo.svg",
-    },
-    featured: true,
-    tags: ["AI", "Parking", "Technology"],
-    links: {
-      pdf: "/assets/documents/press/press-release.pdf",
-    }
+// Notion API configuration
+const NOTION_API_BASE = '/api/notion';
+const PRESS_DATABASE_ID = 'a27fd039f4b94d82a0ead9a45ffef625'; // From your Notion URL
+
+// Helper function to extract plain text from Notion rich text
+const extractPlainText = (richText: any[]): string => {
+  if (!richText || !Array.isArray(richText)) return '';
+  return richText.map(text => text.plain_text || '').join('');
+};
+
+// Helper function to extract date from Notion date property
+const extractDate = (dateProperty: any): string => {
+  if (!dateProperty || !dateProperty.date) return new Date().toISOString();
+  return new Date(dateProperty.date.start).toISOString();
+};
+
+// Helper function to extract select property
+const extractSelect = (selectProperty: any): string => {
+  if (!selectProperty || !selectProperty.select) return '';
+  return selectProperty.select.name || '';
+};
+
+// Helper function to extract URL from Notion files
+const extractImageUrl = (filesProperty: any): string => {
+  if (!filesProperty || !filesProperty.files || !Array.isArray(filesProperty.files)) {
+    return '/assets/images/press/placeholder.png';
   }
-];
+  
+  const firstFile = filesProperty.files[0];
+  if (!firstFile) return '/assets/images/press/placeholder.png';
+  
+  // Handle both external and internal file types
+  if (firstFile.type === 'external' && firstFile.external?.url) {
+    return firstFile.external.url;
+  } else if (firstFile.type === 'file' && firstFile.file?.url) {
+    return firstFile.file.url;
+  }
+  
+  return '/assets/images/press/placeholder.png';
+};
+
+// Transform Notion database results to PressItem format
+const transformNotionToPressItem = (notionPage: any): PressItem | null => {
+  try {
+    const properties = notionPage.properties;
+    
+    // Extract required fields
+    const title = extractPlainText(properties.Title?.title || properties.Name?.title || []);
+    const category = extractSelect(properties.Category || properties.Type);
+    const date = extractDate(properties.Date || properties['Published Date']);
+    
+    if (!title) {
+      console.warn('Skipping Notion page without title:', notionPage.id);
+      return null;
+    }
+
+    // Create slug from title
+    const slug = title.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+
+    const pressItem: PressItem = {
+      id: parseInt(notionPage.id.replace(/-/g, '').substring(0, 8), 16), // Convert ID to number
+      title,
+      category: (category || 'News Release') as PressCategory,
+      date,
+      slug,
+      summary: extractPlainText(properties.Summary?.rich_text || properties.Description?.rich_text || []) || title,
+      content: extractPlainText(properties.Content?.rich_text || []) || `<p>${title}</p>`,
+      image: extractImageUrl(properties.Image || properties.Photo),
+      source: {
+        name: extractPlainText(properties.Source?.rich_text || []) || 'JAPA Inc.',
+        logo: '/assets/images/japa-logo.svg',
+      },
+      featured: properties.Featured?.checkbox || false,
+      tags: properties.Tags?.multi_select?.map((tag: any) => tag.name) || [],
+      links: {
+        pdf: extractPlainText(properties['PDF Link']?.rich_text || []) || undefined,
+        externalArticle: extractPlainText(properties['External Link']?.rich_text || []) || undefined,
+      }
+    };
+
+    return pressItem;
+  } catch (error) {
+    console.error('Error transforming Notion page to PressItem:', error, notionPage);
+    return null;
+  }
+};
 
 export const fetchNotionPressItems = async (): Promise<PressItem[]> => {
-  // Return mock data instead of fetching from Notion
-  return MOCK_NOTION_DATA;
+  try {
+    console.log('🔄 Fetching press items from Notion database...');
+    
+    // Query the Notion database
+    const response = await fetch(`${NOTION_API_BASE}/databases/${PRESS_DATABASE_ID}/query`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        sorts: [
+          {
+            property: 'Date',
+            direction: 'descending'
+          }
+        ],
+        page_size: 100
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Notion API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    console.log('✅ Notion API response received:', data.results?.length || 0, 'items');
+
+    if (!data.results || !Array.isArray(data.results)) {
+      console.warn('No results found in Notion response');
+      return [];
+    }
+
+    // Transform Notion pages to PressItem format
+    const pressItems = data.results
+      .map(transformNotionToPressItem)
+      .filter((item): item is PressItem => item !== null);
+
+    console.log('✅ Successfully transformed', pressItems.length, 'press items');
+    return pressItems;
+
+  } catch (error) {
+    console.error('❌ Error fetching press items from Notion:', error);
+    
+    // Return empty array instead of mock data on error
+    // This allows the UI to show a proper "no items" state
+    return [];
+  }
 };
 
 export const mergeWithExistingPressData = async (existingItems: PressItem[]): Promise<PressItem[]> => {
-  // Return mock data instead of merging with existing data
-  return MOCK_NOTION_DATA;
+  try {
+    const notionItems = await fetchNotionPressItems();
+    
+    // Combine Notion items with existing items, removing duplicates by slug
+    const allItems = [...notionItems, ...existingItems];
+    const uniqueItems = allItems.filter((item, index, self) => 
+      index === self.findIndex(t => t.slug === item.slug)
+    );
+    
+    // Sort by date (newest first)
+    return uniqueItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (error) {
+    console.error('❌ Error merging press data:', error);
+    return existingItems;
+  }
 }; 
