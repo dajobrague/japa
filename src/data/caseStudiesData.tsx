@@ -498,5 +498,81 @@ export const caseStudies: CaseStudy[] = [
     implementation: "The system covers all major beach and harbor parking areas, with dynamic pricing capabilities to manage demand during peak periods. Integration with tourism websites and apps helps visitors plan their trips effectively.",
     outcomes: "Dana Point has significantly improved visitor access to its coastal areas while reducing traffic congestion. The data collected has also informed coastal access planning and helped balance the needs of visitors and residents.",
     color: "from-blue-500/20 to-teal-500/30"
+  },
+  {
+    id: 14,
+    title: "John Glenn Columbus International Airport",
+    category: "Airport",
+    slug: "john-glenn-columbus-airport",
+    description: "JAPA is monitoring garage occupancy at John Glenn Columbus International Airport using car counting technology. The system provides real-time data to help improve traffic flow, maximize space usage, enhance parking operations and the overall parking experience for travelers.",
+    image: "https://drive.google.com/file/d/1Qx9LdU38oSlojnE8g-a1hYf3s8t6oAiW/view?usp=drive_link",
+    results: [
+      "Real-time garage occupancy monitoring",
+      "Improved traffic flow management",
+      "Enhanced parking operations efficiency",
+      "Better traveler parking experience"
+    ],
+    stats: {
+      improvement: "30%",
+      timeframe: "6 months",
+      satisfaction: "90%"
+    },
+    client: {
+      name: "John Glenn Columbus International Airport",
+      logo: "/columbus-airport-logo.svg",
+      testimonial: {
+        quote: "JAPA's car counting technology has transformed our parking operations. We now have complete visibility into garage occupancy, allowing us to optimize traffic flow and provide a better experience for our travelers.",
+        author: "Airport Operations Director",
+        position: "John Glenn Columbus International Airport"
+      }
+    },
+    challenges: [
+      "Limited visibility into garage occupancy",
+      "Traffic congestion during peak travel times",
+      "Inefficient space utilization",
+      "Need to improve traveler experience"
+    ],
+    solution: "JAPA implemented car counting technology throughout the airport's parking garages to provide real-time occupancy data and improve parking operations.",
+    implementation: "The system was deployed across all parking garage levels, with sensors strategically placed to provide accurate occupancy counts and real-time data feeds to airport operations.",
+    outcomes: "John Glenn Columbus International Airport now has complete visibility into garage occupancy, enabling better traffic management, improved space utilization, and enhanced traveler experience through real-time parking information.",
+    color: "from-blue-500/20 to-blue-600/30"
+  },
+  {
+    id: 15,
+    title: "NC State University",
+    category: "University",
+    slug: "nc-state-university",
+    description: "NC State is using JAPA's per-space monitoring system to track parking occupancy across multiple zones on campus. The data helps their team manage timed zones, enforce regulations more effectively, and optimize operations without relying on a mobile app—giving them full visibility into how their parking assets are being used day to day.",
+    image: "https://drive.google.com/file/d/1oIegYY_kd7JQSCivKgIbVcVX3VkGZxYh/view?usp=drive_link",
+    results: [
+      "Per-space monitoring across multiple zones",
+      "Effective timed zone management",
+      "Improved regulation enforcement",
+      "Full visibility into parking asset utilization"
+    ],
+    stats: {
+      improvement: "35%",
+      timeframe: "7 months",
+      satisfaction: "92%"
+    },
+    client: {
+      name: "NC State University",
+      logo: "/nc-state-logo.svg",
+      testimonial: {
+        quote: "JAPA's per-space monitoring system has given us unprecedented visibility into our parking operations. We can now manage timed zones effectively and optimize our parking assets without the complexity of a mobile app.",
+        author: "Transportation Services Director",
+        position: "NC State University"
+      }
+    },
+    challenges: [
+      "Limited visibility into parking zone utilization",
+      "Ineffective timed zone management",
+      "Difficulty enforcing parking regulations",
+      "Need for operational optimization without mobile app complexity"
+    ],
+    solution: "JAPA implemented a per-space monitoring system across multiple campus zones, providing detailed occupancy data to help manage timed zones and optimize parking operations.",
+    implementation: "The system was deployed across all major parking zones on campus, with individual space monitoring capabilities that provide granular data for parking management and enforcement.",
+    outcomes: "NC State University now has complete visibility into parking asset utilization across all zones, enabling effective timed zone management, improved regulation enforcement, and optimized parking operations without requiring mobile app integration.",
+    color: "from-red-500/20 to-red-600/30"
   }
 ]; 
