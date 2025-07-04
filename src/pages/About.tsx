@@ -116,7 +116,7 @@ const teamMembers = [
   },
   {
     name: "Mariana Arcaya",
-    position: "Sales Manager",
+    position: "Head of Operations",
     image: "/assets/images/team/LinkedIn_Mariana.jpeg",
     bio: "Growing JAPA's market presence and building strong client partnerships."
   },
@@ -131,6 +131,24 @@ const teamMembers = [
     position: "CRO",
     image: "/assets/images/team/LinkedIn_DJ.jpeg",
     bio: "Optimizing revenue generation strategies and driving business growth for JAPA."
+  },
+  {
+    name: "Michael Baker",
+    position: "Sales Director",
+    image: "/assets/images/team/JAPA_MichaelBaker.png",
+    bio: "Leading sales initiatives and building strong client relationships for JAPA."
+  },
+  {
+    name: "Louis Monterosso",
+    position: "Senior Account Executive",
+    image: "/assets/images/team/JAPA_LouisMonterosso.jpg",
+    bio: "Driving account growth and ensuring client success at JAPA."
+  },
+  {
+    name: "Austin Harney",
+    position: "Account Executive",
+    image: "/assets/images/team/JAPA_AustinHarney.jpg",
+    bio: "Building strong client relationships and driving account growth for JAPA."
   }
 ];
 
