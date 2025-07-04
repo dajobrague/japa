@@ -50,6 +50,19 @@ const Press: React.FC = () => {
             <p className="text-lg text-japa-slate/80 max-w-2xl">
               Stay up to date with the latest news, announcements, and media coverage about JAPA's smart parking solutions.
             </p>
+            <div className="mt-4">
+              <a 
+                href="https://japainc.notion.site/Recent-Press-a27fd039f4b94d82a0ead9a45ffef625" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-japa-orange hover:text-japa-orange/80 font-medium transition-colors"
+              >
+                <span>View Full Press Database</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </AnimationWrapper>
 

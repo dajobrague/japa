@@ -2,6 +2,7 @@
 
 // Simplified Notion API Test Script for direct access
 import https from 'https';
+import fetch from 'node-fetch';
 
 // Configuration
 const NOTION_TOKEN = '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';
@@ -251,4 +252,55 @@ async function main() {
 }
 
 // Run the main function
-main(); 
+main();
+
+// Direct test of Notion database access
+const NOTION_URL = 'https://japainc.notion.site/Recent-Press-a27fd039f4b94d82a0ead9a45ffef625';
+
+async function testNotionAccess() {
+  console.log('🧪 Testing direct Notion access...');
+  console.log('📄 URL:', NOTION_URL);
+  
+  try {
+    // Try to fetch the page with different headers
+    const response = await fetch(NOTION_URL, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Accept-Encoding': 'gzip, deflate',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+      }
+    });
+    
+    console.log('📊 Response status:', response.status);
+    console.log('📋 Response headers:', Object.fromEntries(response.headers.entries()));
+    
+    const content = await response.text();
+    console.log('📄 Content length:', content.length);
+    console.log('📄 First 500 chars:', content.substring(0, 500));
+    
+    // Look for any data in the content
+    const dataMatches = content.match(/window\.__INITIAL_STATE__\s*=\s*({.*?});/);
+    if (dataMatches) {
+      console.log('🎯 Found initial state data!');
+      try {
+        const initialState = JSON.parse(dataMatches[1]);
+        console.log('📦 Initial state keys:', Object.keys(initialState));
+      } catch (e) {
+        console.log('❌ Could not parse initial state');
+      }
+    }
+    
+    // Save content for analysis
+    const fs = await import('fs');
+    fs.writeFileSync('notion-direct-content.html', content);
+    console.log('💾 Saved content to notion-direct-content.html');
+    
+  } catch (error) {
+    console.error('❌ Error accessing Notion:', error.message);
+  }
+}
+
+testNotionAccess(); 

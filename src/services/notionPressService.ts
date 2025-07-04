@@ -96,44 +96,11 @@ const transformNotionToPressItem = (notionPage: any): PressItem | null => {
 
 export const fetchNotionPressItems = async (): Promise<PressItem[]> => {
   try {
-    console.log('🔄 Fetching press items from Notion database...');
+    console.log('🔄 Fetching press items from public Notion database...');
     
-    // Query the Notion database
-    const response = await fetch(`${NOTION_API_BASE}/databases/${PRESS_DATABASE_ID}/query`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        sorts: [
-          {
-            property: 'Date',
-            direction: 'descending'
-          }
-        ],
-        page_size: 100
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`Notion API error: ${response.status} ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    console.log('✅ Notion API response received:', data.results?.length || 0, 'items');
-
-    if (!data.results || !Array.isArray(data.results)) {
-      console.warn('No results found in Notion response');
-      return [];
-    }
-
-    // Transform Notion pages to PressItem format
-    const pressItems = data.results
-      .map(transformNotionToPressItem)
-      .filter((item): item is PressItem => item !== null);
-
-    console.log('✅ Successfully transformed', pressItems.length, 'press items');
-    return pressItems;
+    // Import and use the public service
+    const { fetchPublicNotionPressItems } = await import('./notionPublicService');
+    return await fetchPublicNotionPressItems();
 
   } catch (error) {
     console.error('❌ Error fetching press items from Notion:', error);
