@@ -1,4 +1,4 @@
-export type PressCategory = 'News Release' | 'Media Coverage' | 'Award' | 'Industry Update';
+export type PressCategory = 'Press Release' | 'News Release' | 'Media Coverage' | 'Award' | 'Industry Update' | 'Case Study';
 
 export interface PressItem {
   id: number;

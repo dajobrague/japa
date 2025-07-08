@@ -98,7 +98,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japa-raises-1-3-million-to-grow-its-smart-parking-market-nationwide",
           summary: "Japa Inc.'s hardware, software and app are used by universities, airports, hospitals and others to monitor parking and make it easier.",
           content: "<p>Japa Inc. has successfully raised $1.3 million in funding to expand its smart parking market nationwide. The company's innovative hardware, software and mobile app solutions are currently being used by universities, airports, hospitals and other institutions to monitor parking and make it easier for users to find available spaces.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/features/analytics_image.png",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -117,7 +117,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japas-expansion-in-smart-ev-charging-solutions-at-smud",
           summary: "West Sacramento, July 2024 — Japa, Inc., a pioneer in innovative parking solutions, is excited to announce a significant expansion of our partnership with the Sacramento Municipal Utility District (SMUD).",
           content: "<p>West Sacramento, July 2024 — Japa, Inc., a pioneer in innovative parking solutions, is excited to announce a significant expansion of our partnership with the Sacramento Municipal Utility District (SMUD). This expansion includes extending the Sacramento-based company's smart parking technology to more SMUD employee EV charging spaces.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/Sacramento-Muni-Utility-District.png",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -136,7 +136,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japa-inc-partners-to-revolutionize-parking-for-premier-medical-university",
           summary: "Japa Smart Parking is thrilled to announce a groundbreaking partnership aimed at transforming the parking experience at a leading medical university in San Francisco.",
           content: "<p>Japa Smart Parking is thrilled to announce a groundbreaking partnership aimed at transforming the parking experience at a leading medical university in San Francisco. This strategic collaboration will implement cutting-edge smart parking solutions to improve access and reduce congestion around the medical campus.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/UC-SanFrancisco.jpg",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -155,7 +155,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japas-project-expansion-at-premier-university-riverside",
           summary: "West Sacramento, April 2024 — Japa, Inc., a leader in smart parking solutions, is proud to announce the expansion of our partnership with a premier university in Riverside, California.",
           content: "<p>West Sacramento, April 2024 — Japa, Inc., a leader in smart parking solutions, is proud to announce the expansion of our partnership with a premier university in Riverside, California. This expansion will enhance the campus parking experience through advanced IoT technology and real-time data analytics.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/USC.png",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -174,7 +174,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japa-lands-parking-intelligence-gigs-for-sf-lots-garages",
           summary: "Japa Inc. deployed its smart parking technology and data platform to two areas of San Francisco with seriously challenging parking congestion.",
           content: "<p>Japa Inc. deployed its smart parking technology and data platform to two areas of San Francisco with seriously challenging parking congestion. The implementation addresses the city's complex parking challenges through innovative sensor technology and real-time data analytics.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/CastroDistrict.jpg",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -193,7 +193,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "startup-japa-inc-continues-to-expand-parking-sensor-innovations",
           summary: "The company has deployed more than 6,000 of its sensors at parking lots, parking garages and on city streets to help users monitor, track and improve parking.",
           content: "<p>The company has deployed more than 6,000 of its sensors at parking lots, parking garages and on city streets to help users monitor, track and improve parking. This extensive deployment demonstrates Japa's commitment to revolutionizing urban mobility through innovative IoT solutions.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/sensors/sensor-1080x720.png",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -212,7 +212,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "japa-inc-elevates-parking-experience-san-francisco-prime-location",
           summary: "Japa, Inc., a pioneer in smart parking solutions, is excited to announce a new partnership that will redefine parking in one of San Francisco's most vibrant areas.",
           content: "<p>Japa, Inc., a pioneer in smart parking solutions, is excited to announce a new partnership that will redefine parking in one of San Francisco's most vibrant areas. This strategic collaboration focuses on enhancing the parking experience at two key parking locations through advanced technology solutions.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/DanaPoint.png",
           source: {
             name: "JAPA Inc.",
             logo: "/japa-logo.png",
@@ -231,7 +231,7 @@ app.get('/api/notion-public', async (req, res) => {
           slug: "smart-parking-siemens-xcelerator",
           summary: "Use parking occupancy data to integrate and analyse in the building management system.",
           content: "<p>Japa's smart parking technology is featured in Siemens Xcelerator, demonstrating how parking occupancy data can be integrated and analyzed in building management systems. This collaboration showcases the potential for IoT solutions in smart building infrastructure.</p>",
-          image: "/assets/images/press/default-press-image.jpg",
+          image: "/assets/images/siemens-logo-240x240.png",
           source: {
             name: "Siemens",
             logo: "/assets/images/siemens-logo-240x240.png",

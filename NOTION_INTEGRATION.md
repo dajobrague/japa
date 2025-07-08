@@ -166,6 +166,29 @@ Users can access the full Notion database directly:
 - **Link**: "View Full Press Database" button on the press page
 - **URL**: https://japainc.notion.site/Recent-Press-a27fd039f4b94d82a0ead9a45ffef625
 
+## Development
+
+### Quick Start
+
+Use the new unified start script to run both servers:
+
+```bash
+npm run start
+```
+
+This will start:
+- Frontend dev server on `http://localhost:8080`
+- Backend API server on `http://localhost:3001`
+
+### Individual Scripts
+
+- `npm run dev` - Start frontend only
+- `npm run server` - Start backend API only
+- `npm run build` - Build for production
+- `npm run build:production` - Build with production optimizations
+- `npm run test:api` - Test API integration
+- `npm run deploy:check` - Run full deployment check
+
 ## Testing
 
 ### Test Script
@@ -173,13 +196,13 @@ Users can access the full Notion database directly:
 Run the integration test:
 
 ```bash
-node test-press.mjs
+npm run test:api
 ```
 
 ### Manual Testing
 
 1. Visit: http://localhost:8080/press
-2. Check API: http://localhost:3001/api/notion-public
+2. Check API: http://localhost:3001/api/notion-public (development) or `/api/notion-public` (production)
 3. Verify data loads correctly
 4. Test "View Full Press Database" link
 
@@ -222,12 +245,56 @@ The integration provides comprehensive logging:
 - `⚠️` - Warnings
 - `📋` - Information
 
+## Deployment
+
+### Pre-deployment Checklist
+
+Run the deployment check to ensure everything is ready:
+
+```bash
+npm run deploy:check
+```
+
+This command will:
+1. Run linting checks
+2. Build for production with optimizations
+3. Test API integration
+
+### Production Configuration
+
+The site is configured for deployment on Vercel with:
+
+1. **Static Frontend**: Built with Vite and served from `/dist`
+2. **Serverless API**: Functions in `/api` directory using Node.js 18.x
+3. **Environment Detection**: Automatically switches between development and production API URLs
+4. **Fallback Strategy**: Uses sample data if API is unavailable
+
+### API Endpoints (Production)
+
+- **Press Data**: `/api/notion-public`
+- **Health Check**: `/api/health`
+
+### Image Optimization
+
+Ensure all images are properly sized:
+- JAPA logo displays as `max-w-[120px] max-h-[80px]` in cards
+- Gradient background for professional appearance
+- Automatic fallback to JAPA logo on error
+
+### Deployment Steps
+
+1. **Prepare**: `npm run deploy:check`
+2. **Deploy**: Push to main branch (auto-deploys on Vercel)
+3. **Verify**: Check `/api/health` endpoint
+4. **Test**: Visit `/press` page and verify data loads
+
 ## Security
 
 - Uses public Notion database (no authentication required)
 - No sensitive data exposed
-- CORS configured for local development
+- CORS configured for all origins
 - Input validation on all data
+- Serverless functions with proper error handling
 
 ## Performance
 
@@ -235,3 +302,5 @@ The integration provides comprehensive logging:
 - Real-time parsing has timeout protection
 - Fallback mechanism ensures reliability
 - Minimal impact on page load times
+- Production builds with optimizations
+- Static assets with proper caching headers

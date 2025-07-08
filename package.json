@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:production": "NODE_ENV=production npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "node server.js"
+    "server": "node server.js",
+    "start": "concurrently \"npm run server\" \"npm run dev\" --names \"SERVER,FRONTEND\" --prefix-colors \"blue,green\"",
+    "test:api": "node test-press.mjs",
+    "deploy:check": "npm run lint && npm run build:production && npm run test:api"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",
@@ -76,6 +80,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "@vitejs/plugin-react-swc": "^3.8.1",
     "autoprefixer": "^10.4.16",
+    "concurrently": "^9.2.0",
     "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",

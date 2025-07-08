@@ -220,26 +220,29 @@ const attemptRealTimeParsing = async (): Promise<PressItem[]> => {
 // Function to fetch data from the server API with fallback
 const fetchPublicNotionData = async (): Promise<PressItem[]> => {
   try {
-    console.log('🔄 Fetching data from server API...');
+    console.log('🔄 Fetching data from API...');
     
-    // Try to fetch from the server API first
-    const serverUrl = window.location.hostname === 'localhost' 
+    // Use production API endpoint when deployed, localhost for development
+    const isDevelopment = typeof window !== 'undefined' && window.location.hostname === 'localhost';
+    const apiUrl = isDevelopment 
       ? 'http://localhost:3001/api/notion-public'
-      : `http://${window.location.hostname}:3001/api/notion-public`;
+      : '/api/notion-public';
     
-    const response = await fetch(serverUrl);
+    console.log('📡 API URL:', apiUrl);
+    
+    const response = await fetch(apiUrl);
     
     if (response.ok) {
       const data = await response.json();
-      console.log('✅ Successfully fetched data from server API:', data.length, 'items');
+      console.log('✅ Successfully fetched data from API:', data.length, 'items');
       return data;
     }
     
-    console.log('⚠️ Server API not available, falling back to sample data');
+    console.log('⚠️ API not available, falling back to sample data');
     return samplePressData;
     
   } catch (error) {
-    console.error('❌ Error fetching from server API:', error);
+    console.error('❌ Error fetching from API:', error);
     console.log('📋 Falling back to sample data');
     return samplePressData;
   }
@@ -288,4 +291,7 @@ export const mergeWithPublicNotionData = async (existingItems: PressItem[]): Pro
 // Export the sample data for testing purposes
 export const getSamplePressData = (): PressItem[] => {
   return samplePressData;
-}; 
+};
+
+// Export for serverless functions
+export { samplePressData }; 
